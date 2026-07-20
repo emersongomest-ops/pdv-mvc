@@ -1,0 +1,20 @@
+{
+  "0": "SessionContext.tsx",
+  "1": "compilerOptions",
+  "2": "compilerOptions",
+  "3": "client.ts",
+  "4": "package.json",
+  "5": "devDependencies",
+  "6": "plugins",
+  "7": "tsconfig.json",
+  "8": "vite.config.ts",
+  "9": "SessionContext.tsx",
+  "10": "PDV Frontend — Operational SPA",
+  "11": "formatApiError",
+  "12": "types.ts",
+  "13": "useAdminDashboard.ts",
+  "14": "useAdminSales.ts",
+  "15": "useAdminShifts.ts",
+  "16": "useAdminCustomers.ts",
+  "17": "PlaceholderPage.tsx"
+}

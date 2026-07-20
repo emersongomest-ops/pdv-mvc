@@ -1,0 +1,38 @@
+.payMethods {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.payMethods label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-muted);
+}
+
+.change {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.toolRow {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.toolRow input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  color: var(--text);
+}

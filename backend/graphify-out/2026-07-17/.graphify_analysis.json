@@ -1,0 +1,717 @@
+{
+  "communities": {
+    "0": [
+      "app_domain_store_repositories_storerepositoryinterface",
+      "app_domain_store_repositories_storerepositoryinterface_findbyid",
+      "app_domain_store_repositories_storerepositoryinterface_listaccessibleforuser",
+      "app_domain_store_repositories_storerepositoryinterface_usercanaccessstore",
+      "app_models_store_store",
+      "app_models_store_store_casts",
+      "app_models_user_php_belongstomany",
+      "app_models_user_user",
+      "app_models_user_user_casts",
+      "app_models_user_user_ismanager",
+      "app_models_user_user_isoperator",
+      "app_models_user_user_stores",
+      "app_policies_storepolicy",
+      "app_policies_storepolicy_storepolicy",
+      "app_policies_storepolicy_storepolicy_access",
+      "authenticatable",
+      "model",
+      "notifiable",
+      "tests_feature_auth_logintest_logintest",
+      "tests_feature_auth_logintest_logintest_setup",
+      "tests_feature_auth_logintest_logintest_test_inactive_user_login_returns_auth_account_inactive",
+      "tests_feature_auth_logintest_logintest_test_login_with_invalid_credentials_returns_auth_invalid_credentials",
+      "tests_feature_auth_logintest_logintest_test_manager_can_login_and_access_admin_route",
+      "tests_feature_auth_logintest_logintest_test_operator_can_login_and_access_operational_route",
+      "tests_feature_auth_operationalrouteaccesstest_operationalrouteaccesstest",
+      "tests_feature_auth_operationalrouteaccesstest_operationalrouteaccesstest_setup",
+      "tests_feature_auth_operationalrouteaccesstest_operationalrouteaccesstest_test_guest_cannot_access_operational_pos",
+      "tests_feature_auth_operationalrouteaccesstest_operationalrouteaccesstest_test_inactive_operator_cannot_access_operational_pos",
+      "tests_feature_auth_operationalrouteaccesstest_operationalrouteaccesstest_test_manager_can_access_operational_pos",
+      "tests_feature_auth_operationalrouteaccesstest_operationalrouteaccesstest_test_operator_can_access_operational_pos",
+      "tests_feature_store_liststorestest_liststorestest_test_manager_sees_all_assigned_stores",
+      "tests_feature_store_liststorestest_liststorestest_test_operator_sees_only_assigned_stores",
+      "tests_feature_store_operationalstorecontexttest_operationalstorecontexttest",
+      "tests_feature_store_operationalstorecontexttest_operationalstorecontexttest_setup",
+      "tests_feature_store_operationalstorecontexttest_operationalstorecontexttest_test_operational_pos_after_selecting_store_context_in_session_flow",
+      "tests_feature_store_operationalstorecontexttest_operationalstorecontexttest_test_operational_pos_with_store_context_returns_store_id",
+      "tests_feature_store_operationalstorecontexttest_operationalstorecontexttest_test_operational_pos_without_store_context_returns_auth_store_context_required",
+      "tests_feature_store_selectstorecontexttest_selectstorecontexttest",
+      "tests_feature_store_selectstorecontexttest_selectstorecontexttest_setup",
+      "tests_feature_store_selectstorecontexttest_selectstorecontexttest_test_manager_can_select_any_assigned_store",
+      "tests_feature_store_selectstorecontexttest_selectstorecontexttest_test_operator_can_select_assigned_store_context",
+      "tests_feature_store_selectstorecontexttest_selectstorecontexttest_test_operator_cannot_select_unassigned_store",
+      "tests_feature_store_selectstorecontexttest_selectstorecontexttest_test_selecting_inactive_store_returns_store_inactive",
+      "tests_feature_store_selectstorecontexttest_selectstorecontexttest_test_selecting_nonexistent_store_returns_store_not_found",
+      "tests_feature_store_storecontextidortest_storecontextidortest_test_operational_route_rejects_inactive_store_in_session",
+      "tests_feature_store_storecontextidortest_storecontextidortest_test_operational_route_rejects_revoked_store_assignment_in_session"
+    ],
+    "1": [
+      "composer",
+      "composer_allow_plugins_pestphp_pest_plugin",
+      "composer_allow_plugins_php_http_discovery",
+      "composer_autoload",
+      "composer_autoload_dev",
+      "composer_autoload_dev_psr_4",
+      "composer_autoload_psr_4",
+      "composer_config",
+      "composer_config_allow_plugins",
+      "composer_config_optimize_autoloader",
+      "composer_config_preferred_install",
+      "composer_config_sort_packages",
+      "composer_description",
+      "composer_extra",
+      "composer_extra_laravel",
+      "composer_keywords",
+      "composer_laravel_dont_discover",
+      "composer_license",
+      "composer_minimum_stability",
+      "composer_name",
+      "composer_prefer_stable",
+      "composer_psr_4_app",
+      "composer_psr_4_database_factories",
+      "composer_psr_4_database_seeders",
+      "composer_psr_4_tests",
+      "composer_require",
+      "composer_require_dev",
+      "composer_require_dev_fakerphp_faker",
+      "composer_require_dev_laravel_pail",
+      "composer_require_dev_laravel_pao",
+      "composer_require_dev_laravel_pint",
+      "composer_require_dev_mockery_mockery",
+      "composer_require_dev_nunomaduro_collision",
+      "composer_require_dev_phpunit_phpunit",
+      "composer_require_laravel_framework",
+      "composer_require_laravel_sanctum",
+      "composer_require_laravel_tinker",
+      "composer_require_php",
+      "composer_schema",
+      "composer_type",
+      "ref_framework",
+      "ref_laravel"
+    ],
+    "2": [
+      "app_application_identityaccess_actions_loginuseraction",
+      "app_models_store",
+      "app_models_store_php_belongstomany",
+      "app_models_store_store_users",
+      "app_models_user",
+      "app_support_store_storecontext",
+      "basetestcase",
+      "config_auth",
+      "hasfactory",
+      "interactswithstatefulapi",
+      "refreshdatabase",
+      "tests_feature_auth_adminrouteaccesstest",
+      "tests_feature_auth_adminrouteaccesstest_adminrouteaccesstest",
+      "tests_feature_auth_adminrouteaccesstest_adminrouteaccesstest_test_guest_cannot_access_admin_dashboard",
+      "tests_feature_auth_adminrouteaccesstest_adminrouteaccesstest_test_inactive_manager_cannot_access_admin_dashboard",
+      "tests_feature_auth_adminrouteaccesstest_adminrouteaccesstest_test_manager_can_access_admin_dashboard",
+      "tests_feature_auth_adminrouteaccesstest_adminrouteaccesstest_test_operator_cannot_access_admin_dashboard",
+      "tests_feature_auth_logintest",
+      "tests_feature_auth_operationalrouteaccesstest",
+      "tests_feature_exampletest",
+      "tests_feature_exampletest_exampletest",
+      "tests_feature_exampletest_exampletest_test_the_application_returns_a_successful_response",
+      "tests_feature_store_liststorestest",
+      "tests_feature_store_liststorestest_liststorestest",
+      "tests_feature_store_liststorestest_liststorestest_test_guest_cannot_list_stores",
+      "tests_feature_store_operationalstorecontexttest",
+      "tests_feature_store_selectstorecontexttest",
+      "tests_feature_store_storecontextidortest",
+      "tests_feature_store_storecontextidortest_storecontextidortest",
+      "tests_feature_store_storecontextidortest_storecontextidortest_setup",
+      "tests_testcase",
+      "tests_testcase_testcase",
+      "tests_unit_exampletest",
+      "tests_unit_exampletest_exampletest",
+      "tests_unit_exampletest_exampletest_test_that_true_is_true"
+    ],
+    "3": [
+      "app_application_identityaccess_actions_loginuseraction_loginuseraction",
+      "app_application_identityaccess_actions_loginuseraction_loginuseraction_execute",
+      "app_http_controllers_controller",
+      "app_http_controllers_controller_controller",
+      "app_http_identityaccess_controllers_admindashboardcontroller",
+      "app_http_identityaccess_controllers_admindashboardcontroller_admindashboardcontroller",
+      "app_http_identityaccess_controllers_admindashboardcontroller_admindashboardcontroller_invoke",
+      "app_http_identityaccess_controllers_admindashboardcontroller_php_jsonresponse",
+      "app_http_identityaccess_controllers_admindashboardcontroller_php_request",
+      "app_http_identityaccess_controllers_logincontroller",
+      "app_http_identityaccess_controllers_logincontroller_logincontroller",
+      "app_http_identityaccess_controllers_logincontroller_logincontroller_invoke",
+      "app_http_identityaccess_controllers_logincontroller_php_jsonresponse",
+      "app_http_identityaccess_controllers_operationalposcontroller",
+      "app_http_identityaccess_controllers_operationalposcontroller_operationalposcontroller",
+      "app_http_identityaccess_controllers_operationalposcontroller_operationalposcontroller_invoke",
+      "app_http_identityaccess_controllers_operationalposcontroller_php_jsonresponse",
+      "app_http_identityaccess_controllers_operationalposcontroller_php_request",
+      "app_http_identityaccess_requests_loginrequest",
+      "app_http_identityaccess_requests_loginrequest_loginrequest",
+      "app_http_identityaccess_requests_loginrequest_loginrequest_authorize",
+      "app_http_identityaccess_requests_loginrequest_loginrequest_rules",
+      "app_http_store_controllers_selectstorecontextcontroller",
+      "app_http_store_controllers_selectstorecontextcontroller_php_jsonresponse",
+      "app_http_store_controllers_selectstorecontextcontroller_selectstorecontextcontroller",
+      "app_http_store_controllers_selectstorecontextcontroller_selectstorecontextcontroller_invoke",
+      "app_http_store_requests_selectstorecontextrequest",
+      "app_http_store_requests_selectstorecontextrequest_selectstorecontextrequest",
+      "app_http_store_requests_selectstorecontextrequest_selectstorecontextrequest_authorize",
+      "app_http_store_requests_selectstorecontextrequest_selectstorecontextrequest_rules",
+      "formrequest",
+      "routes_api"
+    ],
+    "4": [
+      "app_application_store_actions_selectstorecontextaction",
+      "app_application_store_actions_selectstorecontextaction_php_request",
+      "app_application_store_actions_selectstorecontextaction_php_storerepositoryinterface",
+      "app_application_store_actions_selectstorecontextaction_selectstorecontextaction",
+      "app_application_store_actions_selectstorecontextaction_selectstorecontextaction_construct",
+      "app_application_store_actions_selectstorecontextaction_selectstorecontextaction_execute",
+      "app_domain_shared_errorcode",
+      "app_domain_shared_errorcode_authenticationerrors",
+      "app_domain_shared_errorcode_httpstatus",
+      "app_domain_shared_errorcode_message",
+      "app_domain_shared_errorcode_storeerrors",
+      "app_domain_shared_errorcode_toerrorpayload",
+      "app_http_middleware_ensurestorecontext",
+      "app_http_middleware_ensurestorecontext_ensurestorecontext",
+      "app_http_middleware_ensurestorecontext_ensurestorecontext_construct",
+      "app_http_middleware_ensurestorecontext_ensurestorecontext_handle",
+      "app_http_middleware_ensurestorecontext_php_closure",
+      "app_http_middleware_ensurestorecontext_php_request",
+      "app_http_middleware_ensurestorecontext_php_response",
+      "app_http_middleware_ensurestorecontext_php_storerepositoryinterface",
+      "app_http_middleware_ensureuserhasrole",
+      "app_http_middleware_ensureuserhasrole_ensureuserhasrole",
+      "app_http_middleware_ensureuserhasrole_ensureuserhasrole_handle",
+      "app_http_middleware_ensureuserhasrole_php_closure",
+      "app_http_middleware_ensureuserhasrole_php_request",
+      "app_http_middleware_ensureuserhasrole_php_response",
+      "app_support_store_storecontext_php_request",
+      "app_support_store_storecontext_storecontext",
+      "app_support_store_storecontext_storecontext_current",
+      "app_support_store_storecontext_storecontext_set"
+    ],
+    "5": [
+      "composer_scripts",
+      "composer_scripts_dev",
+      "composer_scripts_post_autoload_dump",
+      "composer_scripts_post_create_project_cmd",
+      "composer_scripts_post_root_package_install",
+      "composer_scripts_post_update_cmd",
+      "composer_scripts_pre_package_uninstall",
+      "composer_scripts_setup",
+      "composer_scripts_test",
+      "ref_composer_config_disableprocesstimeout",
+      "ref_composer_install",
+      "ref_illuminate_foundation_composerscripts_postautoloaddump",
+      "ref_illuminate_foundation_composerscripts_prepackageuninstall",
+      "ref_npm_install_ignore_scripts",
+      "ref_npm_run_build",
+      "ref_npx_concurrently_c_93c5fd_c4b5fd_fb7185_fdba74_php_artisan_serve_php_artisan_queue_listen_tries_1_timeout_0_php_artisan_pail_timeout_0_npm_run_dev_names_server_queue_logs_vite_kill_others",
+      "ref_php_artisan_config_clear_ansi_no_additional_args",
+      "ref_php_artisan_key_generate",
+      "ref_php_artisan_key_generate_ansi",
+      "ref_php_artisan_migrate_force",
+      "ref_php_artisan_migrate_graceful_ansi",
+      "ref_php_artisan_package_discover_ansi",
+      "ref_php_artisan_test",
+      "ref_php_artisan_vendor_publish_tag_laravel_assets_ansi_force",
+      "ref_php_r_file_exists_database_database_sqlite_touch_database_database_sqlite",
+      "ref_php_r_file_exists_env_copy_env_example_env",
+      "ref_putenv_php_ini_scan_dir_php_conf_d"
+    ],
+    "6": [
+      "app_domain_identityaccess_exceptions_authenticationdomainexception",
+      "app_domain_identityaccess_exceptions_authenticationdomainexception_authenticationdomainexception",
+      "app_domain_identityaccess_exceptions_authenticationdomainexception_authenticationdomainexception_construct",
+      "app_domain_identityaccess_exceptions_authenticationdomainexception_php_errorcode",
+      "app_domain_store_exceptions_storedomainexception",
+      "app_domain_store_exceptions_storedomainexception_php_errorcode",
+      "app_domain_store_exceptions_storedomainexception_storedomainexception",
+      "app_domain_store_exceptions_storedomainexception_storedomainexception_construct",
+      "app_support_http_apierrorresponse",
+      "app_support_http_apierrorresponse_apierrorresponse",
+      "app_support_http_apierrorresponse_apierrorresponse_fromauthenticationexception",
+      "app_support_http_apierrorresponse_apierrorresponse_fromauthorizationexception",
+      "app_support_http_apierrorresponse_apierrorresponse_fromdomainexception",
+      "app_support_http_apierrorresponse_apierrorresponse_fromerrorcode",
+      "app_support_http_apierrorresponse_apierrorresponse_shouldrenderjson",
+      "app_support_http_apierrorresponse_php_errorcode",
+      "app_support_http_apierrorresponse_php_jsonresponse",
+      "app_support_http_apierrorresponse_php_request",
+      "authenticationexception",
+      "authorizationexception",
+      "bootstrap_app",
+      "domainexception"
+    ],
+    "7": [
+      "app_domain_identityaccess_valueobjects_userrole",
+      "app_domain_identityaccess_valueobjects_userrole_label",
+      "database_factories_storefactory",
+      "database_factories_storefactory_php_static",
+      "database_factories_storefactory_storefactory",
+      "database_factories_storefactory_storefactory_definition",
+      "database_factories_storefactory_storefactory_inactive",
+      "database_factories_userfactory",
+      "database_factories_userfactory_php_static",
+      "database_factories_userfactory_userfactory",
+      "database_factories_userfactory_userfactory_definition",
+      "database_factories_userfactory_userfactory_inactive",
+      "database_factories_userfactory_userfactory_manager",
+      "database_factories_userfactory_userfactory_operator",
+      "database_factories_userfactory_userfactory_unverified",
+      "database_migrations_2026_07_15_000001_add_role_to_users_table",
+      "database_migrations_2026_07_15_000001_add_role_to_users_table_down",
+      "database_migrations_2026_07_15_000001_add_role_to_users_table_up",
+      "factory"
+    ],
+    "8": [
+      "concurrently",
+      "laravel_vite_plugin",
+      "package",
+      "package_devdependencies",
+      "package_devdependencies_concurrently",
+      "package_devdependencies_laravel_vite_plugin",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_vite",
+      "package_devdependencies_vite",
+      "package_private",
+      "package_schema",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_type",
+      "tailwindcss",
+      "tailwindcss_vite",
+      "vite"
+    ],
+    "9": [
+      "app_console_commands_createdomaincommand",
+      "app_console_commands_createdomaincommand_createdomaincommand",
+      "app_console_commands_createdomaincommand_createdomaincommand_handle",
+      "app_support_domain_domainscaffolder",
+      "app_support_domain_domainscaffolder_domainscaffolder",
+      "app_support_domain_domainscaffolder_domainscaffolder_construct",
+      "app_support_domain_domainscaffolder_domainscaffolder_directorypaths",
+      "app_support_domain_domainscaffolder_domainscaffolder_projectdocspath",
+      "app_support_domain_domainscaffolder_domainscaffolder_relative",
+      "app_support_domain_domainscaffolder_domainscaffolder_renderstub",
+      "app_support_domain_domainscaffolder_domainscaffolder_scaffold",
+      "app_support_domain_domainscaffolder_domainscaffolder_stubfiles",
+      "app_support_domain_domainscaffolder_domainscaffolder_validatename",
+      "command"
+    ],
+    "10": [
+      "app_infrastructure_store_persistence_repositories_storerepository",
+      "app_infrastructure_store_persistence_repositories_storerepository_storerepository",
+      "app_infrastructure_store_persistence_repositories_storerepository_storerepository_findbyid",
+      "app_infrastructure_store_persistence_repositories_storerepository_storerepository_listaccessibleforuser",
+      "app_infrastructure_store_persistence_repositories_storerepository_storerepository_usercanaccessstore",
+      "app_providers_appserviceprovider",
+      "app_providers_appserviceprovider_appserviceprovider",
+      "app_providers_appserviceprovider_appserviceprovider_boot",
+      "app_providers_appserviceprovider_appserviceprovider_register",
+      "bootstrap_providers",
+      "serviceprovider",
+      "storerepositoryinterface"
+    ],
+    "11": [
+      "app_application_store_actions_listaccessiblestoresaction",
+      "app_application_store_actions_listaccessiblestoresaction_listaccessiblestoresaction",
+      "app_application_store_actions_listaccessiblestoresaction_listaccessiblestoresaction_construct",
+      "app_application_store_actions_listaccessiblestoresaction_listaccessiblestoresaction_execute",
+      "app_application_store_actions_listaccessiblestoresaction_php_storerepositoryinterface",
+      "app_http_store_controllers_liststorescontroller",
+      "app_http_store_controllers_liststorescontroller_liststorescontroller",
+      "app_http_store_controllers_liststorescontroller_liststorescontroller_invoke",
+      "app_http_store_controllers_liststorescontroller_php_jsonresponse",
+      "app_http_store_controllers_liststorescontroller_php_request"
+    ],
+    "12": [
+      "tests_unit_domain_shared_autherrorcodetest",
+      "tests_unit_domain_shared_autherrorcodetest_autherrorcodetest",
+      "tests_unit_domain_shared_autherrorcodetest_autherrorcodetest_authenticationerrorprovider",
+      "tests_unit_domain_shared_autherrorcodetest_autherrorcodetest_test_catalog_lists_all_authentication_error_codes",
+      "tests_unit_domain_shared_autherrorcodetest_autherrorcodetest_test_each_authentication_error_has_message_and_http_status",
+      "tests_unit_domain_shared_autherrorcodetest_php_errorcode"
+    ],
+    "13": [
+      "tests_unit_domain_shared_storeerrorcodetest",
+      "tests_unit_domain_shared_storeerrorcodetest_php_errorcode",
+      "tests_unit_domain_shared_storeerrorcodetest_storeerrorcodetest",
+      "tests_unit_domain_shared_storeerrorcodetest_storeerrorcodetest_storeerrorprovider",
+      "tests_unit_domain_shared_storeerrorcodetest_storeerrorcodetest_test_catalog_lists_all_store_error_codes",
+      "tests_unit_domain_shared_storeerrorcodetest_storeerrorcodetest_test_each_store_error_has_message_and_http_status"
+    ],
+    "14": [
+      "database_seeders_databaseseeder",
+      "database_seeders_databaseseeder_databaseseeder",
+      "database_seeders_databaseseeder_databaseseeder_run",
+      "seeder",
+      "withoutmodelevents"
+    ],
+    "15": [
+      "analyticsrepositoryinterface",
+      "app_infrastructure_analytics_persistence_repositories_analyticsrepository",
+      "app_infrastructure_analytics_persistence_repositories_analyticsrepository_analyticsrepository"
+    ],
+    "16": [
+      "app_infrastructure_cashshift_persistence_repositories_cashshiftrepository",
+      "app_infrastructure_cashshift_persistence_repositories_cashshiftrepository_cashshiftrepository",
+      "cashshiftrepositoryinterface"
+    ],
+    "17": [
+      "app_infrastructure_catalog_persistence_repositories_catalogrepository",
+      "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository",
+      "catalogrepositoryinterface"
+    ],
+    "18": [
+      "app_infrastructure_customers_persistence_repositories_customersrepository",
+      "app_infrastructure_customers_persistence_repositories_customersrepository_customersrepository",
+      "customersrepositoryinterface"
+    ],
+    "19": [
+      "app_infrastructure_identityaccess_persistence_repositories_identityaccessrepository",
+      "app_infrastructure_identityaccess_persistence_repositories_identityaccessrepository_identityaccessrepository",
+      "identityaccessrepositoryinterface"
+    ],
+    "20": [
+      "app_infrastructure_inventory_persistence_repositories_inventoryrepository",
+      "app_infrastructure_inventory_persistence_repositories_inventoryrepository_inventoryrepository",
+      "inventoryrepositoryinterface"
+    ],
+    "21": [
+      "app_infrastructure_payments_persistence_repositories_paymentsrepository",
+      "app_infrastructure_payments_persistence_repositories_paymentsrepository_paymentsrepository",
+      "paymentsrepositoryinterface"
+    ],
+    "22": [
+      "app_infrastructure_promotions_persistence_repositories_promotionsrepository",
+      "app_infrastructure_promotions_persistence_repositories_promotionsrepository_promotionsrepository",
+      "promotionsrepositoryinterface"
+    ],
+    "23": [
+      "app_infrastructure_refundsreturns_persistence_repositories_refundsreturnsrepository",
+      "app_infrastructure_refundsreturns_persistence_repositories_refundsreturnsrepository_refundsreturnsrepository",
+      "refundsreturnsrepositoryinterface"
+    ],
+    "24": [
+      "app_infrastructure_sales_persistence_repositories_salesrepository",
+      "app_infrastructure_sales_persistence_repositories_salesrepository_salesrepository",
+      "salesrepositoryinterface"
+    ],
+    "25": [
+      "database_migrations_0001_01_01_000000_create_users_table",
+      "database_migrations_0001_01_01_000000_create_users_table_down",
+      "database_migrations_0001_01_01_000000_create_users_table_up"
+    ],
+    "26": [
+      "database_migrations_0001_01_01_000001_create_cache_table",
+      "database_migrations_0001_01_01_000001_create_cache_table_down",
+      "database_migrations_0001_01_01_000001_create_cache_table_up"
+    ],
+    "27": [
+      "database_migrations_0001_01_01_000002_create_jobs_table",
+      "database_migrations_0001_01_01_000002_create_jobs_table_down",
+      "database_migrations_0001_01_01_000002_create_jobs_table_up"
+    ],
+    "28": [
+      "database_migrations_2026_07_15_100000_create_stores_table",
+      "database_migrations_2026_07_15_100000_create_stores_table_down",
+      "database_migrations_2026_07_15_100000_create_stores_table_up"
+    ],
+    "29": [
+      "database_migrations_2026_07_15_100001_create_store_user_table",
+      "database_migrations_2026_07_15_100001_create_store_user_table_down",
+      "database_migrations_2026_07_15_100001_create_store_user_table_up"
+    ],
+    "30": [
+      "artisan",
+      "routes_console"
+    ],
+    "31": [
+      "tests_support_interactswithstatefulapi",
+      "tests_support_interactswithstatefulapi_enablestatefulapiheaders"
+    ],
+    "32": [
+      "app_domain_analytics_repositories_analyticsrepositoryinterface"
+    ],
+    "33": [
+      "app_domain_cashshift_repositories_cashshiftrepositoryinterface"
+    ],
+    "34": [
+      "app_domain_catalog_repositories_catalogrepositoryinterface"
+    ],
+    "35": [
+      "app_domain_customers_repositories_customersrepositoryinterface"
+    ],
+    "36": [
+      "app_domain_identityaccess_repositories_identityaccessrepositoryinterface"
+    ],
+    "37": [
+      "app_domain_inventory_repositories_inventoryrepositoryinterface"
+    ],
+    "38": [
+      "app_domain_payments_repositories_paymentsrepositoryinterface"
+    ],
+    "39": [
+      "app_domain_promotions_repositories_promotionsrepositoryinterface"
+    ],
+    "40": [
+      "app_domain_refundsreturns_repositories_refundsreturnsrepositoryinterface"
+    ],
+    "41": [
+      "app_domain_sales_repositories_salesrepositoryinterface"
+    ],
+    "42": [
+      "config_app"
+    ],
+    "43": [
+      "config_cache"
+    ],
+    "44": [
+      "config_database"
+    ],
+    "45": [
+      "config_filesystems"
+    ],
+    "46": [
+      "config_logging"
+    ],
+    "47": [
+      "config_mail"
+    ],
+    "48": [
+      "config_queue"
+    ],
+    "49": [
+      "config_services"
+    ],
+    "50": [
+      "config_session"
+    ],
+    "51": [
+      "public_index"
+    ],
+    "52": [
+      "resources_js_app"
+    ],
+    "53": [
+      "resources_views_welcome_blade"
+    ],
+    "54": [
+      "routes_web"
+    ],
+    "55": [
+      "vite_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.07246376811594203,
+    "1": 0.047619047619047616,
+    "2": 0.12100840336134454,
+    "3": 0.10080645161290322,
+    "4": 0.10804597701149425,
+    "5": 0.07692307692307693,
+    "6": 0.18181818181818182,
+    "7": 0.13450292397660818,
+    "8": 0.1111111111111111,
+    "9": 0.21978021978021978,
+    "10": 0.21212121212121213,
+    "11": 0.3111111111111111,
+    "12": 0.5333333333333333,
+    "13": 0.5333333333333333,
+    "14": 0.6,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 0.6666666666666666,
+    "26": 0.6666666666666666,
+    "27": 0.6666666666666666,
+    "28": 0.6666666666666666,
+    "29": 0.6666666666666666,
+    "30": 1.0,
+    "31": 1.0,
+    "32": 1.0,
+    "33": 1.0,
+    "34": 1.0,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0
+  },
+  "gods": [
+    {
+      "id": "app_models_user_user",
+      "label": "User",
+      "degree": 44
+    },
+    {
+      "id": "app_models_store_store",
+      "label": "Store",
+      "degree": 26
+    },
+    {
+      "id": "tests_testcase_testcase",
+      "label": "TestCase",
+      "degree": 24
+    },
+    {
+      "id": "app_domain_identityaccess_exceptions_authenticationdomainexception_authenticationdomainexception",
+      "label": "AuthenticationDomainException",
+      "degree": 12
+    },
+    {
+      "id": "app_http_controllers_controller_controller",
+      "label": "Controller",
+      "degree": 11
+    },
+    {
+      "id": "app_support_store_storecontext_storecontext",
+      "label": "StoreContext",
+      "degree": 11
+    },
+    {
+      "id": "app_support_domain_domainscaffolder_domainscaffolder",
+      "label": "DomainScaffolder",
+      "degree": 10
+    },
+    {
+      "id": "tests_feature_store_selectstorecontexttest_selectstorecontexttest",
+      "label": "SelectStoreContextTest",
+      "degree": 10
+    },
+    {
+      "id": "composer_scripts",
+      "label": "scripts",
+      "degree": 9
+    },
+    {
+      "id": "tests_feature_auth_logintest_logintest",
+      "label": "LoginTest",
+      "degree": 9
+    }
+  ],
+  "surprises": [
+    {
+      "source": "findById()",
+      "target": "Store",
+      "source_files": [
+        "app/Domain/Store/Repositories/StoreRepositoryInterface.php",
+        "app/Models/Store.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "peripheral node `findById()` unexpectedly reaches hub `Store`"
+    },
+    {
+      "source": "listAccessibleForUser()",
+      "target": "User",
+      "source_files": [
+        "app/Domain/Store/Repositories/StoreRepositoryInterface.php",
+        "app/Models/User.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "peripheral node `listAccessibleForUser()` unexpectedly reaches hub `User`"
+    },
+    {
+      "source": "userCanAccessStore()",
+      "target": "User",
+      "source_files": [
+        "app/Domain/Store/Repositories/StoreRepositoryInterface.php",
+        "app/Models/User.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "peripheral node `userCanAccessStore()` unexpectedly reaches hub `User`"
+    },
+    {
+      "source": "ListStoresController",
+      "target": "Controller",
+      "source_files": [
+        "app/Http/Store/Controllers/ListStoresController.php",
+        "app/Http/Controllers/Controller.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "inherits",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "LoginTest",
+      "target": "TestCase",
+      "source_files": [
+        "tests/Feature/Auth/LoginTest.php",
+        "tests/TestCase.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "inherits",
+      "why": "bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `User` connect `User` to `TestCase`, `Controller`, `StoreContext`, `AppServiceProvider.php`, `ListAccessibleStoresAction`, `DatabaseSeeder.php`?",
+      "why": "High betweenness centrality (0.098) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `TestCase` connect `TestCase` to `User`, `AuthErrorCodeTest`, `StoreErrorCodeTest`?",
+      "why": "High betweenness centrality (0.057) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `AuthenticationDomainException` connect `AuthenticationDomainException` to `TestCase`, `Controller`, `StoreContext`?",
+      "why": "High betweenness centrality (0.056) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 24 inferred relationships involving `User` (e.g. with `.execute()` and `.run()`) actually correct?",
+      "why": "`User` has 24 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 13 inferred relationships involving `Store` (e.g. with `.test_operator_can_login_and_access_operational_route()` and `.test_manager_can_access_operational_pos()`) actually correct?",
+      "why": "`Store` has 13 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `$schema`, `name`, `type` to the rest of the system?",
+      "why": "57 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `User` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.07246376811594203 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

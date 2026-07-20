@@ -1,0 +1,21 @@
+# Context: projects/pdv/
+backend/vendor
+backend/node_modules
+backend/.env
+backend/.env.*
+backend/cookies.txt
+backend/php-conf.d
+backend/graphify-out
+backend/storage/logs/*
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+backend/bootstrap/cache/*.php
+frontend/node_modules
+frontend/dist
+frontend/.env
+frontend/.env.*
+.env.docker
+.git
+**/graphify-out
+**/.phpunit.result.cache

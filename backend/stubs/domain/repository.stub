@@ -1,0 +1,11 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Infrastructure\{{ domain }}\Persistence\Repositories;
+
+use App\Domain\{{ domain }}\Repositories\{{ domain }}RepositoryInterface;
+
+final class {{ domain }}Repository implements {{ domain }}RepositoryInterface
+{
+}

@@ -1,0 +1,28 @@
+# Secrets / local env
+.env
+.env.*
+!.env*.example
+.env.docker
+
+# Runtime junk
+**/cookies.txt
+*.log
+
+# Dependencies & builds (also covered by backend/frontend ignores)
+backend/vendor/
+frontend/node_modules/
+frontend/dist/
+backend/public/build/
+backend/public/hot
+backend/storage/*.key
+backend/.phpunit.result.cache
+backend/.phpunit.cache/
+
+# Graphify AST cache
+**/graphify-out/cache/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
