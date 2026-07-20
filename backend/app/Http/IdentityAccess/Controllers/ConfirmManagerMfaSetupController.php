@@ -19,6 +19,7 @@ final class ConfirmManagerMfaSetupController extends Controller
             'data' => [
                 'mfa_required' => false,
                 'mfa_setup_required' => false,
+                'recovery_codes' => $result['recovery_codes'],
                 'user' => [
                     'id' => $result['user']->id,
                     'name' => $result['user']->name,

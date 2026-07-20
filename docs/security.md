@@ -122,7 +122,7 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 | **Payment stub / SOAP acquirer** | No PAN stored; outbound acquirer protocol is SOAP; app API + payment webhooks remain REST |
 | **Audit** | Append-only `audit_logs` (RN-070): Eloquent + DB triggers block UPDATE/DELETE; audit failure aborts mutation; managers see assigned stores + global rows; unassigned `store_id` filter → 403 `AUTH_STORE_ACCESS_DENIED` |
 | **API** | Unversioned `/api/*` today (ASVS gap: `/api/v1` when breaking); Form Requests at boundary |
-| **Headers** | Target CSP / frame / nosniff / referrer — **not yet on nginx** (see ASVS L2 review) |
+| **Headers** | Nginx SPA: CSP, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` (`docker/nginx.conf`) |
 
 ---
 
@@ -142,13 +142,16 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 - [x] LGPD technical controls: customer PII encrypted at rest + blind indexes (ADR-0008)  
 - [x] OWASP ASVS L2 **desk review** documented ([`docs/security/asvs-l2-gap-review.md`](./security/asvs-l2-gap-review.md)); external pen-test still recommended before prod  
 - [x] `composer audit` / `npm audit` clean or accepted risks documented (see §15)  
-- [x] MFA on Manager accounts (TOTP; ADR-0010)  
+- [x] MFA on Manager accounts (TOTP + recovery codes; ADR-0010 / RN-067)  
 - [x] Rate limits on auth + refund endpoints (`throttle:login`, `throttle:refunds`)  
 - [x] Backup restore tested (see [`docs/ops/backup-restore.md`](./ops/backup-restore.md); smoke: `scripts/restore-mysql-verify.sh`)  
 - [x] LGPD privacy policy + data retention **drafts** ([`docs/legal/`](./legal/)) — counsel approval + DPO fields still required before prod  
-- [ ] External penetration test (post ASVS gaps 1–3 or in parallel)  
+- [x] Docker Redis password + cache/queue on Redis (`.env.docker` / compose)  
+- [x] Password create/update min 12 (`Password::defaults()`)  
+- [ ] External penetration test (post remaining ASVS residuals or in parallel)  
 - [ ] Legal sign-off on privacy/retention + fill controller/DPO placeholders  
 - [ ] Card issuer SOAP verify (leave 501 until WSDL) — ADR-0009  
+- [ ] Prod: `APP_DEBUG=false`, `SESSION_SECURE_COOKIE=true`, TLS/HSTS
 
 ---
 
@@ -209,4 +212,4 @@ Automated coverage added under `tests/Feature/Security/`:
 
 Full matrix: [`docs/security/asvs-l2-gap-review.md`](./security/asvs-l2-gap-review.md).
 
-**Top gaps to close next:** nginx security headers + CSP; password `min:12`; prod `APP_DEBUG=false` / `SESSION_SECURE_COOKIE=true` / Redis password; MFA recovery; external pen-test.
+**Top residual gaps:** prod TLS/`SESSION_SECURE_COOKIE`; API `/api/v1`; HIBP/CAPTCHA; formal threat model; external pen-test; admin MFA reset.

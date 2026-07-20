@@ -24,6 +24,7 @@ export function LoginPage() {
       mfaCode={form.mfaCode}
       setupSecret={form.setupSecret}
       setupQrDataUri={form.setupQrDataUri}
+      recoveryCodes={form.recoveryCodes}
       error={form.error}
       loading={form.loading}
       onEmailChange={form.setEmail}

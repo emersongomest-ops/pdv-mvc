@@ -134,6 +134,7 @@ This document is the **source of truth for business rules**. BDD scenarios and T
 | **RN-064** | **Multi-store** enabled: inventory, shifts, sales scoped per store; Manager may access all assigned stores. | Required |
 | **RN-065** | Operator works in **one store context** per session (selected or assigned). | Required |
 | **RN-066** | Manager authentication requires **TOTP MFA** after password (enroll on first use); Operators remain password-only. | Required |
+| **RN-067** | On MFA enroll confirm, system issues **8 one-time recovery codes** (shown once); verify accepts TOTP **or** unused recovery code. | Required |
 
 ### 4.9 Analytics and campaigns
 

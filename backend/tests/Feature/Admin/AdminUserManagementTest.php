@@ -8,11 +8,19 @@ use App\Models\Store;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
+use Tests\Support\InteractsWithStatefulApi;
 use Tests\TestCase;
 
 final class AdminUserManagementTest extends TestCase
 {
+    use InteractsWithStatefulApi;
     use RefreshDatabase;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->enableStatefulApiHeaders();
+    }
 
     public function test_manager_can_create_list_show_and_update_user(): void
     {
@@ -23,8 +31,8 @@ final class AdminUserManagementTest extends TestCase
         $create = $this->actingAs($manager)->postJson('/api/admin/users', [
             'name' => 'Ana Operator',
             'email' => 'ana@pos.test',
-            'password' => 'password123',
-            'password_confirmation' => 'password123',
+            'password' => 'password12345',
+            'password_confirmation' => 'password12345',
             'role' => 'operator',
             'is_active' => true,
             'store_ids' => [$storeA->id],
@@ -80,8 +88,8 @@ final class AdminUserManagementTest extends TestCase
         $this->actingAs($manager)->postJson('/api/admin/users', [
             'name' => 'Dup',
             'email' => 'taken@pos.test',
-            'password' => 'password123',
-            'password_confirmation' => 'password123',
+            'password' => 'password12345',
+            'password_confirmation' => 'password12345',
             'role' => 'operator',
             'store_ids' => [$store->id],
         ])
@@ -112,7 +120,7 @@ final class AdminUserManagementTest extends TestCase
         $store = Store::factory()->create();
         $user = User::factory()->operator()->create([
             'email' => 'will-deactivate@pos.test',
-            'password' => 'password123',
+            'password' => 'password12345',
             'is_active' => true,
         ]);
         $user->stores()->attach($store);
@@ -125,7 +133,7 @@ final class AdminUserManagementTest extends TestCase
 
         $this->postJson('/api/auth/login', [
             'email' => 'will-deactivate@pos.test',
-            'password' => 'password123',
+            'password' => 'password12345',
         ])
             ->assertForbidden()
             ->assertJsonPath('error.code', 'AUTH_ACCOUNT_INACTIVE');
@@ -168,8 +176,8 @@ final class AdminUserManagementTest extends TestCase
         $this->actingAs($manager)->postJson('/api/admin/users', [
             'name' => 'No Store',
             'email' => 'nostore@pos.test',
-            'password' => 'password123',
-            'password_confirmation' => 'password123',
+            'password' => 'password12345',
+            'password_confirmation' => 'password12345',
             'role' => 'operator',
             'store_ids' => [],
         ])->assertUnprocessable();
@@ -177,8 +185,17 @@ final class AdminUserManagementTest extends TestCase
         $this->actingAs($manager)->postJson('/api/admin/users', [
             'name' => 'Bad Pass',
             'email' => 'badpass@pos.test',
-            'password' => 'password123',
+            'password' => 'password12345',
             'password_confirmation' => 'mismatch',
+            'role' => 'operator',
+            'store_ids' => [Store::factory()->create()->id],
+        ])->assertUnprocessable();
+
+        $this->actingAs($manager)->postJson('/api/admin/users', [
+            'name' => 'Short Pass',
+            'email' => 'shortpass@pos.test',
+            'password' => 'password123',
+            'password_confirmation' => 'password123',
             'role' => 'operator',
             'store_ids' => [Store::factory()->create()->id],
         ])->assertUnprocessable();

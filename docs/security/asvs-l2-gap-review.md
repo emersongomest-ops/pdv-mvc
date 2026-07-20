@@ -23,15 +23,14 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | Bucket | Count (approx.) |
 |--------|-----------------|
 | Pass | Strong on authn/session cookie SPA, RBAC/IDOR store scope, Eloquent bindings, MFA managers, audit append-only, payment webhook HMAC, supply-chain audits |
-| Partial / Gap (priority) | Security headers/CSP, password policy (min 12), Redis auth, TLS/Secure cookies in prod defaults, API versioning claim, MFA recovery, HIBP/CAPTCHA, formal threat model |
+| Partial / Gap (priority) | TLS/Secure cookies in prod defaults, API versioning claim, HIBP/CAPTCHA, formal threat model, admin MFA reset |
 
 **Recommended next engineering slices (ordered):**
 
-1. Nginx/Laravel security headers + CSP for SPA HTML  
-2. Password rules → min 12 (+ optional `Password::defaults()`)  
-3. Prod env hardening checklist (`APP_DEBUG=false`, `SESSION_SECURE_COOKIE=true`, Redis password)  
-4. MFA recovery codes / admin reset (ADR-0010 deferred)  
-5. External pen-test before multi-store production go-live  
+1. Prod env hardening checklist (`APP_DEBUG=false`, `SESSION_SECURE_COOKIE=true`, TLS/HSTS)  
+2. Admin MFA reset / break-glass (beyond recovery codes)  
+3. External pen-test before multi-store production go-live  
+4. Optional: HIBP / CAPTCHA after repeated failures  
 
 ---
 
@@ -52,8 +51,8 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | Credential storage | **Pass** | `User` password `hashed` cast (bcrypt/argon via Laravel). |
 | Login brute-force | **Pass** | `throttle:login` + `LoginUserAction` RateLimiter; `AuthSecurityBaselineTest`. |
 | MFA for privileged | **Pass** | Manager TOTP (ADR-0010); operators password-only by design. |
-| MFA recovery | **Gap** | No recovery codes / admin MFA reset (deferred in ADR-0010). |
-| Password policy L2 | **Partial** | Docs say min 12; code `min:8` (`StoreUserRequest`, `LoginRequest`). |
+| MFA recovery | **Pass** | Eight one-time recovery codes on enroll confirm (RN-067); admin MFA reset still deferred. |
+| Password policy L2 | **Partial** | Create/update: `Password::min(12)` via `Password::defaults()`. Login accepts existing shorter demo passwords (`min:8`). |
 | Breach password check | **Gap** | HIBP optional in security.md — not implemented. |
 | CAPTCHA after failures | **Gap** | Listed as mitigation; not implemented. |
 | Generic auth errors | **Pass** | `ErrorCode` / `ApiErrorResponse` (no user enumeration beyond inactive). |
@@ -182,8 +181,8 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 
 | ID (theme) | Status | Evidence / gap |
 |------------|--------|----------------|
-| Security headers | **Gap** | `docker/nginx.conf` has no `Content-Security-Policy`, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy` (claimed in security.md §10 — **doc drift**). |
-| Redis hardening | **Partial** | Compose Redis without password; `.env` `REDIS_PASSWORD=null`. |
+| Security headers | **Pass** | `docker/nginx.conf`: CSP, frame, nosniff, referrer, permissions-policy (local HTTP; HSTS when TLS terminates). |
+| Redis hardening | **Pass** | Compose `--requirepass` + `REDIS_PASSWORD`; app `CACHE_STORE`/`QUEUE_CONNECTION`/`PAYMENTS_RECONCILE_DRIVER=redis`. |
 | MySQL least privilege | **Partial** | App user `pdv` OK; root used only for backup scripts. |
 | Secrets not in VCS | **Pass** | `.env` / `.env.docker` gitignored. |
 

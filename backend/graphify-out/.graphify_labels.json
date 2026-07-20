@@ -207,9 +207,22 @@
   "205": "RemoveSaleLineController.php",
   "206": "DemoUserSeedersTest",
   "207": "ResumeSaleController.php",
+  "208": "ApplyPromotionToSaleAction",
   "209": "CatalogResource",
+  "210": "HasFactory",
   "211": "EnsureUserHasRole.php",
+  "212": "CardInstrumentFormatGuardTest",
+  "213": "LoginTest",
   "214": "2026_07_15_300001_create_sales_table.php",
   "215": "2026_07_20_950000_encrypt_customer_pii_columns.php",
-  "216": "pii.php"
+  "216": "pii.php",
+  "217": "SelectStoreContextTest",
+  "218": "ListCampaignCustomersAction",
+  "219": "CustomerPayloadNormalizer",
+  "220": "ListAdminSalesAction",
+  "221": "RemovePromotionFromSaleAction",
+  "222": "ListAdminNotificationsController.php",
+  "223": "ActsWithOperationalSession.php",
+  "224": "2026_07_20_120000_add_mfa_recovery_codes_to_users_table.php",
+  "225": "ProbeQueuedJob"
 }

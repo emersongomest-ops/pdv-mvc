@@ -7,6 +7,7 @@ namespace App\Http\IdentityAccess\Requests;
 use App\Domain\IdentityAccess\ValueObjects\UserRole;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Password;
 
 final class StoreUserRequest extends FormRequest
 {
@@ -23,7 +24,7 @@ final class StoreUserRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'confirmed', Password::defaults()],
             'role' => ['required', 'string', Rule::enum(UserRole::class)],
             'is_active' => ['sometimes', 'boolean'],
             'store_ids' => ['required', 'array', 'min:1'],

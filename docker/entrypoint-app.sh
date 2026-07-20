@@ -21,8 +21,17 @@ chown -R www-data:www-data storage bootstrap/cache 2>/dev/null || true
 chmod -R ug+rwx storage bootstrap/cache 2>/dev/null || true
 
 if [ -z "${APP_KEY:-}" ]; then
-  echo "[entrypoint] generating APP_KEY for this process"
-  APP_KEY="$(php -r 'echo "base64:".base64_encode(random_bytes(32));')"
+  KEY_FILE="storage/app/.docker_app_key"
+  mkdir -p storage/app
+  if [ -f "$KEY_FILE" ]; then
+    echo "[entrypoint] loading APP_KEY from $KEY_FILE (set APP_KEY in .env.docker to pin explicitly)"
+    APP_KEY="$(cat "$KEY_FILE")"
+  else
+    echo "[entrypoint] generating APP_KEY and persisting to $KEY_FILE"
+    APP_KEY="$(php -r 'echo "base64:".base64_encode(random_bytes(32));')"
+    printf '%s' "$APP_KEY" > "$KEY_FILE"
+    chmod 600 "$KEY_FILE" 2>/dev/null || true
+  fi
   export APP_KEY
 fi
 

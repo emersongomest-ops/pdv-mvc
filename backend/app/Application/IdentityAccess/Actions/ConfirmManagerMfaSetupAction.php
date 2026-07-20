@@ -6,6 +6,7 @@ namespace App\Application\IdentityAccess\Actions;
 
 use App\Application\IdentityAccess\Support\MfaPendingSession;
 use App\Domain\IdentityAccess\Exceptions\AuthenticationDomainException;
+use App\Domain\IdentityAccess\Services\MfaRecoveryCodeVault;
 use App\Domain\IdentityAccess\Services\TotpAuthenticatorInterface;
 use App\Domain\Shared\ErrorCode;
 use App\Models\User;
@@ -18,10 +19,11 @@ final class ConfirmManagerMfaSetupAction
     public function __construct(
         private readonly MfaPendingSession $mfaPending,
         private readonly TotpAuthenticatorInterface $totp,
+        private readonly MfaRecoveryCodeVault $recoveryCodes,
     ) {}
 
     /**
-     * @return array{user: User}
+     * @return array{user: User, recovery_codes: list<string>}
      */
     public function execute(Session $session, string $code): array
     {
@@ -53,16 +55,22 @@ final class ConfirmManagerMfaSetupAction
 
         RateLimiter::clear($throttleKey);
 
+        $plainRecovery = $this->recoveryCodes->generatePlaintexts();
+
         $user->forceFill([
             'mfa_confirmed_at' => now(),
             'mfa_last_otp_timestamp' => $timestamp,
+            'mfa_recovery_codes' => $this->recoveryCodes->hashAll($plainRecovery),
         ])->save();
 
         $this->mfaPending->forget($session);
         Auth::login($user);
         $session->regenerate();
 
-        return ['user' => $user];
+        return [
+            'user' => $user,
+            'recovery_codes' => $plainRecovery,
+        ];
     }
 
     private function pendingManager(Session $session): User

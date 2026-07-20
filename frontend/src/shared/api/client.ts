@@ -143,6 +143,7 @@ export async function confirmMfaSetupRequest(code: string) {
     data: {
       mfa_required: boolean
       mfa_setup_required: boolean
+      recovery_codes: string[]
       user: import('./types').User
     }
   }>('/api/auth/mfa/confirm', {

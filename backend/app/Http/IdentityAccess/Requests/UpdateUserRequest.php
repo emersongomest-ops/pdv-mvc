@@ -7,6 +7,7 @@ namespace App\Http\IdentityAccess\Requests;
 use App\Domain\IdentityAccess\ValueObjects\UserRole;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Password;
 
 final class UpdateUserRequest extends FormRequest
 {
@@ -23,7 +24,7 @@ final class UpdateUserRequest extends FormRequest
         return [
             'name' => ['sometimes', 'string', 'max:255'],
             'email' => ['sometimes', 'email', 'max:255'],
-            'password' => ['sometimes', 'nullable', 'string', 'min:8', 'confirmed'],
+            'password' => ['sometimes', 'nullable', 'string', 'confirmed', Password::defaults()],
             'role' => ['sometimes', 'string', Rule::enum(UserRole::class)],
             'is_active' => ['sometimes', 'boolean'],
             'store_ids' => ['sometimes', 'array', 'min:1'],

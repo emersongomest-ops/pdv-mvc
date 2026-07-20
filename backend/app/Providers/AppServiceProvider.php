@@ -56,6 +56,7 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Validation\Rules\Password;
 use Laravel\Telescope\TelescopeServiceProvider as TelescopePackageServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -111,6 +112,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Password::defaults(static fn (): Password => Password::min(12));
+
         Event::listen(SaleCompleted::class, NotifyManagersOfSaleCompleted::class);
 
         Gate::define('viewPulse', function (User $user): bool {

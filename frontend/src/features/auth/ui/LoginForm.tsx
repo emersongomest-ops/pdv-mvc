@@ -3,7 +3,7 @@ import { ErrorBanner } from '../../../shared/ui/ErrorBanner'
 import { Field, PanelForm } from '../../../shared/ui/FormPrimitives'
 import styles from './LoginForm.module.css'
 
-export type LoginStep = 'credentials' | 'mfa_setup' | 'mfa_verify'
+export type LoginStep = 'credentials' | 'mfa_setup' | 'mfa_verify' | 'mfa_recovery'
 
 type LoginFormProps = {
   step: LoginStep
@@ -12,6 +12,7 @@ type LoginFormProps = {
   mfaCode: string
   setupSecret: string | null
   setupQrDataUri: string | null
+  recoveryCodes: string[] | null
   error: string | null
   loading: boolean
   onEmailChange: (value: string) => void
@@ -29,6 +30,7 @@ export function LoginForm({
   mfaCode,
   setupSecret,
   setupQrDataUri,
+  recoveryCodes,
   error,
   loading,
   onEmailChange,
@@ -37,19 +39,28 @@ export function LoginForm({
   onSubmit,
   onBackToCredentials,
 }: LoginFormProps) {
-  const isMfa = step === 'mfa_setup' || step === 'mfa_verify'
+  const isMfaCode = step === 'mfa_setup' || step === 'mfa_verify'
+  const isRecovery = step === 'mfa_recovery'
 
   return (
     <div className={styles.page}>
       <PanelForm className={styles.card} onSubmit={onSubmit}>
         <p className={styles.brand}>PDV</p>
-        <h1>{isMfa ? 'Authenticator code' : 'Operational login'}</h1>
+        <h1>
+          {isRecovery
+            ? 'Save recovery codes'
+            : isMfaCode
+              ? 'Authenticator code'
+              : 'Operational login'}
+        </h1>
         <p className={styles.hint}>
           {step === 'mfa_setup'
             ? 'Scan the QR with your authenticator app, then enter the 6-digit code.'
             : step === 'mfa_verify'
-              ? 'Enter the 6-digit code from your authenticator app.'
-              : 'Session cookie via Sanctum — store and shift next.'}
+              ? 'Enter the 6-digit TOTP or a one-time recovery code.'
+              : step === 'mfa_recovery'
+                ? 'Store these codes offline. Each works once if you lose the authenticator.'
+                : 'Session cookie via Sanctum — store and shift next.'}
         </p>
 
         <ErrorBanner message={error} />
@@ -91,15 +102,24 @@ export function LoginForm({
           </div>
         )}
 
-        {isMfa && (
-          <Field id="mfa-code" label="Authentication code">
+        {isRecovery && recoveryCodes && recoveryCodes.length > 0 && (
+          <ul className={styles.recoveryList}>
+            {recoveryCodes.map((code) => (
+              <li key={code}>
+                <code>{code}</code>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {isMfaCode && (
+          <Field id="mfa-code" label={step === 'mfa_verify' ? 'Code or recovery' : 'Authentication code'}>
             <input
               id="mfa-code"
               type="text"
-              inputMode="numeric"
+              inputMode={step === 'mfa_setup' ? 'numeric' : 'text'}
               autoComplete="one-time-code"
-              pattern="[0-9 ]*"
-              maxLength={8}
+              maxLength={16}
               value={mfaCode}
               onChange={(e) => onMfaCodeChange(e.target.value)}
               required
@@ -115,10 +135,12 @@ export function LoginForm({
               ? 'Sign in'
               : step === 'mfa_setup'
                 ? 'Confirm and continue'
-                : 'Verify and continue'}
+                : step === 'mfa_recovery'
+                  ? 'I saved these codes'
+                  : 'Verify and continue'}
         </button>
 
-        {isMfa && (
+        {(isMfaCode || isRecovery) && (
           <button className="btn" type="button" disabled={loading} onClick={onBackToCredentials}>
             Back
           </button>

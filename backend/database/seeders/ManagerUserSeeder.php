@@ -33,13 +33,12 @@ class ManagerUserSeeder extends Seeder
             ],
         );
 
-        if (! $user->hasMfaEnabled()) {
-            $user->forceFill([
-                'mfa_secret' => self::DEMO_MFA_SECRET,
-                'mfa_confirmed_at' => now(),
-                'mfa_last_otp_timestamp' => null,
-            ])->save();
-        }
+        // Always re-apply demo MFA with the current APP_KEY (Docker may rotate keys until pinned).
+        $user->forceFill([
+            'mfa_secret' => self::DEMO_MFA_SECRET,
+            'mfa_confirmed_at' => now(),
+            'mfa_last_otp_timestamp' => null,
+        ])->save();
 
         $user->stores()->syncWithoutDetaching([$store->id]);
     }

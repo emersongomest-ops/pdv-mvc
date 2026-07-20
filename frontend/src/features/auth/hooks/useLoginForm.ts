@@ -5,6 +5,7 @@ import {
   primeCsrf,
   verifyMfaChallengeRequest,
 } from '../../../shared/api/client'
+import type { User } from '../../../shared/api/types'
 import { formatApiError, useSession } from '../../../shared/session/SessionContext'
 import type { LoginStep } from '../ui/LoginForm'
 
@@ -16,6 +17,8 @@ export function useLoginForm() {
   const [mfaCode, setMfaCode] = useState('')
   const [setupSecret, setSetupSecret] = useState<string | null>(null)
   const [setupQrDataUri, setSetupQrDataUri] = useState<string | null>(null)
+  const [recoveryCodes, setRecoveryCodes] = useState<string[] | null>(null)
+  const [pendingUser, setPendingUser] = useState<User | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
@@ -28,6 +31,8 @@ export function useLoginForm() {
     setMfaCode('')
     setSetupSecret(null)
     setSetupQrDataUri(null)
+    setRecoveryCodes(null)
+    setPendingUser(null)
   }
 
   async function onSubmit(event: FormEvent) {
@@ -53,7 +58,17 @@ export function useLoginForm() {
 
       if (step === 'mfa_setup') {
         const response = await confirmMfaSetupRequest(mfaCode)
-        establishSession(response.data.user)
+        setRecoveryCodes(response.data.recovery_codes)
+        setPendingUser(response.data.user)
+        setMfaCode('')
+        setStep('mfa_recovery')
+        return
+      }
+
+      if (step === 'mfa_recovery') {
+        if (pendingUser) {
+          establishSession(pendingUser)
+        }
         return
       }
 
@@ -76,6 +91,7 @@ export function useLoginForm() {
     setMfaCode,
     setupSecret,
     setupQrDataUri,
+    recoveryCodes,
     error,
     loading,
     onSubmit,

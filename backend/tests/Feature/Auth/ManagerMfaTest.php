@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Auth;
 
+use App\Domain\IdentityAccess\Services\MfaRecoveryCodeVault;
 use App\Domain\IdentityAccess\Services\TotpAuthenticatorInterface;
 use App\Models\User;
 use Database\Seeders\DemoStoreSeeder;
@@ -86,9 +87,43 @@ final class ManagerMfaTest extends TestCase
 
         $this->postJson('/api/auth/mfa/confirm', ['code' => $code])
             ->assertOk()
-            ->assertJsonPath('data.mfa_required', false);
+            ->assertJsonPath('data.mfa_required', false)
+            ->assertJsonCount(8, 'data.recovery_codes');
 
         $this->getJson('/api/admin/dashboard')->assertOk();
+    }
+
+    #[Test]
+    public function manager_can_verify_with_one_time_recovery_code(): void
+    {
+        $vault = new MfaRecoveryCodeVault;
+        $plains = $vault->generatePlaintexts();
+
+        User::factory()->manager()->withMfa(self::SECRET)->create([
+            'email' => 'manager@pos.test',
+            'password' => 'secret-password',
+            'mfa_recovery_codes' => $vault->hashAll($plains),
+        ]);
+
+        $this->postJson('/api/auth/login', [
+            'email' => 'manager@pos.test',
+            'password' => 'secret-password',
+        ])->assertOk();
+
+        $this->postJson('/api/auth/mfa/verify', ['code' => $plains[0]])
+            ->assertOk()
+            ->assertJsonPath('data.user.role', 'manager');
+
+        $this->postJson('/api/auth/logout')->assertOk();
+
+        $this->postJson('/api/auth/login', [
+            'email' => 'manager@pos.test',
+            'password' => 'secret-password',
+        ])->assertOk();
+
+        $this->postJson('/api/auth/mfa/verify', ['code' => $plains[0]])
+            ->assertUnauthorized()
+            ->assertJsonPath('error.code', 'AUTH_MFA_INVALID_CODE');
     }
 
     #[Test]
