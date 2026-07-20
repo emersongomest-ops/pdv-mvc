@@ -30,7 +30,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 1. ~~Prod env hardening checklist (`APP_DEBUG=false`, `SESSION_SECURE_COOKIE=true`, TLS/HSTS)~~ → **done** (`docs/ops/production-hardening.md`, boot guard, `nginx.tls.conf.example`)
 2. ~~Admin MFA reset / break-glass (beyond recovery codes)~~ → **done** (RN-074)
 3. External pen-test before multi-store production go-live
-4. Optional: HIBP / CAPTCHA after repeated failures
+4. ~~Optional: HIBP~~ → **done** (`Password::uncompromised`); CAPTCHA after repeated failures still open
 5. API `/api/v1` when a breaking change requires it
 
 ---
@@ -53,8 +53,8 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | Login brute-force | **Pass** | `throttle:login` + `LoginUserAction` RateLimiter; `AuthSecurityBaselineTest`. |
 | MFA for privileged | **Pass** | Manager TOTP (ADR-0010); operators password-only by design. |
 | MFA recovery | **Pass** | Eight one-time recovery codes on enroll confirm (RN-067); admin MFA reset for other managers (RN-074). |
-| Password policy L2 | **Partial** | Create/update: `Password::min(12)` via `Password::defaults()`. Login accepts existing shorter demo passwords (`min:8`). |
-| Breach password check | **Gap** | HIBP optional in security.md — not implemented. |
+| Password policy L2 | **Pass** | Create/update: `Password::min(12)` + optional `uncompromised()` via `Password::defaults()`. Login accepts existing shorter demo passwords (`min:8`). |
+| Breach password check | **Pass** | `Password::defaults()` → `uncompromised()` (HIBP k-anonymity) when `PASSWORD_UNCOMPROMISED=true`; off in phpunit. |
 | CAPTCHA after failures | **Gap** | Listed as mitigation; not implemented. |
 | Generic auth errors | **Pass** | `ErrorCode` / `ApiErrorResponse` (no user enumeration beyond inactive). |
 

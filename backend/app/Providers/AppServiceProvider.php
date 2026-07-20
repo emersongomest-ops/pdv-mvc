@@ -118,7 +118,15 @@ class AppServiceProvider extends ServiceProvider
     {
         (new ProductionSecurityConfigAssertor)->assertForEnvironment((string) $this->app->environment());
 
-        Password::defaults(static fn (): Password => Password::min(12));
+        Password::defaults(static function (): Password {
+            $rule = Password::min(12);
+
+            if ((bool) config('auth.password_uncompromised', true)) {
+                $rule = $rule->uncompromised();
+            }
+
+            return $rule;
+        });
 
         Event::listen(SaleCompleted::class, NotifyManagersOfSaleCompleted::class);
 

@@ -114,4 +114,18 @@ return [
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 
+    /*
+    |--------------------------------------------------------------------------
+    | HIBP uncompromised check (ASVS / RN password hygiene)
+    |--------------------------------------------------------------------------
+    |
+    | When true, Password::defaults() includes ->uncompromised() (k-anonymity
+    | range API to api.pwnedpasswords.com). Disable in phpunit to avoid network.
+    |
+    */
+    'password_uncompromised' => filter_var(
+        env('PASSWORD_UNCOMPROMISED', true),
+        FILTER_VALIDATE_BOOLEAN,
+    ),
+
 ];

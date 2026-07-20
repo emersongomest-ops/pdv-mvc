@@ -13,6 +13,7 @@ Copy from [`backend/.env.production.example`](../../backend/.env.production.exam
 | `SESSION_SECURE_COOKIE` | `true` | `Secure` flag on session cookie (ASVS V3; needs HTTPS) |
 | `SESSION_HTTP_ONLY` | `true` | Default; keep |
 | `SESSION_SAME_SITE` | `lax` (or `strict` if UX allows) | CSRF posture |
+| `PASSWORD_UNCOMPROMISED` | `true` | HIBP check on admin create/update password |
 | `APP_URL` | `https://…` | Canonical HTTPS origin |
 | `LOG_LEVEL` | `info` or `warning` | Avoid debug noise/PII in logs |
 

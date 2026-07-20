@@ -39,5 +39,6 @@
         <env name="PAYMENTS_SOAP_MODE" value="stub" force="true"/>
         <env name="PAYMENTS_RECONCILE_DRIVER" value="array" force="true"/>
         <env name="PAYMENTS_ASYNC_SETTLEMENT" value="true" force="true"/>
+        <env name="PASSWORD_UNCOMPROMISED" value="false" force="true"/>
     </php>
 </phpunit>

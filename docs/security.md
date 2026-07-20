@@ -153,10 +153,11 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 - [x] Docker image digests + Compose hardening (no public DB/Redis ports by default)  
 - [x] Prod hardening **runbook + boot guard** ([`docs/ops/production-hardening.md`](./ops/production-hardening.md): `APP_DEBUG=false` / `SESSION_SECURE_COOKIE=true` fail-closed when `APP_ENV=production`; TLS/HSTS via [`docker/nginx.tls.conf.example`](../docker/nginx.tls.conf.example)) — operator must still terminate TLS in prod  
 - [x] Admin MFA reset / break-glass (RN-074; `POST /api/admin/users/{id}/mfa/reset`)  
+- [x] HIBP uncompromised passwords on create/update (`Password::uncompromised()`, `PASSWORD_UNCOMPROMISED`)  
 - [ ] External penetration test (post remaining ASVS residuals or in parallel)  
 - [ ] Legal sign-off on privacy/retention + fill controller/DPO placeholders  
 - [ ] Card issuer SOAP verify (leave 501 until WSDL) — ADR-0009  
-- [ ] Optional: HIBP / CAPTCHA after repeated login failures  
+- [ ] Optional: CAPTCHA after repeated login failures  
 - [ ] API versioning `/api/v1` when introducing breaking changes
 ---
 
@@ -217,4 +218,4 @@ Automated coverage added under `tests/Feature/Security/`:
 
 Full matrix: [`docs/security/asvs-l2-gap-review.md`](./security/asvs-l2-gap-review.md).
 
-**Top residual gaps:** external pen-test; API `/api/v1`; HIBP/CAPTCHA; formal threat model; live TLS termination (runbook ready); legal counsel sign-off.
+**Top residual gaps:** external pen-test; API `/api/v1`; CAPTCHA after failures; formal threat model; live TLS termination (runbook ready); legal counsel sign-off.
