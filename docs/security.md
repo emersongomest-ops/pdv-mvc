@@ -157,6 +157,7 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 - [x] CAPTCHA after repeated login failures (Cloudflare Turnstile; `TURNSTILE_*`)  
 - [x] API versioning `/api/v1` (ADR-0011: live alias + policy; SPA may keep `/api` until cutover)  
 - [x] Threat model STRIDE/DFD ([`docs/security/threat-model.md`](./security/threat-model.md))  
+- [x] Key rotation runbook ([`docs/ops/key-rotation.md`](./ops/key-rotation.md))  
 - [x] External pen-test **scope pack** ([`docs/security/external-pen-test.md`](./security/external-pen-test.md)) — engagement brief, RoE, themes  
 - [ ] External penetration test **executed** + Critical/High closed (see scope pack §9)  
 - [x] Legal counsel **sign-off pack** ([`docs/legal/counsel-sign-off.md`](./legal/counsel-sign-off.md)) — campos DPO/controlador + perguntas  
@@ -225,4 +226,4 @@ Automated coverage added under `tests/Feature/Security/`:
 Full matrix: [`docs/security/asvs-l2-gap-review.md`](./security/asvs-l2-gap-review.md).  
 Threat model: [`docs/security/threat-model.md`](./security/threat-model.md).
 
-**Top residual gaps:** external pen-test **execution**; legal counsel **parecer** (packs ready); live TLS termination (runbook ready); key rotation runbook; idle session UX.
+**Top residual gaps:** external pen-test **execution**; legal counsel **parecer** (packs ready); live TLS termination (runbook ready); idle session UX; customer purge job.

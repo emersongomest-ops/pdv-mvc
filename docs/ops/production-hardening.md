@@ -34,6 +34,7 @@ Copy from [`backend/.env.production.example`](../../backend/.env.production.exam
 - [ ] Redis/MySQL not published on the public internet (Compose default)
 - [ ] `composer audit` / `npm audit` clean (see `docs/security.md` §15)
 - [ ] Backup restore smoke (`docs/ops/backup-restore.md`)
+- [ ] Key rotation drill when needed ([`docs/ops/key-rotation.md`](./key-rotation.md))
 - [ ] External pen-test scheduled / executed ([`docs/security/external-pen-test.md`](../security/external-pen-test.md); still open on `docs/security.md` §12 until report + Critical/High closed)
 
 ## Local vs production

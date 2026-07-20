@@ -23,7 +23,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | Bucket | Count (approx.) |
 |--------|-----------------|
 | Pass | Strong on authn/session cookie SPA, RBAC/IDOR store scope, Eloquent bindings, MFA managers, audit append-only, payment webhook HMAC, supply-chain audits |
-| Partial / Gap (priority) | TLS live in prod (runbook ready); key rotation runbook; idle session UX |
+| Partial / Gap (priority) | TLS live in prod (runbook ready); idle session UX; customer purge job |
 
 **Recommended next engineering slices (ordered):**
 
@@ -103,7 +103,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | PII at rest | **Pass** | ADR-0008 dedicated keys + blind indexes. |
 | MFA secret at rest | **Pass** | `mfa_secret` encrypted cast. |
 | No PAN storage | **Pass** | Card path 501 / stub; ADR-0009. |
-| Key management | **Partial** | Keys in `.env.docker`; backup runbook warns separate storage; no KMS/rotation runbook yet. |
+| Key management | **Pass** (runbook) / **Partial** (no KMS) | Keys in env/vault; [`docs/ops/key-rotation.md`](../ops/key-rotation.md) + backup separation. No cloud KMS yet. |
 
 ---
 
