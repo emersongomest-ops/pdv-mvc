@@ -35,7 +35,7 @@ Rules are identified as `RN-XXX` in [`docs/business-rules.md`](./docs/business-r
 
 **Roles (MVP):** Operator + Manager only (RN-062).
 
-**Deferred (MVP):** live acquirer WSDL credentials / card issuer SOAP op. Adapter is `SoapPaymentGateway` (`PAYMENTS_SOAP_MODE=stub` locally). Card instrument still returns 501 until issuer verify is bound. Customer PII encrypted at rest (ADR-0008).
+**Deferred:** live acquirer WSDL / card issuer SOAP verify (adapter stub; card path **501** until bound). Customer PII encrypted at rest (ADR-0008). Privacy + retention **drafts** in [`docs/legal/`](./docs/legal/) (counsel review before prod).
 
 ---
 

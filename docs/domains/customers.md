@@ -41,6 +41,7 @@ Customer registry (PII), identification at POS by CPF, optional attach to in-pro
 - At rest: `cpf`, `email`, `phone`, `address`, `birth_date` encrypted (`CUSTOMER_PII_ENCRYPTION_KEY`). See [ADR-0008](../adr/0008-customer-pii-encryption-lgpd.md).
 - Lookup: `cpf_hash` / `email_hash` (HMAC). Admin search: name substring + exact CPF/email when query shape matches.
 - PAN/card data is never persisted.
+- Legal drafts (controller/DPO placeholders): [privacy policy](../legal/privacy-policy.md), [data retention](../legal/data-retention.md).
 
 ## Notes
 

@@ -151,6 +151,7 @@ This document is the **source of truth for business rules**. BDD scenarios and T
 |----|------|----------|
 | **RN-070** | Sensitive actions log **who**, **when**, and before/after: effective **price change**, admin **stock adjust**, **refund/return**, and promotion **create/update** (incl. activation/assignments). Append-only `audit_logs`; audit write failure rolls back the mutation. Initial product price and applying/removing a promotion on a sale are **not** audited. Managers query via `GET /api/admin/audit-logs` with RN-064 scope (assigned stores + global `store_id=null`). | Required |
 | **RN-071** | Operator: operational UI only; Manager: both views. | Required |
+| **RN-072** | Customer PII and related operational data follow the published **privacy + retention** drafts (`docs/legal/`); technical encryption per ADR-0008. Legal counsel must approve before production go-live. | Required |
 
 ---
 

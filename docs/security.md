@@ -139,14 +139,16 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 
 ## 12. Checklist before launch
 
-- [x] LGPD technical controls: customer PII encrypted at rest + blind indexes (ADR-0008); privacy policy / retention still product/legal  
+- [x] LGPD technical controls: customer PII encrypted at rest + blind indexes (ADR-0008)  
 - [x] OWASP ASVS L2 **desk review** documented ([`docs/security/asvs-l2-gap-review.md`](./security/asvs-l2-gap-review.md)); external pen-test still recommended before prod  
 - [x] `composer audit` / `npm audit` clean or accepted risks documented (see §15)  
 - [x] MFA on Manager accounts (TOTP; ADR-0010)  
 - [x] Rate limits on auth + refund endpoints (`throttle:login`, `throttle:refunds`)  
 - [x] Backup restore tested (see [`docs/ops/backup-restore.md`](./ops/backup-restore.md); smoke: `scripts/restore-mysql-verify.sh`)  
-- [ ] LGPD privacy policy + data retention (legal text)  
+- [x] LGPD privacy policy + data retention **drafts** ([`docs/legal/`](./legal/)) — counsel approval + DPO fields still required before prod  
 - [ ] External penetration test (post ASVS gaps 1–3 or in parallel)  
+- [ ] Legal sign-off on privacy/retention + fill controller/DPO placeholders  
+- [ ] Card issuer SOAP verify (leave 501 until WSDL) — ADR-0009  
 
 ---
 
