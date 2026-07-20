@@ -14,7 +14,7 @@
 | **Gap** | Missing or contradicted by evidence |
 | **N/A** | Out of scope for current product shape |
 
-This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/security.md`](../security.md) §12 as a **documented gap analysis**. It does **not** replace an external pen-test.
+This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/security.md`](../security.md) §12 as a **documented gap analysis**. It does **not** replace an external pen-test. Threat modeling artifact: [`threat-model.md`](./threat-model.md).
 
 ---
 
@@ -23,7 +23,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | Bucket | Count (approx.) |
 |--------|-----------------|
 | Pass | Strong on authn/session cookie SPA, RBAC/IDOR store scope, Eloquent bindings, MFA managers, audit append-only, payment webhook HMAC, supply-chain audits |
-| Partial / Gap (priority) | TLS/Secure cookies in prod defaults, formal threat model |
+| Partial / Gap (priority) | TLS live in prod (runbook ready); key rotation runbook; idle session UX |
 
 **Recommended next engineering slices (ordered):**
 
@@ -39,7 +39,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 
 | ID (theme) | Status | Evidence / gap |
 |------------|--------|----------------|
-| Secure design docs | **Partial** | `docs/architecture.md`, ADRs, `business-rules.md`, this file. No formal STRIDE/DFD threat model artifact. |
+| Secure design docs | **Pass** | Architecture, ADRs, RNs + formal STRIDE/DFD [`threat-model.md`](./threat-model.md). |
 | Security champions / review | **Partial** | Baseline rule `.cursor/rules/06-seguranca-baseline.mdc`; Security feature tests. No mandatory external review gate in CI. |
 | Trust boundaries | **Pass** | Delivery → Application → Domain → Infrastructure; Sanctum cookie same-origin; webhook HMAC boundary. |
 

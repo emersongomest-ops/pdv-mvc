@@ -185,6 +185,8 @@ All under `projects/pdv/docs/`:
 | ADR-0010 | Manager MFA (TOTP) | 2026-07-20 |
 | ADR-0011 | API URI versioning (`/api/v1` alias) | 2026-07-20 |
 
+Security threat model (STRIDE/DFD): [`docs/security/threat-model.md`](security/threat-model.md).
+
 ## 12. Money
 
 - **Storage / domain:** integer **cents** (`unsignedBigInteger` / PHP `int`).
