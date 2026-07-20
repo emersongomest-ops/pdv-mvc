@@ -3,7 +3,8 @@
 > **Status:** RASCUNHO para revisão jurídica — **não** constitui aconselhamento legal.  
 > **Idioma do produto:** inglês no código; este texto é em português (titulares BR).  
 > **Data do rascunho:** 2026-07-20  
-> Controles técnicos: [ADR-0008](../adr/0008-customer-pii-encryption-lgpd.md), [`docs/security.md`](../security.md).
+> Controles técnicos: [ADR-0008](../adr/0008-customer-pii-encryption-lgpd.md), [`docs/security.md`](../security.md).  
+> Pacote para counsel: [`counsel-sign-off.md`](./counsel-sign-off.md).
 
 Preencher antes de publicar:
 

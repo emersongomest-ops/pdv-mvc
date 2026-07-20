@@ -122,7 +122,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 
 | ID (theme) | Status | Evidence / gap |
 |------------|--------|----------------|
-| Sensitive data classification | **Partial** | PII encrypted; privacy/retention **drafts** in `docs/legal/` — counsel sign-off pending |
+| Sensitive data classification | **Partial** | PII encrypted; privacy/retention drafts + counsel pack [`docs/legal/`](../legal/) — **parecer** ainda pendente |
 | Backup confidentiality | **Pass** | `docs/ops/backup-restore.md` + gitignore dumps; secrets separate. |
 | Client-side storage | **Partial** | `sessionStorage` for UX hint only; boot revalidates `/api/auth/me`. |
 

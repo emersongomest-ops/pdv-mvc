@@ -158,7 +158,8 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 - [x] API versioning `/api/v1` (ADR-0011: live alias + policy; SPA may keep `/api` until cutover)  
 - [x] External pen-test **scope pack** ([`docs/security/external-pen-test.md`](./security/external-pen-test.md)) — engagement brief, RoE, themes  
 - [ ] External penetration test **executed** + Critical/High closed (see scope pack §9)  
-- [ ] Legal sign-off on privacy/retention + fill controller/DPO placeholders  
+- [x] Legal counsel **sign-off pack** ([`docs/legal/counsel-sign-off.md`](./legal/counsel-sign-off.md)) — campos DPO/controlador + perguntas  
+- [ ] Legal sign-off **executed** (parecer + placeholders preenchidos; RN-072)  
 - [ ] Card issuer SOAP verify (leave 501 until WSDL) — ADR-0009
 ---
 
@@ -170,6 +171,7 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 - RN-070, RN-071 (`business-rules.md`)
 - ASVS L2 gap review: `docs/security/asvs-l2-gap-review.md`
 - External pen-test brief: `docs/security/external-pen-test.md`
+- Legal counsel pack: `docs/legal/counsel-sign-off.md`
 - Project baseline: `.cursor/rules/06-seguranca-baseline.mdc` (always apply; violation = -3 scoring)
 
 ---
@@ -220,4 +222,4 @@ Automated coverage added under `tests/Feature/Security/`:
 
 Full matrix: [`docs/security/asvs-l2-gap-review.md`](./security/asvs-l2-gap-review.md).
 
-**Top residual gaps:** external pen-test **execution** (scope pack ready); formal threat model; live TLS termination (runbook ready); legal counsel sign-off.
+**Top residual gaps:** external pen-test **execution**; legal counsel **parecer** (packs ready); formal threat model; live TLS termination (runbook ready).

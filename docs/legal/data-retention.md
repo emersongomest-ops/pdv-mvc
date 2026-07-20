@@ -2,7 +2,7 @@
 
 > **Status:** RASCUNHO operacional + jurídico — prazos **sugeridos** para o produto; validar com advogado/contabilidade (obrigações fiscais BR, CDC, trabalhista).  
 > **Data:** 2026-07-20  
-> Relacionada: [Política de Privacidade](./privacy-policy.md), ADR-0008, RN-070.
+> Relacionada: [Política de Privacidade](./privacy-policy.md), [Sign-off counsel](./counsel-sign-off.md), ADR-0008, RN-070.
 
 ## Princípios
 
@@ -24,6 +24,7 @@
 | Auditoria sensível | `audit_logs` | **5 anos** (ou = prazo da entidade auditada) | Append-only; sem UPDATE/DELETE em produção | RN-070; exclusão só via processo controlado fora do app |
 | Contas de usuário (staff) | `users`, MFA | Vigência do vínculo + **5 anos** | Desativar → depois eliminar | MFA secret cifrado |
 | Sessões / rate limit | Redis, cache | Horas / dias (TTL técnico) | Expiração automática | Não é arquivo permanente |
+| Idempotência financeira | `idempotency_records` | **7 dias** (`IDEMPOTENCY_RETENTION_DAYS`) | Purge diário `idempotency:purge` | RN-073; não é PII de titular |
 | Outbox / webhook retry | Redis | Até liquidação ou TTL curto (dias) | Purge após confirmed/failed terminal | ADR-0009 |
 | Logs de aplicação | `storage/logs` | **90 dias** (default ops) | Rotação / delete | Sem PII em claro |
 | Backups MySQL | `backups/*.sql.gz` | Espelhar o maior prazo acima **ou** máx. **5 anos** com prune | Destroy + checksum inventory | Chaves `CUSTOMER_PII_*` / `APP_KEY` **fora** do dump |

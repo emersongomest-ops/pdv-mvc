@@ -76,7 +76,7 @@ Share passwords/TOTP secrets **out of band** (not in git). Demo seeds exist for 
 - Neo4j / analytics backends not exposed publicly
 - Third-party Cloudflare Turnstile / HIBP availability (treat as dependency; abuse of those vendors’ APIs is out)
 - Source-code review as primary deliverable (optional add-on; code is available if contracted)
-- Legal / LGPD counsel sign-off (parallel track — [`docs/legal/`](../legal/))
+- Legal / LGPD counsel sign-off (parallel track — [`docs/legal/counsel-sign-off.md`](../legal/counsel-sign-off.md))
 
 ---
 
