@@ -31,7 +31,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 2. ~~Admin MFA reset / break-glass (beyond recovery codes)~~ → **done** (RN-074)
 3. External pen-test **execution** before multi-store production go-live (scope pack: [`external-pen-test.md`](./external-pen-test.md))
 4. ~~Optional: HIBP~~ → **done** (`Password::uncompromised`); ~~CAPTCHA after repeated failures~~ → **done** (Cloudflare Turnstile)
-5. ~~API `/api/v1`~~ → **done** (ADR-0011: `/api/v1` alias + policy; SPA cutover optional)
+5. ~~API `/api/v1`~~ → **done** (ADR-0011: aliases + SPA `API_BASE=/api/v1`)
 
 ---
 

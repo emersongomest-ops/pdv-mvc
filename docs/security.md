@@ -155,7 +155,7 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 - [x] Admin MFA reset / break-glass (RN-074; `POST /api/admin/users/{id}/mfa/reset`)  
 - [x] HIBP uncompromised passwords on create/update (`Password::uncompromised()`, `PASSWORD_UNCOMPROMISED`)  
 - [x] CAPTCHA after repeated login failures (Cloudflare Turnstile; `TURNSTILE_*`)  
-- [x] API versioning `/api/v1` (ADR-0011: live alias + policy; SPA may keep `/api` until cutover)  
+- [x] API versioning `/api/v1` (ADR-0011: live alias + SPA cutover to `API_BASE=/api/v1`)  
 - [x] Threat model STRIDE/DFD ([`docs/security/threat-model.md`](./security/threat-model.md))  
 - [x] Key rotation runbook ([`docs/ops/key-rotation.md`](./ops/key-rotation.md))  
 - [x] Idle session warning / logout (SPA `IdleSessionGuard`; `VITE_IDLE_*`)  

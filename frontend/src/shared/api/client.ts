@@ -1,5 +1,8 @@
 import type { ApiError } from './types'
 
+/** Canonical versioned API prefix (ADR-0011). Unversioned `/api/*` remains for compatibility. */
+export const API_BASE = '/api/v1'
+
 function readCookie(name: string): string | null {
   const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`))
   return match ? decodeURIComponent(match[1]) : null
@@ -29,10 +32,10 @@ export function setSessionInvalidHandler(handler: SessionInvalidHandler | null) 
 function shouldInvalidateSession(path: string, status: number, code: string): boolean {
   // Boot/login/logout/MFA own their flows; avoid full-page bounce during /me probe.
   if (
-    path === '/api/auth/login' ||
-    path === '/api/auth/logout' ||
-    path === '/api/auth/me' ||
-    path.startsWith('/api/auth/mfa/')
+    path === '/api/v1/auth/login' ||
+    path === '/api/v1/auth/logout' ||
+    path === '/api/v1/auth/me' ||
+    path.startsWith('/api/v1/auth/mfa/')
   ) {
     return false
   }
@@ -129,7 +132,7 @@ export async function loginRequest(
       mfa_setup_required: boolean
       user: import('./types').User
     }
-  }>('/api/auth/login', {
+  }>('/api/v1/auth/login', {
     method: 'POST',
     body: JSON.stringify(body),
   })
@@ -143,7 +146,7 @@ export async function beginMfaSetupRequest() {
       otpauth_url: string
       qr_data_uri: string
     }
-  }>('/api/auth/mfa/setup', {
+  }>('/api/v1/auth/mfa/setup', {
     method: 'POST',
   })
 }
@@ -157,7 +160,7 @@ export async function confirmMfaSetupRequest(code: string) {
       recovery_codes: string[]
       user: import('./types').User
     }
-  }>('/api/auth/mfa/confirm', {
+  }>('/api/v1/auth/mfa/confirm', {
     method: 'POST',
     body: JSON.stringify({ code }),
   })
@@ -171,19 +174,19 @@ export async function verifyMfaChallengeRequest(code: string) {
       mfa_setup_required: boolean
       user: import('./types').User
     }
-  }>('/api/auth/mfa/verify', {
+  }>('/api/v1/auth/mfa/verify', {
     method: 'POST',
     body: JSON.stringify({ code }),
   })
 }
 
 export async function fetchCurrentUser() {
-  return apiRequest<{ data: { user: import('./types').User } }>('/api/auth/me')
+  return apiRequest<{ data: { user: import('./types').User } }>('/api/v1/auth/me')
 }
 
 export async function logoutRequest() {
   await primeCsrf()
-  return apiRequest<{ data: { logged_out: boolean } }>('/api/auth/logout', {
+  return apiRequest<{ data: { logged_out: boolean } }>('/api/v1/auth/logout', {
     method: 'POST',
   })
 }
@@ -191,7 +194,7 @@ export async function logoutRequest() {
 let storesRequest: ReturnType<typeof fetchStores> | null = null
 
 function fetchStores() {
-  return apiRequest<{ data: { stores: import('./types').Store[] } }>('/api/stores')
+  return apiRequest<{ data: { stores: import('./types').Store[] } }>('/api/v1/stores')
 }
 
 export function listStores() {
@@ -205,21 +208,21 @@ export function listStores() {
 }
 
 export function selectStore(storeId: number) {
-  return apiRequest<{ data: { store_id: number } }>('/api/stores/context', {
+  return apiRequest<{ data: { store_id: number } }>('/api/v1/stores/context', {
     method: 'POST',
     body: JSON.stringify({ store_id: storeId }),
   })
 }
 
 export function openShift(openingCashAmount = 100) {
-  return apiRequest<{ data: { shift: unknown } }>('/api/operational/shifts/open', {
+  return apiRequest<{ data: { shift: unknown } }>('/api/v1/operational/shifts/open', {
     method: 'POST',
     body: JSON.stringify({ opening_cash_amount: openingCashAmount }),
   })
 }
 
 export function getCurrentShift() {
-  return apiRequest<{ data: { shift: unknown | null } }>('/api/operational/shifts/current')
+  return apiRequest<{ data: { shift: unknown | null } }>('/api/v1/operational/shifts/current')
 }
 
 export function closeShift(closingCashAmount?: number) {
@@ -233,7 +236,7 @@ export function closeShift(closingCashAmount?: number) {
       shift: { id: number; status: string }
       report: import('./types').ShiftClosingReport
     }
-  }>('/api/operational/shifts/close', {
+  }>('/api/v1/operational/shifts/close', {
     method: 'POST',
     body,
   })
@@ -241,13 +244,13 @@ export function closeShift(closingCashAmount?: number) {
 
 export function listAdminShifts(storeId: number) {
   return apiRequest<{ data: { shifts: import('./types').AdminShiftSummary[] } }>(
-    `/api/admin/shifts?store_id=${storeId}`,
+    `/api/v1/admin/shifts?store_id=${storeId}`,
   )
 }
 
 export function getAdminShiftReport(shiftId: number) {
   return apiRequest<{ data: { report: import('./types').ShiftClosingReport } }>(
-    `/api/admin/shifts/${shiftId}/report`,
+    `/api/v1/admin/shifts/${shiftId}/report`,
   )
 }
 
@@ -265,7 +268,7 @@ export function reopenAdminShift(shiftId: number) {
         closed_at: string | null
       }
     }
-  }>(`/api/admin/shifts/${shiftId}/reopen`, {
+  }>(`/api/v1/admin/shifts/${shiftId}/reopen`, {
     method: 'POST',
   })
 }
@@ -283,7 +286,7 @@ export function listAdminUsers(params?: {
   return apiRequest<{
     data: { users: import('./types').AdminUser[] }
     meta?: { next_cursor: string | null }
-  }>(`/api/admin/users${query}`)
+  }>(`/api/v1/admin/users${query}`)
 }
 
 export function listAdminAuditLogs(filters: import('./types').AdminAuditFilters = {}) {
@@ -301,7 +304,7 @@ export function listAdminAuditLogs(filters: import('./types').AdminAuditFilters 
   return apiRequest<{
     data: { audit_logs: import('./types').AuditLogEntry[] }
     meta: { next_cursor: string | null }
-  }>(`/api/admin/audit-logs${query}`)
+  }>(`/api/v1/admin/audit-logs${query}`)
 }
 
 export function getAdminAnalytics(params?: { registration_days?: number; top_customers?: number }) {
@@ -313,7 +316,7 @@ export function getAdminAnalytics(params?: { registration_days?: number; top_cus
     search.set('top_customers', String(params.top_customers))
   }
   const query = search.toString() ? `?${search.toString()}` : ''
-  return apiRequest<{ data: import('./types').AdminAnalytics }>(`/api/admin/analytics${query}`)
+  return apiRequest<{ data: import('./types').AdminAnalytics }>(`/api/v1/admin/analytics${query}`)
 }
 
 export function listCampaignCustomers(filters: import('./types').CampaignCustomerFilters = {}) {
@@ -322,19 +325,19 @@ export function listCampaignCustomers(filters: import('./types').CampaignCustome
   if (filters.region) search.set('region', filters.region)
   const query = search.toString() ? `?${search.toString()}` : ''
   return apiRequest<{ data: { customers: import('./types').Customer[] } }>(
-    `/api/admin/campaigns/customers${query}`,
+    `/api/v1/admin/campaigns/customers${query}`,
   )
 }
 
 export function getAdminUser(userId: number) {
   return apiRequest<{ data: { user: import('./types').AdminUser } }>(
-    `/api/admin/users/${userId}`,
+    `/api/v1/admin/users/${userId}`,
   )
 }
 
 export function createAdminUser(payload: import('./types').CreateAdminUserPayload) {
   return apiRequest<{ data: { message: string; user: import('./types').AdminUser } }>(
-    '/api/admin/users',
+    '/api/v1/admin/users',
     {
       method: 'POST',
       body: JSON.stringify(payload),
@@ -347,7 +350,7 @@ export function updateAdminUser(
   payload: import('./types').UpdateAdminUserPayload,
 ) {
   return apiRequest<{ data: { message: string; user: import('./types').AdminUser } }>(
-    `/api/admin/users/${userId}`,
+    `/api/v1/admin/users/${userId}`,
     {
       method: 'PATCH',
       body: JSON.stringify(payload),
@@ -357,7 +360,7 @@ export function updateAdminUser(
 
 export function resetAdminUserMfa(userId: number, reason: string) {
   return apiRequest<{ data: { message: string; user: import('./types').AdminUser } }>(
-    `/api/admin/users/${userId}/mfa/reset`,
+    `/api/v1/admin/users/${userId}/mfa/reset`,
     {
       method: 'POST',
       body: JSON.stringify({ reason }),
@@ -380,7 +383,7 @@ export function listOperationalProducts(params?: {
   return apiRequest<{
     data: { products: import('./types').Product[] }
     meta: { next_cursor: string | null }
-  }>(`/api/operational/catalog/products${query}`)
+  }>(`/api/v1/operational/catalog/products${query}`)
 }
 
 export function getAdminDashboard() {
@@ -391,7 +394,7 @@ export function getAdminDashboard() {
       user_id: number | null
       metrics: import('./types').AdminDashboardMetrics
     }
-  }>('/api/admin/dashboard')
+  }>('/api/v1/admin/dashboard')
 }
 
 export function listAdminNotifications() {
@@ -399,7 +402,7 @@ export function listAdminNotifications() {
     data: {
       notifications: import('./types').AdminNotification[]
     }
-  }>('/api/admin/notifications')
+  }>('/api/v1/admin/notifications')
 }
 
 export function listAdminSales(filters: import('./types').AdminSalesFilters = {}) {
@@ -413,17 +416,17 @@ export function listAdminSales(filters: import('./types').AdminSalesFilters = {}
   if (filters.status) search.set('status', filters.status)
   const query = search.toString() ? `?${search.toString()}` : ''
   return apiRequest<{ data: { sales: import('./types').AdminSaleSummary[] } }>(
-    `/api/admin/sales${query}`,
+    `/api/v1/admin/sales${query}`,
   )
 }
 
 export function getAdminSale(saleId: number) {
-  return apiRequest<{ data: { sale: import('./types').Sale } }>(`/api/admin/sales/${saleId}`)
+  return apiRequest<{ data: { sale: import('./types').Sale } }>(`/api/v1/admin/sales/${saleId}`)
 }
 
 export function listRefundsForSale(saleId: number) {
   return apiRequest<{ data: { refunds: import('./types').Refund[] } }>(
-    `/api/admin/sales/${saleId}/refunds`,
+    `/api/v1/admin/sales/${saleId}/refunds`,
   )
 }
 
@@ -434,7 +437,7 @@ export function createRefund(
 ) {
   const key = idempotencyKey ?? crypto.randomUUID()
   return apiRequest<{ data: { message: string; refund: import('./types').Refund } }>(
-    `/api/admin/sales/${saleId}/refunds`,
+    `/api/v1/admin/sales/${saleId}/refunds`,
     {
       method: 'POST',
       headers: { 'Idempotency-Key': key },
@@ -464,7 +467,7 @@ export function listAdminProducts(params?: {
   return apiRequest<{
     data: { products: import('./types').AdminProduct[] }
     meta?: { next_cursor: string | null }
-  }>(`/api/admin/catalog/products${query}`)
+  }>(`/api/v1/admin/catalog/products${query}`)
 }
 
 export function listAdminCustomers(params?: {
@@ -480,11 +483,11 @@ export function listAdminCustomers(params?: {
   return apiRequest<{
     data: { customers: import('./types').Customer[] }
     meta?: { next_cursor: string | null }
-  }>(`/api/admin/customers${query}`)
+  }>(`/api/v1/admin/customers${query}`)
 }
 
 export function createAdminCustomer(payload: import('./types').CustomerPayload) {
-  return apiRequest<{ data: { customer: import('./types').Customer } }>('/api/admin/customers', {
+  return apiRequest<{ data: { customer: import('./types').Customer } }>('/api/v1/admin/customers', {
     method: 'POST',
     body: JSON.stringify(payload),
   })
@@ -492,7 +495,7 @@ export function createAdminCustomer(payload: import('./types').CustomerPayload) 
 
 export function updateAdminCustomer(customerId: number, payload: Partial<import('./types').CustomerPayload>) {
   return apiRequest<{ data: { customer: import('./types').Customer } }>(
-    `/api/admin/customers/${customerId}`,
+    `/api/v1/admin/customers/${customerId}`,
     {
       method: 'PATCH',
       body: JSON.stringify(payload),
@@ -508,11 +511,11 @@ export function listAdminPromotions(params?: { cursor?: string; per_page?: numbe
   return apiRequest<{
     data: { promotions: import('./types').Promotion[] }
     meta?: { next_cursor: string | null }
-  }>(`/api/admin/promotions${query}`)
+  }>(`/api/v1/admin/promotions${query}`)
 }
 
 export function createAdminPromotion(payload: import('./types').PromotionPayload) {
-  return apiRequest<{ data: { promotion: import('./types').Promotion } }>('/api/admin/promotions', {
+  return apiRequest<{ data: { promotion: import('./types').Promotion } }>('/api/v1/admin/promotions', {
     method: 'POST',
     body: JSON.stringify(payload),
   })
@@ -523,7 +526,7 @@ export function updateAdminPromotion(
   payload: Partial<import('./types').PromotionPayload>,
 ) {
   return apiRequest<{ data: { promotion: import('./types').Promotion } }>(
-    `/api/admin/promotions/${promotionId}`,
+    `/api/v1/admin/promotions/${promotionId}`,
     {
       method: 'PATCH',
       body: JSON.stringify(payload),
@@ -533,13 +536,13 @@ export function updateAdminPromotion(
 
 export function listAdminInventory(storeId: number) {
   return apiRequest<{ data: { inventory: import('./types').StoreInventoryRow[] } }>(
-    `/api/admin/inventory?store_id=${storeId}`,
+    `/api/v1/admin/inventory?store_id=${storeId}`,
   )
 }
 
 export function adjustAdminInventory(payload: import('./types').AdjustInventoryPayload) {
   return apiRequest<{ data: { inventory: import('./types').StoreInventoryRow } }>(
-    '/api/admin/inventory/adjustments',
+    '/api/v1/admin/inventory/adjustments',
     {
       method: 'POST',
       body: JSON.stringify(payload),
@@ -553,7 +556,7 @@ export function createSale(
 ) {
   const key = idempotencyKey ?? crypto.randomUUID()
   return apiRequest<{ data: { message: string; sale: import('./types').Sale } }>(
-    '/api/operational/sales',
+    '/api/v1/operational/sales',
     {
       method: 'POST',
       headers: { 'Idempotency-Key': key },
@@ -575,7 +578,7 @@ export function addSaleLine(
 ) {
   const key = idempotencyKey ?? crypto.randomUUID()
   return apiRequest<{ data: { sale: import('./types').Sale } }>(
-    `/api/operational/sales/${saleId}/lines`,
+    `/api/v1/operational/sales/${saleId}/lines`,
     {
       method: 'POST',
       headers: { 'Idempotency-Key': key },
@@ -586,7 +589,7 @@ export function addSaleLine(
 
 export function holdSale(saleId: number, label?: string) {
   return apiRequest<{ data: { sale: import('./types').Sale } }>(
-    `/api/operational/sales/${saleId}/hold`,
+    `/api/v1/operational/sales/${saleId}/hold`,
     {
       method: 'POST',
       body: JSON.stringify({ label: label || null }),
@@ -596,26 +599,26 @@ export function holdSale(saleId: number, label?: string) {
 
 export function resumeSale(saleId: number) {
   return apiRequest<{ data: { sale: import('./types').Sale } }>(
-    `/api/operational/sales/${saleId}/resume`,
+    `/api/v1/operational/sales/${saleId}/resume`,
     { method: 'POST' },
   )
 }
 
 export function listHeldSales() {
   return apiRequest<{ data: { sales: import('./types').Sale[] } }>(
-    '/api/operational/sales/held',
+    '/api/v1/operational/sales/held',
   )
 }
 
 export function findCustomerByCpf(cpf: string) {
   return apiRequest<{ data: { customer: import('./types').Customer } }>(
-    `/api/operational/customers?cpf=${encodeURIComponent(cpf)}`,
+    `/api/v1/operational/customers?cpf=${encodeURIComponent(cpf)}`,
   )
 }
 
 export function attachCustomerToSale(saleId: number, customerId: number) {
   return apiRequest<{ data: { sale: import('./types').Sale } }>(
-    `/api/operational/sales/${saleId}/customer`,
+    `/api/v1/operational/sales/${saleId}/customer`,
     {
       method: 'POST',
       body: JSON.stringify({ customer_id: customerId }),
@@ -625,7 +628,7 @@ export function attachCustomerToSale(saleId: number, customerId: number) {
 
 export function applyPromotionToSale(saleId: number, code: string) {
   return apiRequest<{ data: { sale: import('./types').Sale } }>(
-    `/api/operational/sales/${saleId}/promotions`,
+    `/api/v1/operational/sales/${saleId}/promotions`,
     {
       method: 'POST',
       body: JSON.stringify({ code }),
@@ -640,7 +643,7 @@ export function completeSale(
 ) {
   const key = idempotencyKey ?? crypto.randomUUID()
   return apiRequest<{ data: { sale: import('./types').Sale } }>(
-    `/api/operational/sales/${saleId}/complete`,
+    `/api/v1/operational/sales/${saleId}/complete`,
     {
       method: 'POST',
       headers: { 'Idempotency-Key': key },
@@ -661,14 +664,14 @@ export type PaymentReconcileSummary = {
 
 export function reconcileOperationalPayments() {
   return apiRequest<{ data: PaymentReconcileSummary }>(
-    '/api/operational/payments/reconcile',
+    '/api/v1/operational/payments/reconcile',
     { method: 'POST' },
   )
 }
 
 export function reconcileAdminPayments() {
   return apiRequest<{ data: PaymentReconcileSummary }>(
-    '/api/admin/payments/reconcile',
+    '/api/v1/admin/payments/reconcile',
     { method: 'POST' },
   )
 }
