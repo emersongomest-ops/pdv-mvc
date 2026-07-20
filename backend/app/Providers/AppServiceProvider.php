@@ -51,6 +51,7 @@ use App\Domain\Shared\Idempotency\IdempotencyRecordRepositoryInterface;
 use App\Infrastructure\Shared\Idempotency\EloquentIdempotencyRecordRepository;
 use App\Infrastructure\Store\Persistence\Repositories\StoreRepository;
 use App\Models\User;
+use App\Support\Security\ProductionSecurityConfigAssertor;
 use App\Support\Store\StoreContext;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
@@ -115,6 +116,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        (new ProductionSecurityConfigAssertor)->assertForEnvironment((string) $this->app->environment());
+
         Password::defaults(static fn (): Password => Password::min(12));
 
         Event::listen(SaleCompleted::class, NotifyManagersOfSaleCompleted::class);

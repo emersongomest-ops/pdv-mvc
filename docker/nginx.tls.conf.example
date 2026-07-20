@@ -1,0 +1,53 @@
+# Example TLS edge for production (ASVS V9).
+# Do NOT replace docker/nginx.conf for local HTTP :8080 — use this behind real certificates.
+#
+# Typical path: terminate TLS here or at a load balancer that sets X-Forwarded-Proto=https
+# and forwards to the app network. Adjust paths/certs for your host.
+
+# server {
+#     listen 80;
+#     server_name pdv.example.com;
+#     return 301 https://$host$request_uri;
+# }
+
+server {
+    listen 443 ssl http2;
+    server_name pdv.example.com;
+    client_max_body_size 32M;
+
+    # ssl_certificate     /etc/nginx/certs/fullchain.pem;
+    # ssl_certificate_key /etc/nginx/certs/privkey.pem;
+
+    # HSTS — only on HTTPS (max-age 1 year). Add includeSubDomains only when ready.
+    add_header Strict-Transport-Security "max-age=31536000" always;
+
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Permissions-Policy "camera=(), microphone=(), geolocation=()" always;
+    add_header Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' wss:;" always;
+
+    root /var/www/frontend;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location ~ ^/(api|sanctum|broadcasting) {
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME /var/www/html/public/index.php;
+        fastcgi_param SCRIPT_NAME /index.php;
+        fastcgi_param DOCUMENT_ROOT /var/www/html/public;
+        fastcgi_param HTTPS on;
+        fastcgi_pass app:9000;
+        fastcgi_read_timeout 120s;
+        fastcgi_buffers 16 16k;
+        fastcgi_buffer_size 32k;
+    }
+
+    location = /favicon.ico {
+        access_log off;
+        log_not_found off;
+    }
+}

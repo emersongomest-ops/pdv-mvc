@@ -208,6 +208,7 @@ Never put GitHub/MCP tokens in `.env` / `.env.docker` (gitignored). Demo passwor
 ### 5.3 Backup / restore drill
 
 See [`docs/ops/backup-restore.md`](./docs/ops/backup-restore.md).
+Production go-live: [`docs/ops/production-hardening.md`](./docs/ops/production-hardening.md).
 
 ```bash
 bash scripts/backup-mysql.sh

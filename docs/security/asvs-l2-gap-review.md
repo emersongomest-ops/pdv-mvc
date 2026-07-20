@@ -27,10 +27,11 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 
 **Recommended next engineering slices (ordered):**
 
-1. Prod env hardening checklist (`APP_DEBUG=false`, `SESSION_SECURE_COOKIE=true`, TLS/HSTS)  
-2. Admin MFA reset / break-glass (beyond recovery codes)  
-3. External pen-test before multi-store production go-live  
-4. Optional: HIBP / CAPTCHA after repeated failures  
+1. ~~Prod env hardening checklist (`APP_DEBUG=false`, `SESSION_SECURE_COOKIE=true`, TLS/HSTS)~~ → **done** (`docs/ops/production-hardening.md`, boot guard, `nginx.tls.conf.example`)
+2. Admin MFA reset / break-glass (beyond recovery codes)
+3. External pen-test before multi-store production go-live
+4. Optional: HIBP / CAPTCHA after repeated failures
+5. API `/api/v1` when a breaking change requires it
 
 ---
 
@@ -64,7 +65,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | ID (theme) | Status | Evidence / gap |
 |------------|--------|----------------|
 | Session regenerate on login | **Pass** | Operator: regenerate after password; manager: after MFA verify/confirm. |
-| Cookie flags | **Partial** | `http_only` default true; `same_site=lax`; `secure` env-driven — `.env*.example` defaults `SESSION_SECURE_COOKIE=false` (OK local; must flip in prod TLS). |
+| Cookie flags | **Pass** (prod) / **Partial** (local) | Local examples keep `SESSION_SECURE_COOKIE=false` for HTTP. Production template + boot guard require `true` (`docs/ops/production-hardening.md`). |
 | Session serialization | **Pass** | `session.serialization = json`. |
 | Logout invalidates server session | **Pass** | `LogoutUserAction` + `SessionGateTest`. |
 | Idle / absolute timeout | **Partial** | Framework session lifetime only; no explicit idle UX warning. |
@@ -113,7 +114,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | Generic API errors | **Pass** | Domain `ErrorCode` catalog. |
 | Security audit trail | **Pass** | Append-only `audit_logs` + triggers (RN-070). |
 | Sensitive data in logs | **Partial** | Correlation id middleware; ensure dumps/logs never print PII plaintext (ops discipline). |
-| Debug in production | **Gap (config)** | Examples ship `APP_DEBUG=true` — prod must force `false`. |
+| Debug in production | **Pass** (guard) | `ProductionSecurityConfigAssertor` refuses boot when `APP_ENV=production` and `APP_DEBUG=true`. Local examples may still ship `true`. |
 
 ---
 
@@ -131,8 +132,8 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 
 | ID (theme) | Status | Evidence / gap |
 |------------|--------|----------------|
-| TLS in transit | **Partial** | Local Docker HTTP `:8080`. Production requires TLS terminator + HSTS. |
-| HSTS / secure cookies | **Gap (prod)** | Not configured in `docker/nginx.conf` (HTTP-only local). |
+| TLS in transit | **Partial** | Local Docker HTTP `:8080`. Production runbook + `docker/nginx.tls.conf.example`; operator terminates TLS. |
+| HSTS / secure cookies | **Partial** | HSTS example in `nginx.tls.conf.example`; secure cookie enforced in production boot. Local HTTP omits HSTS by design. |
 | Outbound SSRF | **Partial** | No user-supplied URL fetch in MVP; SOAP stub local — revisit when live WSDL/HTTP clients land. |
 
 ---
