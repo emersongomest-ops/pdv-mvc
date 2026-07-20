@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font: 12px/1.4 Inter, system-ui, sans-serif;
+        margin: 12px;
+        color: #e8eef4;
+        background: #0f1419;
+      }
+      button {
+        width: 100%;
+        padding: 10px 12px;
+        border: 0;
+        border-radius: 8px;
+        background: #3d9a7a;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: wait;
+      }
+      p {
+        color: #8b9aab;
+        margin: 0 0 10px;
+      }
+      #log {
+        margin-top: 10px;
+        white-space: pre-wrap;
+        font-family: ui-monospace, monospace;
+        font-size: 11px;
+        color: #8b9aab;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Builds missing PDV frames: Idle session + full Admin nav on every section
+      (Analytics, Sales, Shifts, Users, Audit log, and refreshes existing admin screens).
+    </p>
+    <button id="run" type="button">Sync all screens</button>
+    <div id="log"></div>
+    <script>
+      const btn = document.getElementById('run')
+      const log = document.getElementById('log')
+      btn.onclick = () => {
+        btn.disabled = true
+        log.textContent = 'Running…'
+        parent.postMessage({ pluginMessage: { type: 'sync' } }, '*')
+      }
+      onmessage = (event) => {
+        const msg = event.data.pluginMessage
+        if (!msg) return
+        if (msg.type === 'done') {
+          btn.disabled = false
+          log.textContent = msg.text || 'Done.'
+        }
+        if (msg.type === 'error') {
+          btn.disabled = false
+          log.textContent = 'Error: ' + msg.text
+        }
+      }
+    </script>
+  </body>
+</html>
