@@ -150,7 +150,7 @@ Legend: **S**poofing · **T**ampering · **R**epudiation · **I**nfo disclosure 
 | TM-03 | Legal counsel not signed | High (gate) | Open | [`../legal/counsel-sign-off.md`](../legal/counsel-sign-off.md) |
 | TM-04 | Card issuer verify 501 | Med | Blocked on WSDL | ADR-0009 |
 | TM-05 | Key rotation not runbooked | Med | **Closed** (runbook) | [`../ops/key-rotation.md`](../ops/key-rotation.md); dual-key still future |
-| TM-06 | Idle session UX weak | Low–Med | Open | Idle warning / re-auth slice |
+| TM-06 | Idle session UX weak | Low–Med | **Closed** | SPA `IdleSessionGuard` (`VITE_IDLE_WARNING_MINUTES` / `VITE_IDLE_LOGOUT_MINUTES`) |
 | TM-07 | Customer purge job missing | Med (LGPD ops) | Open | Retention job slice |
 | TM-08 | Universal API rate limit incomplete | Low–Med | Accepted MVP | Expand throttles if abused |
 

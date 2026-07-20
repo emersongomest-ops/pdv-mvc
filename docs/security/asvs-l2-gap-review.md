@@ -23,7 +23,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | Bucket | Count (approx.) |
 |--------|-----------------|
 | Pass | Strong on authn/session cookie SPA, RBAC/IDOR store scope, Eloquent bindings, MFA managers, audit append-only, payment webhook HMAC, supply-chain audits |
-| Partial / Gap (priority) | TLS live in prod (runbook ready); idle session UX; customer purge job |
+| Partial / Gap (priority) | TLS live in prod (runbook ready); customer purge job |
 
 **Recommended next engineering slices (ordered):**
 
@@ -68,7 +68,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | Cookie flags | **Pass** (prod) / **Partial** (local) | Local examples keep `SESSION_SECURE_COOKIE=false` for HTTP. Production template + boot guard require `true` (`docs/ops/production-hardening.md`). |
 | Session serialization | **Pass** | `session.serialization = json`. |
 | Logout invalidates server session | **Pass** | `LogoutUserAction` + `SessionGateTest`. |
-| Idle / absolute timeout | **Partial** | Framework session lifetime only; no explicit idle UX warning. |
+| Idle / absolute timeout | **Pass** | Cookie `SESSION_LIFETIME` (default 120m) + SPA idle warning/logout (`VITE_IDLE_*`, default 14/15m) via `IdleSessionGuard`. |
 | MFA pending session | **Pass** | `mfa.pending_user_id` until TOTP; no admin access before verify (`ManagerMfaTest`). |
 
 ---

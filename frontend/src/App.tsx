@@ -17,6 +17,7 @@ import { PosPage } from './apps/operational/pages/PosPage'
 import { ShiftPage } from './apps/operational/pages/ShiftPage'
 import { StoreSelectPage } from './apps/operational/pages/StoreSelectPage'
 import { AdminShell } from './features/admin/ui/AdminShell'
+import { IdleSessionGuard } from './shared/session/IdleSessionGuard'
 import { SessionProvider, useSession } from './shared/session/SessionContext'
 
 function HomeRedirect() {
@@ -43,6 +44,7 @@ function HomeRedirect() {
 export default function App() {
   return (
     <SessionProvider>
+      <IdleSessionGuard />
       <div className="app-shell">
         <Routes>
           <Route path="/" element={<HomeRedirect />} />
