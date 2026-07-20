@@ -1,28 +1,32 @@
 # PDV Screens Sync (Figma plugin)
 
-Local plugin that fills the [PDV — Screens](https://www.figma.com/design/UhplgsORC4T0QVq0Zvwyez) file when **Figma MCP quota is exhausted**.
+Local plugin for [PDV — Screens](https://www.figma.com/design/UhplgsORC4T0QVq0Zvwyez) when Figma MCP quota is exhausted.
 
-## What it creates
+## Design model (one board)
 
-| Page | Frames |
-|------|--------|
-| `01 — Operational` | **Idle session warning** (dialog over dimmed POS) |
-| `02 — Administrative` | Full sidebar nav (matches `AdminShell.tsx`) on: Dashboard, Analytics, Catalog, Sales, Shifts, Users, Customers, Promotions, Inventory, Refunds, Audit log |
+**One page:** `PDV — All views (Desktop + Mobile)`
 
-Tokens: dark theme from `frontend/src/index.css` (`#0f1419`, accent `#3d9a7a`, DM Sans with Inter fallback).
+Each vision is **one composition** with breakpoints side by side:
+
+| Breakpoint | Size | Shell |
+|------------|------|--------|
+| Desktop | 1440×900 | Admin: 240px sidebar · POS: catalog + cart |
+| Mobile | 390×844 | Admin: chip nav (matches `@media max-width 900px`) · POS: stacked |
+
+### Covered views
+
+**Operational:** Login (+ Turnstile), Store select, Open shift, POS Checkout, Idle session  
+
+**Administrative:** Dashboard, Analytics, Catalog, Sales, Shifts, Users, Customers, Promotions, Inventory, Refunds, Audit log  
+
+Tokens: `frontend/src/index.css` (dark, `#3d9a7a`, DM Sans → Inter fallback).
 
 ## How to run
 
-1. Open the Figma file **PDV — Screens** (`UhplgsORC4T0QVq0Zvwyez`).
-2. Menu **Plugins → Development → Import plugin from manifest…**
-3. Select `projects/pdv/design/figma-sync-screens/manifest.json`.
-4. Run **PDV Screens Sync** → click **Sync all screens**.
-5. Switch to pages `01 — Operational` and `02 — Administrative`.
+1. Open the Figma file.
+2. **Plugins → Development → Import plugin from manifest…** (or reload if already imported).
+3. Select `design/figma-sync-screens/manifest.json`.
+4. Run **PDV Screens Sync** → **Sync responsive board**.
+5. Open page **`PDV — All views (Desktop + Mobile)`**.
 
-Re-running **replaces** frames with the same names (safe to iterate).
-
-## Why not MCP?
-
-Account is **Full seat on Starter**. MCP daily/monthly call budget was hit (`use_figma` / `generate_figma_design` both blocked). After quota resets or after upgrading Figma plan, the agent can refine via MCP again.
-
-Upgrade link from Figma: team MCP paywall on the Emerson Gomes team.
+Re-run **clears and rebuilds** that page only (other pages untouched).

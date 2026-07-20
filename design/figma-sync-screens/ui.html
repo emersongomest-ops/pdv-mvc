@@ -38,17 +38,17 @@
   </head>
   <body>
     <p>
-      Builds missing PDV frames: Idle session + full Admin nav on every section
-      (Analytics, Sales, Shifts, Users, Audit log, and refreshes existing admin screens).
+      Builds <strong>one page</strong>: every operational + admin view as a single
+      composition with <strong>Desktop + Mobile</strong> side by side.
     </p>
-    <button id="run" type="button">Sync all screens</button>
+    <button id="run" type="button">Sync responsive board</button>
     <div id="log"></div>
     <script>
       const btn = document.getElementById('run')
       const log = document.getElementById('log')
       btn.onclick = () => {
         btn.disabled = true
-        log.textContent = 'Running…'
+        log.textContent = 'Building board…'
         parent.postMessage({ pluginMessage: { type: 'sync' } }, '*')
       }
       onmessage = (event) => {
