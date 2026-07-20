@@ -10,3 +10,4 @@ Artisan::command('inspire', function () {
 
 Schedule::command('payments:reconcile')->hourly();
 Schedule::command('idempotency:purge')->daily();
+Schedule::command('customers:anonymize-expired')->daily();

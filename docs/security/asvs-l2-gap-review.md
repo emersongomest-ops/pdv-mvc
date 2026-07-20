@@ -23,7 +23,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | Bucket | Count (approx.) |
 |--------|-----------------|
 | Pass | Strong on authn/session cookie SPA, RBAC/IDOR store scope, Eloquent bindings, MFA managers, audit append-only, payment webhook HMAC, supply-chain audits |
-| Partial / Gap (priority) | TLS live in prod (runbook ready); customer purge job |
+| Partial / Gap (priority) | TLS live in prod (runbook ready) |
 
 **Recommended next engineering slices (ordered):**
 

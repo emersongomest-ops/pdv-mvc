@@ -19,4 +19,16 @@ return [
     'encryption_key' => env('CUSTOMER_PII_ENCRYPTION_KEY', env('APP_KEY')),
 
     'blind_index_key' => env('CUSTOMER_PII_BLIND_INDEX_KEY', env('APP_KEY')),
+
+    /*
+    |--------------------------------------------------------------------------
+    | PII retention / anonymization
+    |--------------------------------------------------------------------------
+    |
+    | Customers with no sale activity (or last sale) older than this many days
+    | are anonymized by `customers:anonymize-expired` (scheduled daily).
+    | Default ~5 years (docs/legal/data-retention.md).
+    |
+    */
+    'retention_days' => (int) env('CUSTOMER_PII_RETENTION_DAYS', 1825),
 ];

@@ -30,6 +30,7 @@ class Customer extends Model
         'lifetime_spend',
         'cpf_hash',
         'email_hash',
+        'anonymized_at',
     ];
 
     /**
@@ -67,6 +68,7 @@ class Customer extends Model
             'address' => PiiEncryptedString::class,
             'birth_date' => PiiEncryptedDate::class,
             'lifetime_spend' => 'integer',
+            'anonymized_at' => 'datetime',
         ];
     }
 

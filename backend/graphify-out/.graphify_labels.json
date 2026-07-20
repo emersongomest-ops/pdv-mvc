@@ -234,5 +234,10 @@
   "232": "AdminAnalyticsTest",
   "233": "HmacPaymentWebhookSignatureVerifier",
   "234": "DispatchSaleSideEffectsTest",
-  "236": "CatalogResource"
+  "235": "AdminInventoryTest",
+  "236": "CatalogResource",
+  "237": ".__invoke",
+  "238": "User.php",
+  "239": "actingAsManagerForStore",
+  "240": "2026_07_20_960000_add_anonymized_at_to_customers_table.php"
 }

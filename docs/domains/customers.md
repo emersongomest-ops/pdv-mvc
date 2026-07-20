@@ -42,6 +42,7 @@ Customer registry (PII), identification at POS by CPF, optional attach to in-pro
 - Lookup: `cpf_hash` / `email_hash` (HMAC). Admin search: name substring + exact CPF/email when query shape matches.
 - PAN/card data is never persisted.
 - Legal drafts + counsel pack: [privacy](../legal/privacy-policy.md), [retention](../legal/data-retention.md), [sign-off](../legal/counsel-sign-off.md).
+- Retention job: `php artisan customers:anonymize-expired` (daily schedule); `CUSTOMER_PII_RETENTION_DAYS` (default 1825). Sets `anonymized_at`, keeps `id` for sale FKs.
 
 ## Notes
 

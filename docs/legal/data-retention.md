@@ -48,7 +48,7 @@ _Implementação de API “direitos do titular” ainda **não** existe no MVP; 
 
 ## Roadmap técnico (não bloqueia o texto legal)
 
-- [ ] Job agendado de anonimização/purge conforme tabela
+- [x] Job agendado de anonimização conforme tabela (`customers:anonymize-expired`, `CUSTOMER_PII_RETENTION_DAYS`, coluna `anonymized_at`)
 - [ ] Endpoint/admin “exportar / anonimizar cliente” com auditoria
 - [ ] Política publicada na UI (link) e aceite operacional se necessário
 
