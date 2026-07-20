@@ -142,9 +142,9 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 
 - [x] LGPD technical controls: customer PII encrypted at rest + blind indexes (ADR-0008); privacy policy / retention still product/legal  
 - [ ] Penetration test or OWASP ASVS L2 review  
-- [ ] `composer audit` / `npm audit` clean or accepted risks documented  
+- [x] `composer audit` / `npm audit` clean or accepted risks documented (see §15)  
 - [ ] MFA on Manager accounts  
-- [ ] Rate limits on auth + refund endpoints  
+- [x] Rate limits on auth + refund endpoints (`throttle:login`, `throttle:refunds`)  
 - [ ] Backup restore tested  
 - [ ] LGPD privacy policy + data retention (legal text)  
 
@@ -178,5 +178,24 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 | Generic errors to client | ✅ | `ApiErrorResponse` + `ErrorCode` catalog |
 | Session serialization | ✅ | `session.serialization = json` (not PHP serialize) |
 | Supply chain | ✅ | `composer.lock` committed; run `composer audit` after dep changes |
+| Refund rate limiting | ✅ | `throttle:refunds` (10/min per user+IP) on `POST /api/admin/sales/{id}/refunds` |
 
-**Auto-assessment:** `[security: SQLi ok via Eloquent bindings, authz via StorePolicy + middleware re-check, FormRequest validation, throttle login, session regenerate, CSRF via Sanctum stateful API, no hardcoded secrets]`
+**Auto-assessment:** `[security: SQLi ok via Eloquent bindings, authz via StorePolicy + middleware re-check, FormRequest validation, throttle login+refunds, session regenerate, CSRF via Sanctum stateful API, no hardcoded secrets]`
+
+---
+
+## 15. Supply-chain audit log (2026-07-20)
+
+| Tool | Scope | Result |
+|------|-------|--------|
+| `composer audit` | `projects/pdv/backend` | No security vulnerability advisories found |
+| `npm audit` | `projects/pdv/frontend` | 0 vulnerabilities (info/low/moderate/high/critical) |
+
+Accepted residual risks: none from these scans. Re-run after dependency changes.
+
+Automated coverage added under `tests/Feature/Security/`:
+- login throttle → `AUTH_TOO_MANY_ATTEMPTS`
+- CSRF except allowlist for payment webhooks + enforced forgery on logout (PHPUnit normally bypasses CSRF)
+- admin sales IDOR / operator denied
+- refund endpoint 429 after limit
+- webhook HMAC missing/invalid (existing + extended)

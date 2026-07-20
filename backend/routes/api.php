@@ -122,7 +122,8 @@ Route::middleware('auth')->group(function (): void {
                 Route::get('/', ListAdminSalesController::class);
                 Route::get('{saleId}', ShowAdminSaleController::class);
                 Route::get('{saleId}/refunds', ListRefundsForSaleController::class);
-                Route::post('{saleId}/refunds', CreateRefundController::class);
+                Route::post('{saleId}/refunds', CreateRefundController::class)
+                    ->middleware('throttle:refunds');
             });
 
             Route::post('payments/reconcile', ReconcileAdminPaymentsController::class);

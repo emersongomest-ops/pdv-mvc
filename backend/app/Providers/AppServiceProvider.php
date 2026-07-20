@@ -119,5 +119,11 @@ class AppServiceProvider extends ServiceProvider
 
             return Limit::perMinute(5)->by(strtolower($email).'|'.$request->ip());
         });
+
+        RateLimiter::for('refunds', function (Request $request): Limit {
+            $userId = $request->user()?->getAuthIdentifier() ?? 'guest';
+
+            return Limit::perMinute(10)->by($userId.'|'.$request->ip());
+        });
     }
 }

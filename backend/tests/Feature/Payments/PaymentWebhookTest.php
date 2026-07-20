@@ -96,6 +96,30 @@ final class PaymentWebhookTest extends TestCase
     }
 
     #[Test]
+    public function missing_signature_header_is_rejected(): void
+    {
+        $this->pendingPaymentLine('stub-ref-nosig', 1000);
+
+        $payload = [
+            'event_id' => 'evt_no_sig',
+            'type' => 'payment.confirmed',
+            'transaction_reference' => 'stub-ref-nosig',
+        ];
+        $raw = json_encode($payload, JSON_THROW_ON_ERROR);
+
+        $this->call(
+            'POST',
+            '/api/webhooks/payments/stub',
+            server: [
+                'CONTENT_TYPE' => 'application/json',
+                'HTTP_ACCEPT' => 'application/json',
+            ],
+            content: $raw,
+        )->assertUnauthorized()
+            ->assertJsonPath('error.code', 'PAY_WEBHOOK_INVALID_SIGNATURE');
+    }
+
+    #[Test]
     public function unknown_transaction_reference_returns_not_found(): void
     {
         $payload = [
