@@ -52,4 +52,14 @@ class UserFactory extends Factory
             'is_active' => false,
         ]);
     }
+
+    /** Known demo secret for Authenticator apps / tests (RFC 6238 test vector style). */
+    public function withMfa(string $secret = 'JBSWY3DPEHPK3PXP'): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'mfa_secret' => $secret,
+            'mfa_confirmed_at' => now(),
+            'mfa_last_otp_timestamp' => null,
+        ]);
+    }
 }

@@ -27,11 +27,12 @@ export function setSessionInvalidHandler(handler: SessionInvalidHandler | null) 
 }
 
 function shouldInvalidateSession(path: string, status: number, code: string): boolean {
-  // Boot/login/logout own their flows; avoid full-page bounce during /me probe.
+  // Boot/login/logout/MFA own their flows; avoid full-page bounce during /me probe.
   if (
     path === '/api/auth/login' ||
     path === '/api/auth/logout' ||
-    path === '/api/auth/me'
+    path === '/api/auth/me' ||
+    path.startsWith('/api/auth/mfa/')
   ) {
     return false
   }
@@ -111,9 +112,56 @@ export async function apiRequest<T>(
 
 export async function loginRequest(email: string, password: string) {
   await primeCsrf()
-  return apiRequest<{ data: { user: import('./types').User } }>('/api/auth/login', {
+  return apiRequest<{
+    data: {
+      mfa_required: boolean
+      mfa_setup_required: boolean
+      user: import('./types').User
+    }
+  }>('/api/auth/login', {
     method: 'POST',
     body: JSON.stringify({ email, password }),
+  })
+}
+
+export async function beginMfaSetupRequest() {
+  await primeCsrf()
+  return apiRequest<{
+    data: {
+      secret: string
+      otpauth_url: string
+      qr_data_uri: string
+    }
+  }>('/api/auth/mfa/setup', {
+    method: 'POST',
+  })
+}
+
+export async function confirmMfaSetupRequest(code: string) {
+  await primeCsrf()
+  return apiRequest<{
+    data: {
+      mfa_required: boolean
+      mfa_setup_required: boolean
+      user: import('./types').User
+    }
+  }>('/api/auth/mfa/confirm', {
+    method: 'POST',
+    body: JSON.stringify({ code }),
+  })
+}
+
+export async function verifyMfaChallengeRequest(code: string) {
+  await primeCsrf()
+  return apiRequest<{
+    data: {
+      mfa_required: boolean
+      mfa_setup_required: boolean
+      user: import('./types').User
+    }
+  }>('/api/auth/mfa/verify', {
+    method: 'POST',
+    body: JSON.stringify({ code }),
   })
 }
 

@@ -23,7 +23,15 @@ type SessionState = {
   store: Store | null
   shiftOpen: boolean
   authStatus: AuthStatus
-  login: (email: string, password: string) => Promise<void>
+  login: (
+    email: string,
+    password: string,
+  ) => Promise<
+    | { status: 'authenticated'; user: User }
+    | { status: 'mfa_required'; user: User }
+    | { status: 'mfa_setup_required'; user: User }
+  >
+  establishSession: (user: User) => void
   setStore: (store: Store) => void
   clearStore: () => void
   setShiftOpen: (open: boolean) => void
@@ -143,6 +151,25 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     async (email: string, password: string) => {
       const response = await loginRequest(email, password)
       const nextUser = response.data.user
+
+      if (response.data.mfa_required) {
+        return response.data.mfa_setup_required
+          ? ({ status: 'mfa_setup_required' as const, user: nextUser })
+          : ({ status: 'mfa_required' as const, user: nextUser })
+      }
+
+      setUser(nextUser)
+      setStoreState(null)
+      setShiftOpenState(false)
+      persist({ user: nextUser, store: null, shiftOpen: false })
+      setAuthStatus('authenticated')
+      return { status: 'authenticated' as const, user: nextUser }
+    },
+    [persist],
+  )
+
+  const establishSession = useCallback(
+    (nextUser: User) => {
       setUser(nextUser)
       setStoreState(null)
       setShiftOpenState(false)
@@ -202,6 +229,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       shiftOpen,
       authStatus,
       login,
+      establishSession,
       setStore,
       clearStore,
       setShiftOpen,
@@ -214,6 +242,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       shiftOpen,
       authStatus,
       login,
+      establishSession,
       setStore,
       clearStore,
       setShiftOpen,

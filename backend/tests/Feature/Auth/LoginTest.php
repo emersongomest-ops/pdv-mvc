@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Auth;
 
+use App\Domain\IdentityAccess\Services\TotpAuthenticatorInterface;
 use App\Models\Store;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -15,6 +16,8 @@ final class LoginTest extends TestCase
     use InteractsWithStatefulApi;
     use RefreshDatabase;
 
+    private const MFA_SECRET = 'JBSWY3DPEHPK3PXP';
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -23,7 +26,7 @@ final class LoginTest extends TestCase
 
     public function test_manager_can_login_and_access_admin_route(): void
     {
-        $manager = User::factory()->manager()->create([
+        User::factory()->manager()->withMfa(self::MFA_SECRET)->create([
             'email' => 'manager@pos.test',
             'password' => 'secret-password',
         ]);
@@ -35,8 +38,15 @@ final class LoginTest extends TestCase
 
         $login
             ->assertOk()
+            ->assertJsonPath('data.mfa_required', true)
             ->assertJsonPath('data.user.role', 'manager')
             ->assertJsonPath('data.user.email', 'manager@pos.test');
+
+        $code = $this->app->make(TotpAuthenticatorInterface::class)->currentOtp(self::MFA_SECRET);
+
+        $this->postJson('/api/auth/mfa/verify', ['code' => $code])
+            ->assertOk()
+            ->assertJsonPath('data.mfa_required', false);
 
         $dashboard = $this->getJson('/api/admin/dashboard');
 

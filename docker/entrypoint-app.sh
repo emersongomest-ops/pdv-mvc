@@ -11,6 +11,11 @@ echo "[entrypoint] mysql is up"
 
 cd /var/www/html
 
+# Docker uses env_file / process env; an empty .env avoids Dotenv file_get_contents warnings in tests.
+if [ ! -f .env ]; then
+  touch .env
+fi
+
 mkdir -p storage/framework/{cache,sessions,views} storage/logs bootstrap/cache
 chown -R www-data:www-data storage bootstrap/cache 2>/dev/null || true
 chmod -R ug+rwx storage bootstrap/cache 2>/dev/null || true

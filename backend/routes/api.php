@@ -26,6 +26,8 @@ use App\Http\Customers\Controllers\ListCustomersController;
 use App\Http\Customers\Controllers\ShowCustomerController;
 use App\Http\Customers\Controllers\UpdateCustomerController;
 use App\Http\IdentityAccess\Controllers\AdminDashboardController;
+use App\Http\IdentityAccess\Controllers\BeginManagerMfaSetupController;
+use App\Http\IdentityAccess\Controllers\ConfirmManagerMfaSetupController;
 use App\Http\IdentityAccess\Controllers\CreateUserController;
 use App\Http\IdentityAccess\Controllers\ListAdminNotificationsController;
 use App\Http\IdentityAccess\Controllers\ListUsersController;
@@ -35,6 +37,7 @@ use App\Http\IdentityAccess\Controllers\OperationalPosController;
 use App\Http\IdentityAccess\Controllers\ShowCurrentUserController;
 use App\Http\IdentityAccess\Controllers\ShowUserController;
 use App\Http\IdentityAccess\Controllers\UpdateUserController;
+use App\Http\IdentityAccess\Controllers\VerifyManagerMfaChallengeController;
 use App\Http\Inventory\Controllers\AdjustStoreInventoryController;
 use App\Http\Inventory\Controllers\ListStoreInventoryController;
 use App\Http\Payments\Controllers\ConsumePaymentWebhookController;
@@ -65,6 +68,10 @@ use App\Http\Store\Controllers\SelectStoreContextController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('auth/login', LoginController::class)->middleware('throttle:login');
+
+Route::post('auth/mfa/setup', BeginManagerMfaSetupController::class)->middleware('throttle:mfa');
+Route::post('auth/mfa/confirm', ConfirmManagerMfaSetupController::class)->middleware('throttle:mfa');
+Route::post('auth/mfa/verify', VerifyManagerMfaChallengeController::class)->middleware('throttle:mfa');
 
 Route::post('webhooks/payments/{provider}', ConsumePaymentWebhookController::class)
     ->middleware('throttle:60,1');

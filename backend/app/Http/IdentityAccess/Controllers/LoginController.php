@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Http\IdentityAccess\Controllers;
 
 use App\Application\IdentityAccess\Actions\LoginUserAction;
-use App\Domain\IdentityAccess\Exceptions\AuthenticationDomainException;
 use App\Http\Controllers\Controller;
 use App\Http\IdentityAccess\Requests\LoginRequest;
 use Illuminate\Http\JsonResponse;
@@ -16,16 +15,16 @@ final class LoginController extends Controller
     {
         $validated = $request->validated();
 
-        try {
-            $result = $login->execute($validated['email'], $validated['password']);
-        } catch (AuthenticationDomainException $exception) {
-            throw $exception;
-        }
-
-        $request->session()->regenerate();
+        $result = $login->execute(
+            $validated['email'],
+            $validated['password'],
+            $request->session(),
+        );
 
         return response()->json([
             'data' => [
+                'mfa_required' => $result['mfa_required'],
+                'mfa_setup_required' => $result['mfa_setup_required'],
                 'user' => [
                     'id' => $result['user']->id,
                     'name' => $result['user']->name,

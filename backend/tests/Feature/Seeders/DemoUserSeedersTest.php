@@ -38,6 +38,7 @@ final class DemoUserSeedersTest extends TestCase
         $this->assertSame(UserRole::Manager, $manager->role);
         $this->assertTrue($manager->is_active);
         $this->assertTrue($manager->stores->contains($store));
+        $this->assertTrue($manager->hasMfaEnabled());
     }
 
     #[Test]

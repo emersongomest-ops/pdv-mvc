@@ -12,6 +12,9 @@ use RuntimeException;
 
 class ManagerUserSeeder extends Seeder
 {
+    /** Demo TOTP secret — document in README; not for production. */
+    public const DEMO_MFA_SECRET = 'JBSWY3DPEHPK3PXP';
+
     public function run(): void
     {
         $store = Store::query()->where('code', 'MAIN')->first();
@@ -29,6 +32,14 @@ class ManagerUserSeeder extends Seeder
                 'is_active' => true,
             ],
         );
+
+        if (! $user->hasMfaEnabled()) {
+            $user->forceFill([
+                'mfa_secret' => self::DEMO_MFA_SECRET,
+                'mfa_confirmed_at' => now(),
+                'mfa_last_otp_timestamp' => null,
+            ])->save();
+        }
 
         $user->stores()->syncWithoutDetaching([$store->id]);
     }

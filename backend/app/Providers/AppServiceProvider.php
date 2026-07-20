@@ -9,6 +9,7 @@ use App\Domain\CashShift\Repositories\CashShiftRepositoryInterface;
 use App\Domain\Catalog\Repositories\CatalogRepositoryInterface;
 use App\Domain\Customers\Repositories\CustomersRepositoryInterface;
 use App\Domain\IdentityAccess\Repositories\UsersRepositoryInterface;
+use App\Domain\IdentityAccess\Services\TotpAuthenticatorInterface;
 use App\Domain\Inventory\Repositories\InventoryRepositoryInterface;
 use App\Domain\Payments\Card\CardInstrumentValidatorInterface;
 use App\Domain\Payments\Gateways\PaymentGatewayInterface;
@@ -30,6 +31,7 @@ use App\Infrastructure\CashShift\Persistence\Repositories\CashShiftRepository;
 use App\Infrastructure\Catalog\Persistence\Repositories\CatalogRepository;
 use App\Infrastructure\Customers\Persistence\Repositories\CustomersRepository;
 use App\Infrastructure\IdentityAccess\Persistence\Repositories\UsersRepository;
+use App\Infrastructure\IdentityAccess\Totp\Google2faTotpAuthenticator;
 use App\Infrastructure\Inventory\Persistence\Repositories\InventoryRepository;
 use App\Infrastructure\Payments\Card\NotImplementedCardInstrumentValidator;
 use App\Infrastructure\Payments\Gateways\SoapPaymentGateway;
@@ -70,6 +72,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(CatalogRepositoryInterface::class, CatalogRepository::class);
         $this->app->bind(CustomersRepositoryInterface::class, CustomersRepository::class);
         $this->app->bind(UsersRepositoryInterface::class, UsersRepository::class);
+        $this->app->bind(TotpAuthenticatorInterface::class, Google2faTotpAuthenticator::class);
         $this->app->bind(PromotionsRepositoryInterface::class, PromotionsRepository::class);
         $this->app->bind(RefundsReturnsRepositoryInterface::class, RefundsReturnsRepository::class);
         $this->app->bind(InventoryRepositoryInterface::class, InventoryRepository::class);
@@ -124,6 +127,12 @@ class AppServiceProvider extends ServiceProvider
             $userId = $request->user()?->getAuthIdentifier() ?? 'guest';
 
             return Limit::perMinute(10)->by($userId.'|'.$request->ip());
+        });
+
+        RateLimiter::for('mfa', function (Request $request): Limit {
+            $pending = $request->session()->get('mfa.pending_user_id', 'guest');
+
+            return Limit::perMinute(10)->by($pending.'|'.$request->ip());
         });
     }
 }

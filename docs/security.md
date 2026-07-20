@@ -1,8 +1,7 @@
 # Security — POS (PDV)
 
-> **Last updated:** 2026-07-15  
+> **Last updated:** 2026-07-20  
 > **Scope:** Web POS (Laravel API + React), multi-store, payment stubs, customer PII (CPF, email, address, birth_date)
-
 Defense-in-depth mapped to threat categories. Not exhaustive — review per release.
 
 ---
@@ -79,7 +78,7 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 | **Weak passwords** | Policy: min length 12, complexity; bcrypt/argon2 via Laravel |
 | **Pass-the-hash** | HttpOnly cookies; short JWT TTL; refresh rotation |
 
-**Auth stack (planned):** Laravel Sanctum or Passport; MFA for Manager (TOTP) — ADR pending.
+**Auth stack:** Laravel Sanctum (cookie session SPA); **MFA for Manager (TOTP)** — ADR-0010.
 
 ---
 
@@ -122,8 +121,8 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 | **PII (CPF, email, phone, address, birth_date)** | Encrypt at rest (AES-256-CBC, dedicated key); blind indexes for CPF/email equality; operational CPF masked; see ADR-0008 |
 | **Payment stub / SOAP acquirer** | No PAN stored; outbound acquirer protocol is SOAP; app API + payment webhooks remain REST |
 | **Audit** | Append-only `audit_logs` (RN-070): Eloquent + DB triggers block UPDATE/DELETE; audit failure aborts mutation; managers see assigned stores + global rows; unassigned `store_id` filter → 403 `AUTH_STORE_ACCESS_DENIED` |
-| **API** | Versioned `/api/v1`; input validation via Form Requests |
-| **Headers** | `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, CSP |
+| **API** | Unversioned `/api/*` today (ASVS gap: `/api/v1` when breaking); Form Requests at boundary |
+| **Headers** | Target CSP / frame / nosniff / referrer — **not yet on nginx** (see ASVS L2 review) |
 
 ---
 
@@ -141,12 +140,13 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 ## 12. Checklist before launch
 
 - [x] LGPD technical controls: customer PII encrypted at rest + blind indexes (ADR-0008); privacy policy / retention still product/legal  
-- [ ] Penetration test or OWASP ASVS L2 review  
+- [x] OWASP ASVS L2 **desk review** documented ([`docs/security/asvs-l2-gap-review.md`](./security/asvs-l2-gap-review.md)); external pen-test still recommended before prod  
 - [x] `composer audit` / `npm audit` clean or accepted risks documented (see §15)  
-- [ ] MFA on Manager accounts  
+- [x] MFA on Manager accounts (TOTP; ADR-0010)  
 - [x] Rate limits on auth + refund endpoints (`throttle:login`, `throttle:refunds`)  
-- [ ] Backup restore tested  
+- [x] Backup restore tested (see [`docs/ops/backup-restore.md`](./ops/backup-restore.md); smoke: `scripts/restore-mysql-verify.sh`)  
 - [ ] LGPD privacy policy + data retention (legal text)  
+- [ ] External penetration test (post ASVS gaps 1–3 or in parallel)  
 
 ---
 
@@ -156,6 +156,7 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 - OWASP ASVS  
 - Laravel security docs  
 - RN-070, RN-071 (`business-rules.md`)
+- ASVS L2 gap review: `docs/security/asvs-l2-gap-review.md`
 - Project baseline: `.cursor/rules/06-seguranca-baseline.mdc` (always apply; violation = -3 scoring)
 
 ---
@@ -199,3 +200,11 @@ Automated coverage added under `tests/Feature/Security/`:
 - admin sales IDOR / operator denied
 - refund endpoint 429 after limit
 - webhook HMAC missing/invalid (existing + extended)
+
+---
+
+## 16. ASVS L2 desk review (2026-07-20)
+
+Full matrix: [`docs/security/asvs-l2-gap-review.md`](./security/asvs-l2-gap-review.md).
+
+**Top gaps to close next:** nginx security headers + CSP; password `min:12`; prod `APP_DEBUG=false` / `SESSION_SECURE_COOKIE=true` / Redis password; MFA recovery; external pen-test.

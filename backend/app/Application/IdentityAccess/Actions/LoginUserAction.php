@@ -4,19 +4,29 @@ declare(strict_types=1);
 
 namespace App\Application\IdentityAccess\Actions;
 
+use App\Application\IdentityAccess\Support\MfaPendingSession;
 use App\Domain\IdentityAccess\Exceptions\AuthenticationDomainException;
 use App\Domain\Shared\ErrorCode;
 use App\Models\User;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 
 final class LoginUserAction
 {
+    public function __construct(
+        private readonly MfaPendingSession $mfaPending,
+    ) {}
+
     /**
-     * @return array{user: User}
+     * @return array{
+     *     user: User,
+     *     mfa_required: bool,
+     *     mfa_setup_required: bool
+     * }
      */
-    public function execute(string $email, string $password): array
+    public function execute(string $email, string $password, Session $session): array
     {
         $throttleKey = Str::lower($email).'|'.request()->ip();
 
@@ -41,6 +51,25 @@ final class LoginUserAction
         /** @var User $user */
         $user = Auth::user();
 
-        return ['user' => $user];
+        if ($user->isManager()) {
+            Auth::logout();
+            $session->regenerate();
+            $this->mfaPending->put($session, $user->id);
+
+            return [
+                'user' => $user,
+                'mfa_required' => true,
+                'mfa_setup_required' => ! $user->hasMfaEnabled(),
+            ];
+        }
+
+        $session->regenerate();
+        $this->mfaPending->forget($session);
+
+        return [
+            'user' => $user,
+            'mfa_required' => false,
+            'mfa_setup_required' => false,
+        ];
     }
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Auth;
 
+use App\Domain\IdentityAccess\Services\TotpAuthenticatorInterface;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use PHPUnit\Framework\Attributes\Test;
@@ -50,7 +51,7 @@ final class SessionGateTest extends TestCase
     #[Test]
     public function logout_invalidates_session(): void
     {
-        User::factory()->manager()->create([
+        User::factory()->manager()->withMfa('JBSWY3DPEHPK3PXP')->create([
             'email' => 'manager@pos.test',
             'password' => 'secret-password',
         ]);
@@ -59,6 +60,11 @@ final class SessionGateTest extends TestCase
             'email' => 'manager@pos.test',
             'password' => 'secret-password',
         ])->assertOk();
+
+        $code = $this->app->make(TotpAuthenticatorInterface::class)
+            ->currentOtp('JBSWY3DPEHPK3PXP');
+
+        $this->postJson('/api/auth/mfa/verify', ['code' => $code])->assertOk();
 
         $this->postJson('/api/auth/logout')
             ->assertOk()

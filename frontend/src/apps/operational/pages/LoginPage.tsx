@@ -18,13 +18,19 @@ export function LoginPage() {
 
   return (
     <LoginForm
+      step={form.step}
       email={form.email}
       password={form.password}
+      mfaCode={form.mfaCode}
+      setupSecret={form.setupSecret}
+      setupQrDataUri={form.setupQrDataUri}
       error={form.error}
       loading={form.loading}
       onEmailChange={form.setEmail}
       onPasswordChange={form.setPassword}
+      onMfaCodeChange={form.setMfaCode}
       onSubmit={form.onSubmit}
+      onBackToCredentials={form.onBackToCredentials}
     />
   )
 }

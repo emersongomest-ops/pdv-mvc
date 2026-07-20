@@ -178,17 +178,29 @@ Never put GitHub/MCP tokens in `.env.docker` (gitignored).
 
 ### 5.2 Demo credentials (after seed)
 
+| Role | Email | Password | MFA |
+|------|-------|----------|-----|
+| Operator | `operator@pos.test` | `password` | — |
+| Manager | `manager@pos.test` | `password` | TOTP secret `JBSWY3DPEHPK3PXP` (Authenticator app; demo only) |
+
 | Kind | Value |
 |------|--------|
-| Operator | `operator@pos.test` / `password` |
-| Manager | `manager@pos.test` / `password` |
 | Products | SKUs `DEMO-BEV-*`, `DEMO-SNK-*`, `DEMO-GRO-*` (stock on store `MAIN`) |
 | Customers | CPF `39053344705` (Maria), `52998224725` (João), `15350946056` (Ana) |
 | Promotions | `WELCOME10` (all customers), `VIP5OFF` (Maria) |
 
 **Happy path:** login → select store → open cash shift → add demo SKUs → optional CPF → complete sale (stub payment).
 
-### 5.3 Local (Laragon / without Docker)
+### 5.3 Backup / restore drill
+
+See [`docs/ops/backup-restore.md`](./docs/ops/backup-restore.md).
+
+```bash
+bash scripts/backup-mysql.sh
+bash scripts/restore-mysql-verify.sh   # safe smoke — does not overwrite live DB
+```
+
+### 5.4 Local (Laragon / without Docker)
 
 ```bash
 cd backend

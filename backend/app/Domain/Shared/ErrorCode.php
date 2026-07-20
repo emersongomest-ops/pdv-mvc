@@ -26,6 +26,11 @@ enum ErrorCode: string
     case AuthUserNotFound = 'AUTH_USER_NOT_FOUND';
     case AuthEmailDuplicate = 'AUTH_EMAIL_DUPLICATE';
     case AuthCannotModifySelf = 'AUTH_CANNOT_MODIFY_SELF';
+    case AuthMfaRequired = 'AUTH_MFA_REQUIRED';
+    case AuthMfaSetupRequired = 'AUTH_MFA_SETUP_REQUIRED';
+    case AuthMfaInvalidCode = 'AUTH_MFA_INVALID_CODE';
+    case AuthMfaNotPending = 'AUTH_MFA_NOT_PENDING';
+    case AuthMfaAlreadyEnabled = 'AUTH_MFA_ALREADY_ENABLED';
 
     case StoreNotFound = 'STORE_NOT_FOUND';
     case StoreContextRequired = 'STORE_CONTEXT_REQUIRED';
@@ -100,6 +105,8 @@ enum ErrorCode: string
             self::AuthTokenInvalid,
             self::AuthTokenExpired,
             self::AuthSessionExpired,
+            self::AuthMfaInvalidCode,
+            self::AuthMfaNotPending,
             self::PayWebhookInvalidSignature => 401,
             self::AuthTooManyAttempts => 429,
             self::AuthAccountLocked => 423,
@@ -154,6 +161,9 @@ enum ErrorCode: string
             self::PromoNotCombinable,
             self::RefAmountExceedsSale,
             self::AuthCannotModifySelf,
+            self::AuthMfaRequired,
+            self::AuthMfaSetupRequired,
+            self::AuthMfaAlreadyEnabled,
             self::RefReturnQtyInvalid => 422,
             self::SaleFiscalReceiptFailed => 500,
             self::PayGatewayUnavailable => 503,
@@ -185,6 +195,11 @@ enum ErrorCode: string
             self::AuthUserNotFound => 'User not found.',
             self::AuthEmailDuplicate => 'Email already registered.',
             self::AuthCannotModifySelf => 'You cannot deactivate or demote your own account.',
+            self::AuthMfaRequired => 'Multi-factor authentication is required.',
+            self::AuthMfaSetupRequired => 'Multi-factor authentication setup is required before continuing.',
+            self::AuthMfaInvalidCode => 'Invalid or expired authentication code.',
+            self::AuthMfaNotPending => 'No multi-factor authentication challenge is pending.',
+            self::AuthMfaAlreadyEnabled => 'Multi-factor authentication is already enabled.',
             self::StoreNotFound => 'Store not found.',
             self::StoreContextRequired => 'Store context must be selected.',
             self::StoreInactive => 'Store is inactive and cannot be selected.',
@@ -269,6 +284,11 @@ enum ErrorCode: string
             self::AuthUserNotFound,
             self::AuthEmailDuplicate,
             self::AuthCannotModifySelf,
+            self::AuthMfaRequired,
+            self::AuthMfaSetupRequired,
+            self::AuthMfaInvalidCode,
+            self::AuthMfaNotPending,
+            self::AuthMfaAlreadyEnabled,
         ];
     }
 
