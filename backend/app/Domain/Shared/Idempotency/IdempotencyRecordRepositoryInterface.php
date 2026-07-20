@@ -24,4 +24,9 @@ interface IdempotencyRecordRepositoryInterface
     public function markCompleted(IdempotencyRecord $record, int $responseCode, array $responseBody): void;
 
     public function delete(IdempotencyRecord $record): void;
+
+    /**
+     * @return int Number of deleted rows
+     */
+    public function deleteCreatedBefore(\DateTimeInterface $cutoff): int;
 }

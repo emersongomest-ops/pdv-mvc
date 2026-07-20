@@ -24,3 +24,4 @@ Open carts, lines, hold/resume, complete sale with payments and fiscal receipt s
 
 - Snake case key: `sales`
 - Safe retry: same key + same payments payload replays stored JSON (`Idempotent-Replayed: true`)
+- Retention: daily `php artisan idempotency:purge` (default 7 days)

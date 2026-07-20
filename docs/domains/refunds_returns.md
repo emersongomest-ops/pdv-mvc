@@ -42,4 +42,4 @@ Header (POST): `Idempotency-Key` (RN-073)
 - Snake case key: `refunds_returns`
 - Errors: `REF_*` + `IDEMPOTENCY_*` in `docs/errors.md`
 - Create path appends `refund.created` or `return.created` in the same transaction (RN-070); see `docs/domains/audit.md`
-- Replay-safe create via `IdempotencyGuard` (same key + payload → stored 201)
+- Replay-safe create via `IdempotencyGuard` (same key + payload → stored 201); old keys purged daily (`idempotency:purge`)

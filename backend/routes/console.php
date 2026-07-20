@@ -9,3 +9,4 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote');
 
 Schedule::command('payments:reconcile')->hourly();
+Schedule::command('idempotency:purge')->daily();

@@ -47,4 +47,11 @@ final class EloquentIdempotencyRecordRepository implements IdempotencyRecordRepo
     {
         $record->delete();
     }
+
+    public function deleteCreatedBefore(\DateTimeInterface $cutoff): int
+    {
+        return IdempotencyRecord::query()
+            ->where('created_at', '<', $cutoff)
+            ->delete();
+    }
 }
