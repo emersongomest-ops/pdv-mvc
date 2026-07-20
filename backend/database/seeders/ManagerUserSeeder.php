@@ -8,6 +8,7 @@ use App\Domain\IdentityAccess\ValueObjects\UserRole;
 use App\Models\Store;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use RuntimeException;
 
 class ManagerUserSeeder extends Seeder
@@ -33,12 +34,14 @@ class ManagerUserSeeder extends Seeder
             ],
         );
 
-        // Always re-apply demo MFA with the current APP_KEY (Docker may rotate keys until pinned).
-        $user->forceFill([
-            'mfa_secret' => self::DEMO_MFA_SECRET,
+        // Bypass Eloquent encrypted casts: legacy ciphertext from a rotated APP_KEY
+        // would throw "MAC is invalid" on attribute access during forceFill/save.
+        DB::table('users')->where('id', $user->id)->update([
+            'mfa_secret' => encrypt(self::DEMO_MFA_SECRET),
             'mfa_confirmed_at' => now(),
             'mfa_last_otp_timestamp' => null,
-        ])->save();
+            'mfa_recovery_codes' => null,
+        ]);
 
         $user->stores()->syncWithoutDetaching([$store->id]);
     }

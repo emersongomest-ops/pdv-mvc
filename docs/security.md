@@ -130,10 +130,11 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 
 | Store | Hardening |
 |-------|-----------|
-| **MySQL** | Dedicated user, least grants; no public port; encrypted backups |
-| **Redis** | Password + bind localhost/VPC; no `FLUSHALL` in prod |
+| **MySQL** | Dedicated user, least grants; **not published** on host by default (optional `127.0.0.1` via `docker-compose.debug.yml`); encrypted backups |
+| **Redis** | Password + internal Docker network only; healthcheck uses `REDISCLI_AUTH` (not `-a` on argv); no `FLUSHALL` in prod |
 | **PostgreSQL** | Same as MySQL if enabled |
 | **Neo4j** | Auth enabled; not exposed publicly |
+| **Base images** | Pinned by digest (`docker/images.lock`; refresh via `scripts/docker-pin-digests.sh`) |
 
 ---
 
@@ -146,8 +147,9 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 - [x] Rate limits on auth + refund endpoints (`throttle:login`, `throttle:refunds`)  
 - [x] Backup restore tested (see [`docs/ops/backup-restore.md`](./ops/backup-restore.md); smoke: `scripts/restore-mysql-verify.sh`)  
 - [x] LGPD privacy policy + data retention **drafts** ([`docs/legal/`](./legal/)) — counsel approval + DPO fields still required before prod  
-- [x] Docker Redis password + cache/queue on Redis (`.env.docker` / compose)  
+- [x] Docker Redis password + cache/queue on Redis (`.env` / `.env.docker` / compose digests)  
 - [x] Password create/update min 12 (`Password::defaults()`)  
+- [x] Docker image digests + Compose hardening (no public DB/Redis ports by default)  
 - [ ] External penetration test (post remaining ASVS residuals or in parallel)  
 - [ ] Legal sign-off on privacy/retention + fill controller/DPO placeholders  
 - [ ] Card issuer SOAP verify (leave 501 until WSDL) — ADR-0009  

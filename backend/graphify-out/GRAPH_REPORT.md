@@ -1,11 +1,11 @@
 # Graph Report - projects\pdv\backend  (2026-07-20)
 
 ## Corpus Check
-- 462 files · ~62,817 words
+- 462 files · ~62,830 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2469 nodes · 4834 edges · 226 communities (188 shown, 38 thin omitted)
+- 2469 nodes · 4834 edges · 225 communities (188 shown, 37 thin omitted)
 - Extraction: 86% EXTRACTED · 14% INFERRED · 0% AMBIGUOUS · INFERRED: 658 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -170,7 +170,6 @@
 - HasFactory
 - EnsureUserHasRole.php
 - CardInstrumentFormatGuardTest
-- LoginTest
 - 2026_07_15_300001_create_sales_table.php
 - SelectStoreContextTest
 - ListCampaignCustomersAction
@@ -208,7 +207,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (226 total, 38 thin omitted)
+## Communities (225 total, 37 thin omitted)
 
 ### Community 0 - "User"
 Cohesion: 0.22
@@ -331,8 +330,8 @@ Cohesion: 0.20
 Nodes (5): ListProductsAction, CatalogRepositoryInterface, ListProductsController, JsonResponse, ListProductsRequest
 
 ### Community 62 - "Category"
-Cohesion: 0.13
-Nodes (4): Google2faTotpAuthenticator, Google2FA, SessionGateTest, TotpAuthenticatorInterface
+Cohesion: 0.09
+Nodes (5): Google2faTotpAuthenticator, Google2FA, LoginTest, SessionGateTest, TotpAuthenticatorInterface
 
 ### Community 63 - "CreateProductAction"
 Cohesion: 0.15
@@ -343,7 +342,7 @@ Cohesion: 0.12
 Nodes (8): ListAdminShiftsRequest, ApplyPromotionToSaleController, JsonResponse, HoldSaleController, JsonResponse, ApplyPromotionToSaleRequest, HoldSaleRequest, FormRequest
 
 ### Community 73 - "UpdateProductAction"
-Cohesion: 0.14
+Cohesion: 0.15
 Nodes (9): ListAdminAuditLogsAction, AuditLogRepositoryInterface, AdminAuditFilters, AuditLogEntry, append(), listForAdmin(), AuditLogRepository, AuditAction (+1 more)
 
 ### Community 74 - "CatalogRepositoryInterface.php"
@@ -667,7 +666,7 @@ Cohesion: 0.27
 Nodes (6): AuditLogRepositoryInterface, PromotionsRepositoryInterface, UpdatePromotionAction, JsonResponse, UpdatePromotionController, UpdatePromotionRequest
 
 ### Community 200 - "OperationalStoreContextTest"
-Cohesion: 0.20
+Cohesion: 0.18
 Nodes (4): ListAdminAuditLogsController, JsonResponse, ListAdminAuditLogsRequest, AuditLogResource
 
 ### Community 201 - "HoldSaleAction"
@@ -721,16 +720,16 @@ Nodes (4): actingAsOperatorAtStore(), actingAsOperatorWithOpenShift(), static, w
 ## Knowledge Gaps
 - **79 isolated node(s):** `$schema`, `name`, `type`, `description`, `laravel` (+74 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **38 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **37 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `User` connect `StoreInventoryFactory` to `ApiErrorResponse.php`, `PromotionErrorCodeTest`, `autoload-dev`, `AuthenticationDomainException`, `UserFactory`, `HasFactory`, `post-create-project-cmd`, `AppServiceProvider.php`, `DatabaseSeeder.php`, `CashShiftRepository.php`, `AssertManagerStoreAccess`, `CatalogRepository.php`, `HoldSaleAction`, `FormRequest`, `PromotionsRepository.php`, `RefundsReturnsRepository.php`, `ListStoreInventoryRequest`, `SaleCompletedNotificationTest`, `UsersRepository`, `CatalogRepositoryInterface.php`, `PaymentsRepositoryInterface.php`, `PromotionsRepositoryInterface.php`, `RefundsReturnsRepositoryInterface.php`, `DispatchSaleSideEffectsTest`, `EnsureStoreContext.php`, `CustomersRepositoryInterface.php`, `AdjustStoreInventoryAction`, `RefundsReturnsRepositoryInterface.php`, `Sale`, `StoreRepository`, `CreateProductAction`, `Category`, `SelectStoreContextTest`, `AuthSecurityBaselineTest`, `ListAdminShiftsAction`, `MoneyTest`, `CreatePromotionAction`, `UpdateProductAction`, `RemoveSaleLineController.php`, `ShowProductAction`, `HasFactory`, `EnsureUserHasRole.php`, `StoreRepository`, `OperationalRouteAccessTest`, `2026_07_15_300001_create_sales_table.php`, `SaleStatus.php`, `CloseCashShiftTest`, `LoginTest`, `SelectStoreContextTest`, `ListAdminSalesAction`, `ActsWithOperationalSession.php`, `CatalogResource`, `CreateCustomerAction`, `OperationalRouteAccessTest`, `ListStoresTest`, `PaymentMethod`, `SaleResource`, `Promotion.php`, `ListStoresTest`?**
+- **Why does `User` connect `StoreInventoryFactory` to `ApiErrorResponse.php`, `PromotionErrorCodeTest`, `autoload-dev`, `AuthenticationDomainException`, `UserFactory`, `HasFactory`, `post-create-project-cmd`, `AppServiceProvider.php`, `DatabaseSeeder.php`, `CashShiftRepository.php`, `AssertManagerStoreAccess`, `CatalogRepository.php`, `HoldSaleAction`, `FormRequest`, `PromotionsRepository.php`, `RefundsReturnsRepository.php`, `ListStoreInventoryRequest`, `SaleCompletedNotificationTest`, `UsersRepository`, `CatalogRepositoryInterface.php`, `PaymentsRepositoryInterface.php`, `PromotionsRepositoryInterface.php`, `RefundsReturnsRepositoryInterface.php`, `DispatchSaleSideEffectsTest`, `EnsureStoreContext.php`, `CustomersRepositoryInterface.php`, `AdjustStoreInventoryAction`, `RefundsReturnsRepositoryInterface.php`, `Sale`, `StoreRepository`, `CreateProductAction`, `Category`, `SelectStoreContextTest`, `AuthSecurityBaselineTest`, `ListAdminShiftsAction`, `MoneyTest`, `CreatePromotionAction`, `UpdateProductAction`, `RemoveSaleLineController.php`, `ShowProductAction`, `HasFactory`, `EnsureUserHasRole.php`, `StoreRepository`, `OperationalRouteAccessTest`, `2026_07_15_300001_create_sales_table.php`, `SaleStatus.php`, `CloseCashShiftTest`, `SelectStoreContextTest`, `ListAdminSalesAction`, `ActsWithOperationalSession.php`, `CatalogResource`, `CreateCustomerAction`, `OperationalRouteAccessTest`, `ListStoresTest`, `PaymentMethod`, `SaleResource`, `Promotion.php`, `ListStoresTest`?**
   _High betweenness centrality (0.201) - this node is a cross-community bridge._
 - **Why does `Controller` connect `RemoveSaleLineAction` to `User`, `DomainScaffolder`, `AttachCustomerToSaleAction`, `CashShiftRepository.php`, `RefundsReturnsRepository.php`, `SaleCompletedNotificationTest`, `CatalogRepositoryInterface.php`, `CustomersRepositoryInterface.php`, `InventoryRepositoryInterface.php`, `PaymentsRepositoryInterface.php`, `PromotionsRepositoryInterface.php`, `SalesRepositoryInterface.php`, `AppServiceProvider.php`, `AdminStoreAccessIdorTest`, `ShowCurrentUserController.php`, `EnsureStoreContext.php`, `StoreDomainException`, `CustomersRepositoryInterface.php`, `CreateSaleAction`, `RefundsReturnsRepositoryInterface.php`, `SelectStoreContextTest`, `SaleErrorCodeTest`, `MoneyTest`, `CreatePromotionAction`, `OperationalStoreContextTest`, `CatalogRepositoryInterface.php`, `SaleResource`, `Model`, `ShowCategoryAction`, `ShowProductAction`, `AdminRouteAccessTest`, `OperationalRouteAccessTest`, `UpdateCustomerAction`, `SaleStatus.php`, `ListCategoriesAction`, `ListAdminNotificationsController.php`, `DeleteProductAction`, `ShowCategoryAction`, `CurrentCashShiftController.php`, `ShowProductAction`, `CatalogResource`, `DeleteCategoryAction`, `UpdateSaleLineAction`, `ListCustomersAction`, `CustomerResource`, `FindCustomerByCpfAction`, `ShowCustomerAction`, `CustomerErrorCodeTest`, `ResumeSaleController.php`, `ListPromotionsAction`, `SaleResource`, `ApplyPromotionToSaleAction`?**
   _High betweenness centrality (0.146) - this node is a cross-community bridge._
-- **Why does `TestCase` connect `OperationalRouteAccessTest` to `PromotionDiscountCalculator`, `PromotionErrorCodeTest`, `StoreContext`, `autoload-dev`, `AuthenticationDomainException`, `HasFactory`, `AuthErrorCodeTest`, `StoreErrorCodeTest`, `DatabaseSeeder.php`, `CashShiftRepository.php`, `RefundErrorCodeTest`, `FormRequest`, `BusOrchestratorTest`, `CashShiftRepositoryInterface.php`, `InventoryErrorCodeTest`, `PromotionErrorCodeTest`, `CompleteSaleTest`, `AdjustStoreInventoryAction`, `StoreInventoryFactory`, `Sale`, `Category`, `CreateProductAction`, `AuthSecurityBaselineTest`, `AdminAuditLogTest`, `CatalogErrorCodeTest`, `InventoryErrorCodeTest`, `ListAdminShiftsAction`, `StoreErrorCodeTest`, `RemoveSaleLineController.php`, `StoreRepository`, `EnsureUserHasRole.php`, `CardInstrumentFormatGuardTest`, `LoginTest`, `2026_07_15_300001_create_sales_table.php`, `SelectStoreContextTest`, `ShowSaleAction`, `SalePaymentValidator`?**
+- **Why does `TestCase` connect `OperationalRouteAccessTest` to `PromotionDiscountCalculator`, `PromotionErrorCodeTest`, `StoreContext`, `autoload-dev`, `AuthenticationDomainException`, `HasFactory`, `AuthErrorCodeTest`, `StoreErrorCodeTest`, `DatabaseSeeder.php`, `CashShiftRepository.php`, `RefundErrorCodeTest`, `FormRequest`, `BusOrchestratorTest`, `CashShiftRepositoryInterface.php`, `InventoryErrorCodeTest`, `PromotionErrorCodeTest`, `CompleteSaleTest`, `AdjustStoreInventoryAction`, `StoreInventoryFactory`, `Sale`, `Category`, `CreateProductAction`, `AuthSecurityBaselineTest`, `AdminAuditLogTest`, `CatalogErrorCodeTest`, `InventoryErrorCodeTest`, `ListAdminShiftsAction`, `StoreErrorCodeTest`, `RemoveSaleLineController.php`, `StoreRepository`, `EnsureUserHasRole.php`, `CardInstrumentFormatGuardTest`, `2026_07_15_300001_create_sales_table.php`, `SelectStoreContextTest`, `ShowSaleAction`, `SalePaymentValidator`?**
   _High betweenness centrality (0.101) - this node is a cross-community bridge._
 - **Are the 204 inferred relationships involving `User` (e.g. with `.execute()` and `.handle()`) actually correct?**
   _`User` has 204 INFERRED edges - model-reasoned connections that need verification._

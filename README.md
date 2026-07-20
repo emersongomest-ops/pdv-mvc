@@ -154,7 +154,8 @@ Requires [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or E
 
 ```bash
 cd projects/pdv
-cp .env.docker.example .env.docker
+cp .env.example .env                 # Compose interpolation (MySQL/Redis passwords)
+cp .env.docker.example .env.docker   # Laravel app env_file
 docker compose up -d --build
 ```
 
@@ -163,10 +164,23 @@ Open **http://localhost:8080** — SPA and `/api` on the **same origin** (Sanctu
 | Service | Host port | Role |
 |---------|-----------|------|
 | nginx | `8080` | SPA + API reverse proxy |
-| mysql | `3307` | Optional host access |
-| redis | `6379` | Optional host access |
+| mysql / redis | *(none by default)* | Internal Docker network only |
 
-On boot, `app` waits for MySQL, runs migrations, then `db:seed`.
+Host access for DB tools (loopback only):
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.debug.yml up -d
+# MySQL → 127.0.0.1:3307  ·  Redis → 127.0.0.1:6379
+```
+
+On boot, `app` waits for MySQL, runs migrations when `MIGRATE_ON_BOOT=true`, and seeds when `SEED_ON_BOOT=true` (defaults in `.env` / `.env.docker`).
+
+Base images are **pinned by digest** (`docker/images.lock`). Refresh after security advisories:
+
+```bash
+bash scripts/docker-pin-digests.sh
+# then update Dockerfiles + compose image lines to match the lockfile
+```
 
 ```bash
 docker compose logs -f app
@@ -174,7 +188,7 @@ docker compose down          # stop
 docker compose down -v       # stop + wipe DB volumes
 ```
 
-Never put GitHub/MCP tokens in `.env.docker` (gitignored).
+Never put GitHub/MCP tokens in `.env` / `.env.docker` (gitignored). Demo passwords in `.env.example` are **local-only**.
 
 ### 5.2 Demo credentials (after seed)
 

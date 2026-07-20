@@ -182,9 +182,10 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | ID (theme) | Status | Evidence / gap |
 |------------|--------|----------------|
 | Security headers | **Pass** | `docker/nginx.conf`: CSP, frame, nosniff, referrer, permissions-policy (local HTTP; HSTS when TLS terminates). |
-| Redis hardening | **Pass** | Compose `--requirepass` + `REDIS_PASSWORD`; app `CACHE_STORE`/`QUEUE_CONNECTION`/`PAYMENTS_RECONCILE_DRIVER=redis`. |
-| MySQL least privilege | **Partial** | App user `pdv` OK; root used only for backup scripts. |
-| Secrets not in VCS | **Pass** | `.env` / `.env.docker` gitignored. |
+| Redis hardening | **Pass** | Compose `--requirepass` + `REDIS_PASSWORD`; healthcheck via `REDISCLI_AUTH`; not published on host by default. |
+| MySQL least privilege | **Partial** | App user `pdv` OK; root used only for backup scripts; host bind optional via debug compose. |
+| Secrets not in VCS | **Pass** | `.env` / `.env.docker` gitignored; Compose uses `${VAR:?…}` (no password literals in YAML). |
+| Image integrity | **Pass** | Base images pinned `tag@sha256` (`docker/images.lock`). |
 
 ---
 

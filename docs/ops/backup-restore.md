@@ -9,7 +9,7 @@ Operational runbook for the Docker Compose stack (`projects/pdv`). Satisfies the
 | MySQL (`pdv`) | **Yes** | Source of truth for sales, stock, users, encrypted customer PII, audit logs |
 | Redis | No (MVP) | Cache / queue / payment outbox — rebuild empty; `payments:reconcile` recovers pending lines |
 | `storage/` volume | Optional | Logs, local files; not required to reopen POS after DB restore |
-| Secrets (`.env.docker`) | **Separate** | `APP_KEY`, `CUSTOMER_PII_*` — without them ciphertext is unusable (ADR-0008) |
+| Secrets (`.env` + `.env.docker`) | **Separate** | Compose interpolation (`.env`) + Laravel `env_file`; `APP_KEY`, `CUSTOMER_PII_*` — without them ciphertext is unusable (ADR-0008) |
 
 **Do not** store DB dumps and encryption keys in the same place.
 

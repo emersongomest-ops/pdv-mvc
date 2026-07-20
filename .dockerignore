@@ -11,11 +11,17 @@ backend/storage/framework/cache/*
 backend/storage/framework/sessions/*
 backend/storage/framework/views/*
 backend/bootstrap/cache/*.php
+backend/tests
+backend/phpunit.xml
 frontend/node_modules
 frontend/dist
 frontend/.env
 frontend/.env.*
+.env
 .env.docker
 .git
 **/graphify-out
 **/.phpunit.result.cache
+docs
+*.md
+!README.md

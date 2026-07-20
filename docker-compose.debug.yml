@@ -1,0 +1,9 @@
+# Optional host access for DB/Redis tools (loopback only).
+# Usage: docker compose -f docker-compose.yml -f docker-compose.debug.yml up -d
+services:
+  mysql:
+    ports:
+      - "127.0.0.1:3307:3306"
+  redis:
+    ports:
+      - "127.0.0.1:6379:6379"
