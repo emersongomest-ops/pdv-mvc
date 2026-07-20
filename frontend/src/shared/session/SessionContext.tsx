@@ -26,6 +26,7 @@ type SessionState = {
   login: (
     email: string,
     password: string,
+    turnstileToken?: string | null,
   ) => Promise<
     | { status: 'authenticated'; user: User }
     | { status: 'mfa_required'; user: User }
@@ -148,8 +149,8 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   }, [clearSessionState, persist])
 
   const login = useCallback(
-    async (email: string, password: string) => {
-      const response = await loginRequest(email, password)
+    async (email: string, password: string, turnstileToken?: string | null) => {
+      const response = await loginRequest(email, password, turnstileToken)
       const nextUser = response.data.user
 
       if (response.data.mfa_required) {

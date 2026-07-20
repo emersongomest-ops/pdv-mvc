@@ -4,10 +4,13 @@ import {
   confirmMfaSetupRequest,
   primeCsrf,
   verifyMfaChallengeRequest,
+  ApiClientError,
 } from '../../../shared/api/client'
 import type { User } from '../../../shared/api/types'
 import { formatApiError, useSession } from '../../../shared/session/SessionContext'
 import type { LoginStep } from '../ui/LoginForm'
+
+const FALLBACK_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined
 
 export function useLoginForm() {
   const { login, establishSession } = useSession()
@@ -21,10 +24,33 @@ export function useLoginForm() {
   const [pendingUser, setPendingUser] = useState<User | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+  const [captchaRequired, setCaptchaRequired] = useState(false)
+  const [turnstileSiteKey, setTurnstileSiteKey] = useState<string | null>(
+    FALLBACK_SITE_KEY && FALLBACK_SITE_KEY.length > 0 ? FALLBACK_SITE_KEY : null,
+  )
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null)
 
   useEffect(() => {
     void primeCsrf().catch(() => undefined)
   }, [])
+
+  function applyCaptchaFromError(err: unknown) {
+    if (!(err instanceof ApiClientError)) return
+    const ctx = err.error.context
+    if (ctx?.captcha_required === true) {
+      setCaptchaRequired(true)
+      if (ctx.turnstile_site_key) {
+        setTurnstileSiteKey(ctx.turnstile_site_key)
+      }
+    }
+    if (
+      err.error.code === 'AUTH_CAPTCHA_REQUIRED' ||
+      err.error.code === 'AUTH_CAPTCHA_INVALID'
+    ) {
+      setCaptchaRequired(true)
+      setTurnstileToken(null)
+    }
+  }
 
   function resetMfaUi() {
     setStep('credentials')
@@ -41,7 +67,9 @@ export function useLoginForm() {
     setLoading(true)
     try {
       if (step === 'credentials') {
-        const outcome = await login(email, password)
+        const outcome = await login(email, password, turnstileToken)
+        setCaptchaRequired(false)
+        setTurnstileToken(null)
         if (outcome.status === 'authenticated') {
           return
         }
@@ -75,6 +103,7 @@ export function useLoginForm() {
       const response = await verifyMfaChallengeRequest(mfaCode)
       establishSession(response.data.user)
     } catch (err) {
+      applyCaptchaFromError(err)
       setError(formatApiError(err))
     } finally {
       setLoading(false)
@@ -94,6 +123,9 @@ export function useLoginForm() {
     recoveryCodes,
     error,
     loading,
+    captchaRequired,
+    turnstileSiteKey,
+    setTurnstileToken,
     onSubmit,
     onBackToCredentials: resetMfaUi,
   }

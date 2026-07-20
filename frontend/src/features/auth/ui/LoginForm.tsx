@@ -2,6 +2,7 @@ import type { FormEvent } from 'react'
 import { ErrorBanner } from '../../../shared/ui/ErrorBanner'
 import { Field, PanelForm } from '../../../shared/ui/FormPrimitives'
 import styles from './LoginForm.module.css'
+import { TurnstileWidget } from './TurnstileWidget'
 
 export type LoginStep = 'credentials' | 'mfa_setup' | 'mfa_verify' | 'mfa_recovery'
 
@@ -15,9 +16,12 @@ type LoginFormProps = {
   recoveryCodes: string[] | null
   error: string | null
   loading: boolean
+  captchaRequired: boolean
+  turnstileSiteKey: string | null
   onEmailChange: (value: string) => void
   onPasswordChange: (value: string) => void
   onMfaCodeChange: (value: string) => void
+  onTurnstileToken: (token: string | null) => void
   onSubmit: (event: FormEvent) => void
   onBackToCredentials: () => void
 }
@@ -33,14 +37,18 @@ export function LoginForm({
   recoveryCodes,
   error,
   loading,
+  captchaRequired,
+  turnstileSiteKey,
   onEmailChange,
   onPasswordChange,
   onMfaCodeChange,
+  onTurnstileToken,
   onSubmit,
   onBackToCredentials,
 }: LoginFormProps) {
   const isMfaCode = step === 'mfa_setup' || step === 'mfa_verify'
   const isRecovery = step === 'mfa_recovery'
+  const showCaptcha = step === 'credentials' && captchaRequired && Boolean(turnstileSiteKey)
 
   return (
     <div className={styles.page}>
@@ -88,6 +96,19 @@ export function LoginForm({
                 required
               />
             </Field>
+
+            {showCaptcha && turnstileSiteKey && (
+              <div className={styles.captcha}>
+                <TurnstileWidget siteKey={turnstileSiteKey} onToken={onTurnstileToken} />
+              </div>
+            )}
+
+            {captchaRequired && !turnstileSiteKey && (
+              <p className={styles.hint} role="alert">
+                CAPTCHA required but site key is not configured (TURNSTILE_SITE_KEY /
+                VITE_TURNSTILE_SITE_KEY).
+              </p>
+            )}
           </>
         )}
 

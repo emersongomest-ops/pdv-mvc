@@ -72,7 +72,7 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 
 | Threat | Mitigation |
 |--------|------------|
-| **Brute force / dictionary** | Rate limit login; lockout after N failures; CAPTCHA on admin |
+| **Brute force / dictionary** | Rate limit login; CAPTCHA (Turnstile) after N failures; MFA for managers |
 | **Credential stuffing** | Breach password detection (Have I Been Pwned API optional); MFA |
 | **Password spraying** | Same as brute force; unique emails per store admin |
 | **Weak passwords** | Policy: min length 12, complexity; bcrypt/argon2 via Laravel |
@@ -122,7 +122,7 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 | **Payment stub / SOAP acquirer** | No PAN stored; outbound acquirer protocol is SOAP; app API + payment webhooks remain REST |
 | **Complete sale / cart / refund replay** | `Idempotency-Key` + payload hash on create sale, add line, complete, refund (RN-073); webhooks via `payment_webhook_events` (RN-054) |
 | **Audit** | Append-only `audit_logs` (RN-070): Eloquent + DB triggers block UPDATE/DELETE; audit failure aborts mutation; managers see assigned stores + global rows; unassigned `store_id` filter → 403 `AUTH_STORE_ACCESS_DENIED` |
-| **API** | Unversioned `/api/*` today (ASVS gap: `/api/v1` when breaking); Form Requests at boundary |
+| **API** | Versioned `/api/v1/*` (ADR-0011) + compatibility `/api/*` for SPA; Form Requests at boundary |
 | **Headers** | Nginx SPA: CSP, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` (`docker/nginx.conf`) |
 
 ---
@@ -154,11 +154,11 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 - [x] Prod hardening **runbook + boot guard** ([`docs/ops/production-hardening.md`](./ops/production-hardening.md): `APP_DEBUG=false` / `SESSION_SECURE_COOKIE=true` fail-closed when `APP_ENV=production`; TLS/HSTS via [`docker/nginx.tls.conf.example`](../docker/nginx.tls.conf.example)) — operator must still terminate TLS in prod  
 - [x] Admin MFA reset / break-glass (RN-074; `POST /api/admin/users/{id}/mfa/reset`)  
 - [x] HIBP uncompromised passwords on create/update (`Password::uncompromised()`, `PASSWORD_UNCOMPROMISED`)  
+- [x] CAPTCHA after repeated login failures (Cloudflare Turnstile; `TURNSTILE_*`)  
+- [x] API versioning `/api/v1` (ADR-0011: live alias + policy; SPA may keep `/api` until cutover)  
 - [ ] External penetration test (post remaining ASVS residuals or in parallel)  
 - [ ] Legal sign-off on privacy/retention + fill controller/DPO placeholders  
-- [ ] Card issuer SOAP verify (leave 501 until WSDL) — ADR-0009  
-- [ ] Optional: CAPTCHA after repeated login failures  
-- [ ] API versioning `/api/v1` when introducing breaking changes
+- [ ] Card issuer SOAP verify (leave 501 until WSDL) — ADR-0009
 ---
 
 ## 13. References
@@ -192,7 +192,7 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 | Supply chain | ✅ | `composer.lock` committed; run `composer audit` after dep changes |
 | Refund rate limiting | ✅ | `throttle:refunds` (10/min per user+IP) on `POST /api/admin/sales/{id}/refunds` |
 
-**Auto-assessment:** `[security: SQLi ok via Eloquent bindings, authz via StorePolicy + middleware re-check, FormRequest validation, throttle login+refunds, session regenerate, CSRF via Sanctum stateful API, no hardcoded secrets]`
+**Auto-assessment:** `[security: SQLi ok via Eloquent bindings, authz via StorePolicy + middleware re-check, FormRequest validation, throttle login+refunds, Turnstile after N failures, session regenerate, CSRF via Sanctum stateful API, no hardcoded secrets]`
 
 ---
 
@@ -218,4 +218,4 @@ Automated coverage added under `tests/Feature/Security/`:
 
 Full matrix: [`docs/security/asvs-l2-gap-review.md`](./security/asvs-l2-gap-review.md).
 
-**Top residual gaps:** external pen-test; API `/api/v1`; CAPTCHA after failures; formal threat model; live TLS termination (runbook ready); legal counsel sign-off.
+**Top residual gaps:** external pen-test; formal threat model; live TLS termination (runbook ready); legal counsel sign-off.

@@ -22,6 +22,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -30,12 +31,19 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         channels: __DIR__.'/../routes/channels.php',
         health: '/up',
+        then: function (): void {
+            // ADR-0011: versioned alias of the same route table (no SPA cutover yet).
+            Route::middleware('api')
+                ->prefix('api/v1')
+                ->group(base_path('routes/api.php'));
+        },
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->statefulApi();
         $middleware->append(AssignCorrelationId::class);
         $middleware->validateCsrfTokens(except: [
             'api/webhooks/payments/*',
+            'api/v1/webhooks/payments/*',
         ]);
 
         $middleware->alias([
@@ -54,7 +62,7 @@ return Application::configure(basePath: dirname(__DIR__))
                 return null;
             }
 
-            return ApiErrorResponse::fromErrorCode($exception->errorCode);
+            return ApiErrorResponse::fromDomainException($exception);
         });
 
         $exceptions->render(function (StoreDomainException $exception, Request $request) {

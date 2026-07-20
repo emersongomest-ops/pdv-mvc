@@ -110,8 +110,19 @@ export async function apiRequest<T>(
   return payload as T
 }
 
-export async function loginRequest(email: string, password: string) {
+export async function loginRequest(
+  email: string,
+  password: string,
+  turnstileToken?: string | null,
+) {
   await primeCsrf()
+  const body: { email: string; password: string; turnstile_token?: string } = {
+    email,
+    password,
+  }
+  if (turnstileToken) {
+    body.turnstile_token = turnstileToken
+  }
   return apiRequest<{
     data: {
       mfa_required: boolean
@@ -120,7 +131,7 @@ export async function loginRequest(email: string, password: string) {
     }
   }>('/api/auth/login', {
     method: 'POST',
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify(body),
   })
 }
 

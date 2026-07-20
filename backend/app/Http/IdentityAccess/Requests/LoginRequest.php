@@ -21,6 +21,7 @@ final class LoginRequest extends FormRequest
         return [
             'email' => ['required', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'max:128'],
+            'turnstile_token' => ['sometimes', 'nullable', 'string', 'max:2048'],
         ];
     }
 }

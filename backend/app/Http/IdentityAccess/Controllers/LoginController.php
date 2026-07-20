@@ -19,6 +19,7 @@ final class LoginController extends Controller
             $validated['email'],
             $validated['password'],
             $request->session(),
+            isset($validated['turnstile_token']) ? (string) $validated['turnstile_token'] : null,
         );
 
         return response()->json([

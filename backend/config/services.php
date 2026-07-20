@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    'turnstile' => [
+        'enabled' => filter_var(env('TURNSTILE_ENABLED', false), FILTER_VALIDATE_BOOLEAN),
+        'site_key' => env('TURNSTILE_SITE_KEY', ''),
+        'secret_key' => env('TURNSTILE_SECRET_KEY', ''),
+        // Require CAPTCHA after this many failed login attempts (RateLimiter hits).
+        'failure_threshold' => (int) env('TURNSTILE_FAILURE_THRESHOLD', 2),
+    ],
+
 ];

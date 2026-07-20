@@ -9,8 +9,13 @@ use DomainException;
 
 final class AuthenticationDomainException extends DomainException
 {
-    public function __construct(public readonly ErrorCode $errorCode)
-    {
+    /**
+     * @param  array<string, mixed>  $context
+     */
+    public function __construct(
+        public readonly ErrorCode $errorCode,
+        public readonly array $context = [],
+    ) {
         parent::__construct($errorCode->message());
     }
 }

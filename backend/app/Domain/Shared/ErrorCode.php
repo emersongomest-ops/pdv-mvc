@@ -33,6 +33,8 @@ enum ErrorCode: string
     case AuthMfaAlreadyEnabled = 'AUTH_MFA_ALREADY_ENABLED';
     case AuthCannotResetOwnMfa = 'AUTH_CANNOT_RESET_OWN_MFA';
     case AuthMfaResetNotApplicable = 'AUTH_MFA_RESET_NOT_APPLICABLE';
+    case AuthCaptchaRequired = 'AUTH_CAPTCHA_REQUIRED';
+    case AuthCaptchaInvalid = 'AUTH_CAPTCHA_INVALID';
 
     case StoreNotFound = 'STORE_NOT_FOUND';
     case StoreContextRequired = 'STORE_CONTEXT_REQUIRED';
@@ -174,6 +176,8 @@ enum ErrorCode: string
             self::AuthMfaAlreadyEnabled,
             self::AuthCannotResetOwnMfa,
             self::AuthMfaResetNotApplicable,
+            self::AuthCaptchaRequired,
+            self::AuthCaptchaInvalid,
             self::RefReturnQtyInvalid,
             self::IdempotencyKeyRequired => 422,
             self::SaleFiscalReceiptFailed => 500,
@@ -213,6 +217,8 @@ enum ErrorCode: string
             self::AuthMfaAlreadyEnabled => 'Multi-factor authentication is already enabled.',
             self::AuthCannotResetOwnMfa => 'You cannot reset your own MFA; another manager must perform the reset.',
             self::AuthMfaResetNotApplicable => 'MFA reset applies only to manager accounts.',
+            self::AuthCaptchaRequired => 'Complete the CAPTCHA challenge to continue signing in.',
+            self::AuthCaptchaInvalid => 'CAPTCHA verification failed. Try again.',
             self::StoreNotFound => 'Store not found.',
             self::StoreContextRequired => 'Store context must be selected.',
             self::StoreInactive => 'Store is inactive and cannot be selected.',
@@ -307,6 +313,8 @@ enum ErrorCode: string
             self::AuthMfaAlreadyEnabled,
             self::AuthCannotResetOwnMfa,
             self::AuthMfaResetNotApplicable,
+            self::AuthCaptchaRequired,
+            self::AuthCaptchaInvalid,
         ];
     }
 

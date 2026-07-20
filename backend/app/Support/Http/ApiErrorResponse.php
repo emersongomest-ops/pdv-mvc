@@ -13,9 +13,15 @@ use Illuminate\Http\Request;
 
 final class ApiErrorResponse
 {
-    public static function fromErrorCode(ErrorCode $code): JsonResponse
+    public static function fromErrorCode(ErrorCode $code, array $context = []): JsonResponse
     {
-        return response()->json(['error' => $code->toErrorPayload()], $code->httpStatus());
+        $error = $code->toErrorPayload();
+
+        if ($context !== []) {
+            $error['context'] = $context;
+        }
+
+        return response()->json(['error' => $error], $code->httpStatus());
     }
 
     public static function fromAuthenticationException(AuthenticationException $exception): JsonResponse
@@ -25,7 +31,7 @@ final class ApiErrorResponse
 
     public static function fromDomainException(AuthenticationDomainException $exception): JsonResponse
     {
-        return self::fromErrorCode($exception->errorCode);
+        return self::fromErrorCode($exception->errorCode, $exception->context);
     }
 
     public static function fromAuthorizationException(AuthorizationException $exception): JsonResponse

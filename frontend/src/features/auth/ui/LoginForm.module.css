@@ -33,6 +33,12 @@
   font-size: 0.92rem;
 }
 
+.captcha {
+  display: flex;
+  justify-content: center;
+  min-height: 65px;
+}
+
 .mfaSetup {
   display: flex;
   flex-direction: column;

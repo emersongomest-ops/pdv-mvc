@@ -27,9 +27,12 @@ export function LoginPage() {
       recoveryCodes={form.recoveryCodes}
       error={form.error}
       loading={form.loading}
+      captchaRequired={form.captchaRequired}
+      turnstileSiteKey={form.turnstileSiteKey}
       onEmailChange={form.setEmail}
       onPasswordChange={form.setPassword}
       onMfaCodeChange={form.setMfaCode}
+      onTurnstileToken={form.setTurnstileToken}
       onSubmit={form.onSubmit}
       onBackToCredentials={form.onBackToCredentials}
     />

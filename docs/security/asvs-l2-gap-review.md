@@ -23,15 +23,15 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | Bucket | Count (approx.) |
 |--------|-----------------|
 | Pass | Strong on authn/session cookie SPA, RBAC/IDOR store scope, Eloquent bindings, MFA managers, audit append-only, payment webhook HMAC, supply-chain audits |
-| Partial / Gap (priority) | TLS/Secure cookies in prod defaults, API versioning claim, HIBP/CAPTCHA, formal threat model, admin MFA reset |
+| Partial / Gap (priority) | TLS/Secure cookies in prod defaults, formal threat model |
 
 **Recommended next engineering slices (ordered):**
 
 1. ~~Prod env hardening checklist (`APP_DEBUG=false`, `SESSION_SECURE_COOKIE=true`, TLS/HSTS)~~ → **done** (`docs/ops/production-hardening.md`, boot guard, `nginx.tls.conf.example`)
 2. ~~Admin MFA reset / break-glass (beyond recovery codes)~~ → **done** (RN-074)
 3. External pen-test before multi-store production go-live
-4. ~~Optional: HIBP~~ → **done** (`Password::uncompromised`); CAPTCHA after repeated failures still open
-5. API `/api/v1` when a breaking change requires it
+4. ~~Optional: HIBP~~ → **done** (`Password::uncompromised`); ~~CAPTCHA after repeated failures~~ → **done** (Cloudflare Turnstile)
+5. ~~API `/api/v1`~~ → **done** (ADR-0011: `/api/v1` alias + policy; SPA cutover optional)
 
 ---
 
@@ -55,7 +55,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | MFA recovery | **Pass** | Eight one-time recovery codes on enroll confirm (RN-067); admin MFA reset for other managers (RN-074). |
 | Password policy L2 | **Pass** | Create/update: `Password::min(12)` + optional `uncompromised()` via `Password::defaults()`. Login accepts existing shorter demo passwords (`min:8`). |
 | Breach password check | **Pass** | `Password::defaults()` → `uncompromised()` (HIBP k-anonymity) when `PASSWORD_UNCOMPROMISED=true`; off in phpunit. |
-| CAPTCHA after failures | **Gap** | Listed as mitigation; not implemented. |
+| CAPTCHA after failures | **Pass** | Cloudflare Turnstile after `TURNSTILE_FAILURE_THRESHOLD` failed attempts (`LoginUserAction` + `CloudflareTurnstileVerifier`). Off when `TURNSTILE_ENABLED=false` / empty secret. |
 | Generic auth errors | **Pass** | `ErrorCode` / `ApiErrorResponse` (no user enumeration beyond inactive). |
 
 ---
@@ -173,7 +173,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | Authn on API | **Pass** | Sanctum session + MFA gate for managers. |
 | Authorization | **Pass** | Role + store context. |
 | Rate limiting | **Partial** | Login, refunds, MFA, webhooks; not universal per-route budget. |
-| API versioning | **Gap** | Docs mention `/api/v1`; routes are `/api/...` unversioned. |
+| API versioning | **Pass** | `/api/v1/*` aliases same table as `/api/*` (ADR-0011). Unversioned kept for SPA compatibility until cutover. |
 | Webhook authenticity | **Pass** | HMAC verifier + tests. |
 
 ---

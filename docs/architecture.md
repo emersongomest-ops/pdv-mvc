@@ -182,6 +182,8 @@ All under `projects/pdv/docs/`:
 | ADR-0007 | Observability (Telescope/Pulse/Pail) + Redis messaging / Horizon | 2026-07-16 |
 | ADR-0008 | Customer PII encryption at rest (LGPD) | 2026-07-20 |
 | ADR-0009 | SOAP outbound payment acquirer; REST for app + webhooks | 2026-07-20 |
+| ADR-0010 | Manager MFA (TOTP) | 2026-07-20 |
+| ADR-0011 | API URI versioning (`/api/v1` alias) | 2026-07-20 |
 
 ## 12. Money
 

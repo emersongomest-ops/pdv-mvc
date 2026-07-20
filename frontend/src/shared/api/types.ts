@@ -1,6 +1,10 @@
 export type ApiError = {
   code: string
   message: string
+  context?: {
+    captcha_required?: boolean
+    turnstile_site_key?: string
+  }
 }
 
 export type User = {
