@@ -28,7 +28,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 **Recommended next engineering slices (ordered):**
 
 1. ~~Prod env hardening checklist (`APP_DEBUG=false`, `SESSION_SECURE_COOKIE=true`, TLS/HSTS)~~ → **done** (`docs/ops/production-hardening.md`, boot guard, `nginx.tls.conf.example`)
-2. Admin MFA reset / break-glass (beyond recovery codes)
+2. ~~Admin MFA reset / break-glass (beyond recovery codes)~~ → **done** (RN-074)
 3. External pen-test before multi-store production go-live
 4. Optional: HIBP / CAPTCHA after repeated failures
 5. API `/api/v1` when a breaking change requires it
@@ -52,7 +52,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | Credential storage | **Pass** | `User` password `hashed` cast (bcrypt/argon via Laravel). |
 | Login brute-force | **Pass** | `throttle:login` + `LoginUserAction` RateLimiter; `AuthSecurityBaselineTest`. |
 | MFA for privileged | **Pass** | Manager TOTP (ADR-0010); operators password-only by design. |
-| MFA recovery | **Pass** | Eight one-time recovery codes on enroll confirm (RN-067); admin MFA reset still deferred. |
+| MFA recovery | **Pass** | Eight one-time recovery codes on enroll confirm (RN-067); admin MFA reset for other managers (RN-074). |
 | Password policy L2 | **Partial** | Create/update: `Password::min(12)` via `Password::defaults()`. Login accepts existing shorter demo passwords (`min:8`). |
 | Breach password check | **Gap** | HIBP optional in security.md — not implemented. |
 | CAPTCHA after failures | **Gap** | Listed as mitigation; not implemented. |

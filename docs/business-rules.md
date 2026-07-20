@@ -135,6 +135,7 @@ This document is the **source of truth for business rules**. BDD scenarios and T
 | **RN-065** | Operator works in **one store context** per session (selected or assigned). | Required |
 | **RN-066** | Manager authentication requires **TOTP MFA** after password (enroll on first use); Operators remain password-only. | Required |
 | **RN-067** | On MFA enroll confirm, system issues **8 one-time recovery codes** (shown once); verify accepts TOTP **or** unused recovery code. | Required |
+| **RN-074** | A manager may **reset another manager's MFA** (`POST /api/admin/users/{id}/mfa/reset` + reason). Clears TOTP secret, confirmation, recovery codes; invalidates target sessions; audited as `identity.mfa_reset` (RN-070). Target must re-enroll on next login. **Cannot** reset own MFA (need a second manager). Operators are not applicable. | Required |
 
 ### 4.9 Analytics and campaigns
 
@@ -150,7 +151,7 @@ This document is the **source of truth for business rules**. BDD scenarios and T
 
 | ID | Rule | Priority |
 |----|------|----------|
-| **RN-070** | Sensitive actions log **who**, **when**, and before/after: effective **price change**, admin **stock adjust**, **refund/return**, and promotion **create/update** (incl. activation/assignments). Append-only `audit_logs`; audit write failure rolls back the mutation. Initial product price and applying/removing a promotion on a sale are **not** audited. Managers query via `GET /api/admin/audit-logs` with RN-064 scope (assigned stores + global `store_id=null`). | Required |
+| **RN-070** | Sensitive actions log **who**, **when**, and before/after: effective **price change**, admin **stock adjust**, **refund/return**, promotion **create/update** (incl. activation/assignments), cash shift **reopen**, and manager **MFA reset** (RN-074). Append-only `audit_logs`; audit write failure rolls back the mutation. Initial product price and applying/removing a promotion on a sale are **not** audited. Managers query via `GET /api/admin/audit-logs` with RN-064 scope (assigned stores + global `store_id=null`). | Required |
 | **RN-071** | Operator: operational UI only; Manager: both views. | Required |
 | **RN-072** | Customer PII and related operational data follow the published **privacy + retention** drafts (`docs/legal/`); technical encryption per ADR-0008. Legal counsel must approve before production go-live. | Required |
 | **RN-073** | Financial/cart mutating POSTs require `Idempotency-Key` (max 128): **complete sale**, **create refund**, **create sale**, **add sale line**. Same key + same payload → safe replay (`Idempotent-Replayed: true`). Same key + different payload → `IDEMPOTENCY_KEY_REUSE` (409). Concurrent in-flight → `IDEMPOTENCY_REQUEST_IN_FLIGHT` (409). Failed attempts release the claim. Scope `{route}:{saleId\|storeId}` + acting `user_id`. Retention **7 days** (`IDEMPOTENCY_RETENTION_DAYS`); daily `idempotency:purge`. | Required |

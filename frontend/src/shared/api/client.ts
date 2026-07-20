@@ -344,6 +344,16 @@ export function updateAdminUser(
   )
 }
 
+export function resetAdminUserMfa(userId: number, reason: string) {
+  return apiRequest<{ data: { message: string; user: import('./types').AdminUser } }>(
+    `/api/admin/users/${userId}/mfa/reset`,
+    {
+      method: 'POST',
+      body: JSON.stringify({ reason }),
+    },
+  )
+}
+
 export function listOperationalProducts(params?: {
   search?: string
   cursor?: string

@@ -1,12 +1,12 @@
 # Graph Report - projects\pdv\backend  (2026-07-20)
 
 ## Corpus Check
-- 476 files · ~65,341 words
+- 480 files · ~65,946 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2558 nodes · 5025 edges · 237 communities (192 shown, 45 thin omitted)
-- Extraction: 86% EXTRACTED · 14% INFERRED · 0% AMBIGUOUS · INFERRED: 689 edges (avg confidence: 0.8)
+- 2579 nodes · 5079 edges · 236 communities (188 shown, 48 thin omitted)
+- Extraction: 86% EXTRACTED · 14% INFERRED · 0% AMBIGUOUS · INFERRED: 701 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
@@ -171,7 +171,6 @@
 - EnsureUserHasRole.php
 - CardInstrumentFormatGuardTest
 - post-autoload-dump
-- 2026_07_15_300001_create_sales_table.php
 - SelectStoreContextTest
 - AdminDashboardController.php
 - ListAdminSalesAction
@@ -186,15 +185,14 @@
 - actingAsManagerForStore
 - AdminAnalyticsTest
 - AdminInventoryTest
-- .completedSaleFixture
 - ActsWithOperationalSession.php
 - CatalogResource
 
 ## God Nodes (most connected - your core abstractions)
-1. `User` - 310 edges
-2. `Store` - 157 edges
-3. `TestCase` - 147 edges
-4. `Controller` - 131 edges
+1. `User` - 317 edges
+2. `Store` - 162 edges
+3. `TestCase` - 149 edges
+4. `Controller` - 133 edges
 5. `Product` - 105 edges
 6. `Sale` - 105 edges
 7. `Customer` - 64 edges
@@ -203,21 +201,21 @@
 10. `AssertManagerStoreAccess` - 43 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `findCategoryById()` --references--> `Category`  [EXTRACTED]
-  projects/pdv/backend/app/Domain/Catalog/Repositories/CatalogRepositoryInterface.php → projects/pdv/backend/app/Models/Category.php
-- `createCategory()` --references--> `Category`  [EXTRACTED]
-  projects/pdv/backend/app/Domain/Catalog/Repositories/CatalogRepositoryInterface.php → projects/pdv/backend/app/Models/Category.php
-- `deleteCategory()` --references--> `Category`  [EXTRACTED]
-  projects/pdv/backend/app/Domain/Catalog/Repositories/CatalogRepositoryInterface.php → projects/pdv/backend/app/Models/Category.php
-- `findProductById()` --references--> `Product`  [EXTRACTED]
-  projects/pdv/backend/app/Domain/Catalog/Repositories/CatalogRepositoryInterface.php → projects/pdv/backend/app/Models/Product.php
-- `createProduct()` --references--> `Product`  [EXTRACTED]
-  projects/pdv/backend/app/Domain/Catalog/Repositories/CatalogRepositoryInterface.php → projects/pdv/backend/app/Models/Product.php
+- `findById()` --references--> `User`  [EXTRACTED]
+  projects/pdv/backend/app/Domain/IdentityAccess/Repositories/UsersRepositoryInterface.php → projects/pdv/backend/app/Models/User.php
+- `create()` --references--> `User`  [EXTRACTED]
+  projects/pdv/backend/app/Domain/IdentityAccess/Repositories/UsersRepositoryInterface.php → projects/pdv/backend/app/Models/User.php
+- `update()` --references--> `User`  [EXTRACTED]
+  projects/pdv/backend/app/Domain/IdentityAccess/Repositories/UsersRepositoryInterface.php → projects/pdv/backend/app/Models/User.php
+- `findForStoreProduct()` --references--> `StoreInventory`  [EXTRACTED]
+  projects/pdv/backend/app/Domain/Inventory/Repositories/InventoryRepositoryInterface.php → projects/pdv/backend/app/Models/StoreInventory.php
+- `adjustQuantity()` --references--> `StoreInventory`  [EXTRACTED]
+  projects/pdv/backend/app/Domain/Inventory/Repositories/InventoryRepositoryInterface.php → projects/pdv/backend/app/Models/StoreInventory.php
 
 ## Import Cycles
 - None detected.
 
-## Communities (237 total, 45 thin omitted)
+## Communities (236 total, 48 thin omitted)
 
 ### Community 0 - "User"
 Cohesion: 0.22
@@ -256,8 +254,8 @@ Cohesion: 0.11
 Nodes (17): concurrently, laravel-vite-plugin, devDependencies, concurrently, laravel-vite-plugin, tailwindcss, @tailwindcss/vite, vite (+9 more)
 
 ### Community 9 - "DomainScaffolder"
-Cohesion: 0.06
-Nodes (26): ConsumePaymentWebhookAction, PaymentsRepositoryInterface, PaymentWebhookPayloadNormalizerInterface, PaymentWebhookSignatureVerifierInterface, PendingPaymentOutboxInterface, ErrorCode, PaymentGatewayInterface, PaymentsRepositoryInterface (+18 more)
+Cohesion: 0.19
+Nodes (6): IdempotencyRecordRepositoryInterface, PurgeExpiredIdempotencyRecordsAction, CreateDomainCommand, PurgeExpiredIdempotencyRecordsCommand, ReconcilePendingPaymentsCommand, Command
 
 ### Community 10 - "AppServiceProvider.php"
 Cohesion: 0.23
@@ -268,28 +266,28 @@ Cohesion: 0.25
 Nodes (7): About Laravel, Agentic Development, Code of Conduct, Contributing, Learning Laravel, License, Security Vulnerabilities
 
 ### Community 14 - "DatabaseSeeder.php"
-Cohesion: 0.18
-Nodes (5): BelongsTo, BelongsToMany, BelongsToMany, HasFactory, Notifiable
+Cohesion: 0.21
+Nodes (6): AuditLogRepositoryInterface, CatalogRepositoryInterface, UpdateProductAction, JsonResponse, UpdateProductController, UpdateProductRequest
 
 ### Community 15 - "AnalyticsRepositoryInterface"
 Cohesion: 0.21
 Nodes (3): BelongsToMany, HasMany, DemoPromotionSeeder
 
 ### Community 16 - "CashShiftRepository.php"
-Cohesion: 0.19
-Nodes (11): buildClosingReport(), close(), createOpen(), findById(), findOpenForUser(), findOpenForUserAtStore(), listForStore(), Collection (+3 more)
+Cohesion: 0.07
+Nodes (21): OpenCashShiftAction, CashShiftRepositoryInterface, ShiftClosingReport, buildClosingReport(), close(), createOpen(), findById(), findOpenForUser() (+13 more)
 
 ### Community 17 - "CatalogRepository.php"
 Cohesion: 0.19
 Nodes (6): ListAdminShiftsAction, CashShiftRepositoryInterface, Collection, ListAdminShiftsController, JsonResponse, ListAdminShiftsRequest
 
 ### Community 18 - "CustomersRepository.php"
-Cohesion: 0.23
+Cohesion: 0.21
 Nodes (3): CustomersRepository, Collection, CustomersRepositoryInterface
 
 ### Community 20 - "InventoryRepository.php"
-Cohesion: 0.23
-Nodes (3): PendingPaymentOutboxEntry, self, RedisPendingPaymentOutbox
+Cohesion: 0.12
+Nodes (6): PendingPaymentOutboxEntry, self, push(), InMemoryPendingPaymentOutbox, RedisPendingPaymentOutbox, PendingPaymentOutboxInterface
 
 ### Community 21 - "PaymentsRepository.php"
 Cohesion: 0.23
@@ -300,16 +298,12 @@ Cohesion: 0.11
 Nodes (8): attachToSale(), findApplied(), updateAppliedAmount(), Collection, PromotionsRepository, BelongsTo, SalePromotion, PromotionsRepositoryInterface
 
 ### Community 23 - "RefundsReturnsRepository.php"
-Cohesion: 0.15
+Cohesion: 0.12
 Nodes (3): CatalogRepository, Collection, CatalogRepositoryInterface
 
 ### Community 24 - "SalesRepository.php"
-Cohesion: 0.13
-Nodes (10): createCategory(), createProduct(), deleteCategory(), deleteProduct(), findCategoryById(), findProductById(), listCategories(), listProducts() (+2 more)
-
-### Community 30 - "artisan"
-Cohesion: 0.09
-Nodes (5): BelongsTo, StoreInventory, OperationalCatalogTest, AdminInventoryTest, RefundThrottleAndSalesIdorTest
+Cohesion: 0.11
+Nodes (10): createCategory(), deleteCategory(), findCategoryById(), listCategories(), listProducts(), Collection, updateCategory(), Category (+2 more)
 
 ### Community 32 - "AnalyticsRepositoryInterface.php"
 Cohesion: 0.12
@@ -332,28 +326,24 @@ Cohesion: 0.10
 Nodes (11): GetAdminAnalyticsAction, AnalyticsRepositoryInterface, AdminAnalyticsSnapshot, CustomerSpendRow, adminSnapshot(), listCampaignCustomers(), Collection, GetAdminAnalyticsController (+3 more)
 
 ### Community 39 - "PromotionsRepositoryInterface.php"
-Cohesion: 0.22
-Nodes (6): AddSaleLineAction, CatalogRepositoryInterface, SalesRepositoryInterface, AddSaleLineController, JsonResponse, AddSaleLineRequest
+Cohesion: 0.14
+Nodes (10): AddSaleLineAction, CatalogRepositoryInterface, SalesRepositoryInterface, CreateSaleAction, SalesRepositoryInterface, SalesRepositoryInterface, ShowSaleAction, AddSaleLineController (+2 more)
 
 ### Community 40 - "RefundsReturnsRepositoryInterface.php"
 Cohesion: 0.29
 Nodes (4): LoginUserAction, Session, MfaPendingSession, Session
 
 ### Community 41 - "SalesRepositoryInterface.php"
-Cohesion: 0.16
-Nodes (9): Controller, ConfirmManagerMfaSetupController, JsonResponse, ListAdminNotificationsController, JsonResponse, Request, JsonResponse, VerifyManagerMfaChallengeController (+1 more)
+Cohesion: 0.23
+Nodes (5): ConfirmManagerMfaSetupController, JsonResponse, JsonResponse, VerifyManagerMfaChallengeController, MfaCodeRequest
 
 ### Community 57 - "CreateSaleAction"
 Cohesion: 0.20
 Nodes (5): ListProductsAction, CatalogRepositoryInterface, ListProductsController, JsonResponse, ListProductsRequest
 
 ### Community 61 - "Sale"
-Cohesion: 0.12
-Nodes (11): claimProcessing(), delete(), deleteCreatedBefore(), findByScopeAndKey(), markCompleted(), DateTimeInterface, EloquentIdempotencyRecordRepository, DateTimeInterface (+3 more)
-
-### Community 62 - "Category"
-Cohesion: 0.12
-Nodes (3): LoginTest, SessionGateTest, TotpAuthenticatorInterface
+Cohesion: 0.06
+Nodes (22): IdempotencyGuard, IdempotencyRecordRepositoryInterface, JsonResponse, Request, claimProcessing(), delete(), deleteCreatedBefore(), findByScopeAndKey() (+14 more)
 
 ### Community 63 - "CreateProductAction"
 Cohesion: 0.14
@@ -364,8 +354,8 @@ Cohesion: 0.20
 Nodes (6): ApplyPromotionToSaleAction, PromotionsRepositoryInterface, SalesRepositoryInterface, ApplyPromotionToSaleController, JsonResponse, ApplyPromotionToSaleRequest
 
 ### Community 73 - "UpdateProductAction"
-Cohesion: 0.06
-Nodes (19): AuditLogRepositoryInterface, CatalogRepositoryInterface, UpdateProductAction, AdminAuditFilters, AuditLogEntry, append(), listForAdmin(), ListAdminAuditLogsController (+11 more)
+Cohesion: 0.05
+Nodes (20): AuditLogRepositoryInterface, UsersRepositoryInterface, ResetManagerMfaAction, AdminAuditFilters, AuditLogEntry, append(), listForAdmin(), ListAdminAuditLogsController (+12 more)
 
 ### Community 74 - "CatalogRepositoryInterface.php"
 Cohesion: 0.22
@@ -376,12 +366,12 @@ Cohesion: 0.20
 Nodes (6): ListOperationalProductsAction, CatalogRepositoryInterface, InventoryRepositoryInterface, ListOperationalProductsController, JsonResponse, ListOperationalProductsRequest
 
 ### Community 76 - "SalesRepository"
-Cohesion: 0.14
-Nodes (3): AdminSaleFilters, Collection, SalesRepository
+Cohesion: 0.15
+Nodes (4): AdminSaleFilters, Collection, SalesRepository, SalesRepositoryInterface
 
 ### Community 77 - "Model"
-Cohesion: 0.33
-Nodes (4): CreateCategoryAction, CatalogRepositoryInterface, CreateCategoryController, JsonResponse
+Cohesion: 0.22
+Nodes (5): CreateCategoryAction, CatalogRepositoryInterface, CreateCategoryController, JsonResponse, StoreCategoryRequest
 
 ### Community 78 - "ListCategoriesAction"
 Cohesion: 0.32
@@ -396,12 +386,12 @@ Cohesion: 0.31
 Nodes (5): ListAccessibleStoresAction, StoreRepositoryInterface, ListStoresController, JsonResponse, Request
 
 ### Community 81 - "AppServiceProvider.php"
-Cohesion: 0.18
-Nodes (6): generateForSale(), StubFiscalReceiptGenerator, FiscalReceipt, BelongsTo, FiscalReceiptGeneratorInterface, Model
+Cohesion: 0.21
+Nodes (5): generateForSale(), StubFiscalReceiptGenerator, FiscalReceipt, BelongsTo, FiscalReceiptGeneratorInterface
 
 ### Community 82 - "StoreRepository"
-Cohesion: 0.07
-Nodes (5): Product, AdminAuditLogTest, ProductCrudTest, ApplyPromotionToSaleTest, CompleteSaleTest
+Cohesion: 0.09
+Nodes (9): createProduct(), deleteProduct(), findProductById(), updateProduct(), BelongsTo, Product, ProductCrudTest, AdminInventoryTest (+1 more)
 
 ### Community 83 - "AdminRouteAccessTest"
 Cohesion: 0.33
@@ -420,12 +410,12 @@ Cohesion: 0.24
 Nodes (5): CustomersRepositoryInterface, UpdateCustomerAction, JsonResponse, UpdateCustomerController, UpdateCustomerRequest
 
 ### Community 87 - "SaleStatus.php"
-Cohesion: 0.10
-Nodes (16): Request, StoreRepositoryInterface, SelectStoreContextAction, OperationalPosController, JsonResponse, Request, EnsureStoreContext, Closure (+8 more)
+Cohesion: 0.21
+Nodes (8): Request, StoreRepositoryInterface, SelectStoreContextAction, OperationalPosController, JsonResponse, Request, Request, StoreContext
 
 ### Community 88 - "CloseCashShiftTest"
-Cohesion: 0.16
-Nodes (3): SalesRepositoryInterface, RemoveSaleLineAction, SaleCartGuard
+Cohesion: 0.22
+Nodes (3): HoldSaleAction, SalesRepositoryInterface, SaleCartGuard
 
 ### Community 92 - "ListCategoriesAction"
 Cohesion: 0.31
@@ -436,16 +426,16 @@ Cohesion: 0.22
 Nodes (9): dev, serve, test, Composer\\Config::disableProcessTimeout, npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74,#86efac\" \"php artisan serve\" \"php artisan queue:listen redis --tries=3 --timeout=0\" \"php artisan reverb:start\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,reverb,logs,vite --kill-others, @php artisan config:clear --ansi @no_additional_args, @php artisan serve --host=127.0.0.1 --port=8000, @php artisan test (+1 more)
 
 ### Community 94 - "DeleteCategoryAction"
-Cohesion: 0.31
-Nodes (5): SalesRepositoryInterface, ShowSaleAction, JsonResponse, Request, ShowSaleController
+Cohesion: 0.60
+Nodes (3): JsonResponse, Request, ShowSaleController
 
 ### Community 95 - "DeleteProductAction"
 Cohesion: 0.20
 Nodes (5): ListUsersAction, UsersRepositoryInterface, ListUsersController, JsonResponse, ListUsersRequest
 
 ### Community 96 - "ShowCategoryAction"
-Cohesion: 0.33
-Nodes (4): CatalogRepositoryInterface, ShowCategoryAction, JsonResponse, ShowCategoryController
+Cohesion: 0.21
+Nodes (5): CatalogRepositoryInterface, ShowCategoryAction, JsonResponse, ShowCategoryController, CatalogResource
 
 ### Community 97 - "CurrentCashShiftController.php"
 Cohesion: 0.53
@@ -456,12 +446,12 @@ Cohesion: 0.33
 Nodes (4): CatalogRepositoryInterface, ShowProductAction, JsonResponse, ShowProductController
 
 ### Community 99 - "CatalogResource"
-Cohesion: 0.29
-Nodes (7): ListRefundsForSaleAction, Collection, RefundsReturnsRepositoryInterface, SalesRepositoryInterface, ListRefundsForSaleController, JsonResponse, Request
+Cohesion: 0.52
+Nodes (4): ListRefundsForSaleAction, Collection, RefundsReturnsRepositoryInterface, SalesRepositoryInterface
 
 ### Community 102 - "UpdateSaleLineAction"
 Cohesion: 0.27
-Nodes (5): IdempotencyGuard, IdempotencyRecordRepositoryInterface, JsonResponse, Request, QueryException
+Nodes (6): Model, PiiEncryptedDate, Model, PiiEncryptedString, CarbonInterface, CastsAttributes
 
 ### Community 103 - "CreateCustomerAction"
 Cohesion: 0.27
@@ -476,12 +466,12 @@ Cohesion: 0.22
 Nodes (5): CreateCustomerAction, CustomersRepositoryInterface, CreateCustomerController, JsonResponse, StoreCustomerRequest
 
 ### Community 106 - "CreateSaleAction"
-Cohesion: 0.36
-Nodes (5): NormalizedPaymentWebhook, normalize(), JsonPaymentWebhookPayloadNormalizer, PaymentWebhookEventType, PaymentWebhookPayloadNormalizerInterface
+Cohesion: 0.27
+Nodes (6): DeleteCategoryController, JsonResponse, Controller, ListRefundsForSaleController, JsonResponse, Request
 
 ### Community 107 - "ShowSaleAction"
-Cohesion: 0.19
-Nodes (6): DispatchSaleSideEffects, BusOrchestrator, Batch, PendingBatch, PendingChain, DispatchSaleSideEffectsTest
+Cohesion: 0.25
+Nodes (5): DispatchSaleSideEffects, BusOrchestrator, Batch, PendingBatch, PendingChain
 
 ### Community 108 - "FindCustomerByCpfAction"
 Cohesion: 0.17
@@ -492,16 +482,16 @@ Cohesion: 0.33
 Nodes (4): CustomersRepositoryInterface, ShowCustomerAction, JsonResponse, ShowCustomerController
 
 ### Community 110 - "OperationalRouteAccessTest"
-Cohesion: 0.07
-Nodes (12): BaseTestCase, ListAdminNotificationsTest, ExampleTest, CorrelationIdMiddlewareTest, PurgeExpiredIdempotencyRecordsTest, ListStoresTest, static, TestResponse (+4 more)
+Cohesion: 0.05
+Nodes (23): ActsWithAdminStoreAccess, ActsWithOperationalSession, BaseTestCase, InteractsWithStatefulApi, RefreshDatabase, AdminDashboardMetricsTest, ShowAdminSaleTest, CloseCashShiftReportTest (+15 more)
 
 ### Community 111 - "CustomerErrorCodeTest"
 Cohesion: 0.32
 Nodes (3): LoginController, JsonResponse, LoginRequest
 
 ### Community 112 - "ResumeSaleController.php"
-Cohesion: 0.17
-Nodes (5): StoreCategoryRequest, AttachCustomerToSaleRequest, CompleteSaleRequest, FormRequest, Validator
+Cohesion: 0.24
+Nodes (4): CloseCashShiftRequest, CompleteSaleRequest, FormRequest, Validator
 
 ### Community 113 - "ListStoresTest"
 Cohesion: 0.50
@@ -511,17 +501,13 @@ Nodes (3): Session, TotpAuthenticatorInterface, VerifyManagerMfaChallengeAction
 Cohesion: 0.20
 Nodes (5): ListPromotionsAction, PromotionsRepositoryInterface, ListPromotionsController, JsonResponse, ListPromotionsRequest
 
-### Community 118 - "PaymentMethod"
-Cohesion: 0.22
-Nodes (5): OpenCashShiftAction, CashShiftRepositoryInterface, OpenCashShiftController, JsonResponse, OpenCashShiftRequest
-
 ### Community 119 - "SaleResource"
-Cohesion: 0.16
-Nodes (4): updateCategory(), Category, HasMany, CatalogResource
+Cohesion: 0.54
+Nodes (5): ConsumePaymentWebhookAction, PaymentsRepositoryInterface, PaymentWebhookPayloadNormalizerInterface, PaymentWebhookSignatureVerifierInterface, PendingPaymentOutboxInterface
 
 ### Community 120 - "Promotion.php"
-Cohesion: 0.09
-Nodes (13): findLineByTransactionReference(), markLineStatus(), markWebhookProcessed(), DateTimeInterface, PaymentLineStatus, recordWebhookEvent(), PaymentsRepository, DateTimeInterface (+5 more)
+Cohesion: 0.05
+Nodes (27): NormalizedPaymentWebhook, findLineByTransactionReference(), markLineStatus(), markWebhookProcessed(), DateTimeInterface, PaymentLineStatus, recordWebhookEvent(), normalize() (+19 more)
 
 ### Community 121 - "ApplyPromotionToSaleAction"
 Cohesion: 0.29
@@ -552,24 +538,20 @@ Cohesion: 0.29
 Nodes (7): pestphp/pest-plugin, php-http/discovery, config, allow-plugins, optimize-autoloader, preferred-install, sort-packages
 
 ### Community 129 - "ApiErrorResponse.php"
-Cohesion: 0.11
-Nodes (8): Model, PiiEncryptedDate, Model, PiiEncryptedString, PiiCrypto, CarbonInterface, CastsAttributes, Encrypter
+Cohesion: 0.14
+Nodes (3): PiiCrypto, DemoCustomerSeeder, Encrypter
 
 ### Community 130 - "PromotionDiscountCalculator"
 Cohesion: 0.09
 Nodes (6): Collection, PromotionDiscountCalculator, Money, PromotionResource, SaleResource, MoneyTest
 
 ### Community 131 - "PromotionErrorCodeTest"
-Cohesion: 0.06
-Nodes (8): Store, StorePolicy, OperationalCustomerTest, HoldSaleTest, SalesCartTest, actingAsManagerForStore(), attachManagerToStore(), static
+Cohesion: 0.04
+Nodes (15): BelongsToMany, Store, StorePolicy, ResetManagerMfaTest, CloseCashShiftTest, OpenCashShiftTest, OperationalShiftGateTest, OperationalCustomerTest (+7 more)
 
 ### Community 132 - "RemovePromotionFromSaleController.php"
-Cohesion: 0.56
+Cohesion: 0.42
 Nodes (7): CompleteSaleAction, FiscalReceiptGeneratorInterface, InventoryRepositoryInterface, PaymentGatewayInterface, PaymentsRepositoryInterface, PendingPaymentOutboxInterface, SalesRepositoryInterface
-
-### Community 133 - "autoload-dev"
-Cohesion: 0.14
-Nodes (12): ActsWithOperationalSession, InteractsWithStatefulApi, CloseCashShiftReportTest, CloseCashShiftTest, OpenCashShiftTest, OperationalShiftGateTest, CustomerPiiEncryptionTest, InventorySaleTest (+4 more)
 
 ### Community 134 - "psr-4"
 Cohesion: 0.40
@@ -592,16 +574,16 @@ Cohesion: 0.53
 Nodes (4): AssignCorrelationId, Closure, Request, Response
 
 ### Community 142 - "AttachCustomerToSaleAction"
-Cohesion: 0.33
-Nodes (5): AttachCustomerToSaleAction, CustomersRepositoryInterface, SalesRepositoryInterface, AttachCustomerToSaleController, JsonResponse
+Cohesion: 0.22
+Nodes (6): AttachCustomerToSaleAction, CustomersRepositoryInterface, SalesRepositoryInterface, AttachCustomerToSaleController, JsonResponse, AttachCustomerToSaleRequest
 
 ### Community 144 - "HoldSaleAction"
 Cohesion: 0.22
 Nodes (5): UsersRepositoryInterface, UpdateUserAction, JsonResponse, UpdateUserController, UpdateUserRequest
 
 ### Community 145 - "AssertManagerStoreAccess"
-Cohesion: 0.13
-Nodes (8): GetAdminDashboardMetricsAction, AdminDashboardMetrics, GetAdminShiftReportAction, CashShiftRepositoryInterface, SalesRepositoryInterface, ShowAdminSaleAction, AssertManagerStoreAccess, StoreRepositoryInterface
+Cohesion: 0.17
+Nodes (9): ListAdminAuditLogsAction, AuditLogRepositoryInterface, GetAdminShiftReportAction, CashShiftRepositoryInterface, AssertManagerStoreAccess, StoreRepositoryInterface, ListAdminNotificationsController, JsonResponse (+1 more)
 
 ### Community 147 - "DeleteCategoryAction"
 Cohesion: 0.20
@@ -624,12 +606,12 @@ Cohesion: 0.83
 Nodes (3): down(), getConnection(), up()
 
 ### Community 158 - "SaleCompletedNotification"
-Cohesion: 0.15
-Nodes (7): ListStoreInventoryAction, Collection, InventoryRepositoryInterface, ListStoreInventoryController, JsonResponse, ListStoreInventoryRequest, InventoryResource
+Cohesion: 0.19
+Nodes (6): ListStoreInventoryAction, Collection, InventoryRepositoryInterface, ListStoreInventoryController, JsonResponse, ListStoreInventoryRequest
 
 ### Community 160 - "SaleCompletedNotificationTest"
-Cohesion: 0.22
-Nodes (5): CloseCashShiftAction, CashShiftRepositoryInterface, CloseCashShiftController, JsonResponse, CloseCashShiftRequest
+Cohesion: 0.33
+Nodes (4): CloseCashShiftAction, CashShiftRepositoryInterface, CloseCashShiftController, JsonResponse
 
 ### Community 162 - "UsersRepository"
 Cohesion: 0.60
@@ -648,32 +630,32 @@ Cohesion: 0.53
 Nodes (4): EnsureUserHasRole, Closure, Request, Response
 
 ### Community 176 - "ShowCurrentUserController.php"
-Cohesion: 0.22
-Nodes (5): CreateSaleAction, SalesRepositoryInterface, CreateSaleController, JsonResponse, CreateSaleRequest
+Cohesion: 0.43
+Nodes (5): EnsureStoreContext, Closure, Request, Response, StoreRepositoryInterface
 
 ### Community 177 - "EnsureStoreContext.php"
-Cohesion: 0.24
-Nodes (5): HmacPaymentWebhookSignatureVerifier, AppServiceProvider, PaymentWebhookSignatureVerifierInterface, SalesRepositoryInterface, ServiceProvider
+Cohesion: 0.43
+Nodes (5): ConsumePaymentWebhookController, ErrorCode, JsonResponse, Request, WebhookRetryQueueInterface
 
 ### Community 178 - "StoreDomainException"
 Cohesion: 0.33
 Nodes (4): DeleteProductAction, CatalogRepositoryInterface, DeleteProductController, JsonResponse
 
-### Community 184 - "CustomersRepositoryInterface.php"
-Cohesion: 0.23
-Nodes (5): UsersRepositoryInterface, ShowUserAction, JsonResponse, ShowUserController, UserResource
+### Community 183 - "AdminStoreAccessIdorTest"
+Cohesion: 0.32
+Nodes (3): JsonResponse, SelectStoreContextController, SelectStoreContextRequest
 
-### Community 185 - "AdjustStoreInventoryAction"
-Cohesion: 0.22
-Nodes (3): CashShiftRepository, Collection, CashShiftRepositoryInterface
+### Community 184 - "CustomersRepositoryInterface.php"
+Cohesion: 0.33
+Nodes (4): UsersRepositoryInterface, ShowUserAction, JsonResponse, ShowUserController
 
 ### Community 187 - "StoreInventoryFactory"
-Cohesion: 0.05
-Nodes (12): assignedStoreIds(), findById(), listAccessibleForUser(), userCanAccessStore(), User, Authenticatable, AdminUserManagementTest, ListAdminSalesTest (+4 more)
+Cohesion: 0.04
+Nodes (18): assignedStoreIds(), findById(), listAccessibleForUser(), userCanAccessStore(), BelongsToMany, User, UserResource, Authenticatable (+10 more)
 
 ### Community 191 - "AdminAuditLogTest"
-Cohesion: 0.31
-Nodes (3): InventoryRepository, Collection, InventoryRepositoryInterface
+Cohesion: 0.17
+Nodes (7): InventoryRepository, Collection, BelongsTo, StoreInventory, InventoryResource, HasFactory, InventoryRepositoryInterface
 
 ### Community 193 - "SelectStoreContextTest"
 Cohesion: 0.36
@@ -684,24 +666,20 @@ Cohesion: 0.09
 Nodes (21): CashShiftDomainException, ErrorCode, CatalogDomainException, ErrorCode, CustomerDomainException, ErrorCode, InventoryDomainException, ErrorCode (+13 more)
 
 ### Community 196 - "ListAdminShiftsAction"
-Cohesion: 0.36
-Nodes (3): AnalyticsRepositoryInterface, AnalyticsRepository, Collection
+Cohesion: 0.19
+Nodes (5): AnalyticsRepositoryInterface, AnalyticsRepository, Collection, CustomerStoreStat, BelongsTo
 
 ### Community 197 - "MoneyTest"
-Cohesion: 0.22
-Nodes (5): HoldSaleAction, SalesRepositoryInterface, HoldSaleController, JsonResponse, HoldSaleRequest
+Cohesion: 0.32
+Nodes (3): HoldSaleController, JsonResponse, HoldSaleRequest
 
 ### Community 199 - "CreatePromotionAction"
 Cohesion: 0.27
 Nodes (6): AuditLogRepositoryInterface, PromotionsRepositoryInterface, UpdatePromotionAction, JsonResponse, UpdatePromotionController, UpdatePromotionRequest
 
-### Community 207 - "ResumeSaleController.php"
-Cohesion: 0.33
-Nodes (4): DeleteCategoryAction, CatalogRepositoryInterface, DeleteCategoryController, JsonResponse
-
-### Community 211 - "EnsureUserHasRole.php"
-Cohesion: 0.12
-Nodes (4): CustomerStoreStat, BelongsTo, AdminAnalyticsTest, DemoCatalogSeedersTest
+### Community 205 - "RemoveSaleLineController.php"
+Cohesion: 0.60
+Nodes (3): JsonResponse, Request, ReconcileOperationalPaymentsController
 
 ### Community 212 - "CardInstrumentFormatGuardTest"
 Cohesion: 0.60
@@ -711,16 +689,12 @@ Nodes (3): JsonResponse, Request, ShowAdminSaleController
 Cohesion: 0.60
 Nodes (3): JsonResponse, Request, ReopenCashShiftController
 
-### Community 214 - "2026_07_15_300001_create_sales_table.php"
-Cohesion: 0.11
-Nodes (7): ActsWithAdminStoreAccess, RefreshDatabase, AdminDashboardMetricsTest, AdminShiftReportTest, ShowAdminSaleTest, AdminCatalogAccessTest, CreateCustomerActionTest
-
 ### Community 219 - "AdminDashboardController.php"
-Cohesion: 0.60
-Nodes (3): AdminDashboardController, JsonResponse, Request
+Cohesion: 0.19
+Nodes (5): GetAdminDashboardMetricsAction, AdminDashboardMetrics, AdminDashboardController, JsonResponse, Request
 
 ### Community 221 - "RemovePromotionFromSaleAction"
-Cohesion: 0.36
+Cohesion: 0.31
 Nodes (6): PromotionsRepositoryInterface, SalesRepositoryInterface, RemovePromotionFromSaleAction, JsonResponse, Request, RemovePromotionFromSaleController
 
 ### Community 222 - "RemoveSaleLineController.php"
@@ -731,6 +705,10 @@ Nodes (3): JsonResponse, Request, RemoveSaleLineController
 Cohesion: 0.60
 Nodes (3): JsonResponse, Request, ResumeSaleController
 
+### Community 232 - "AdminAnalyticsTest"
+Cohesion: 0.22
+Nodes (8): ErrorCode, PaymentGatewayInterface, PaymentsRepositoryInterface, PendingPaymentOutboxInterface, WebhookRetryQueueInterface, ReconcilePendingPaymentsAction, JsonResponse, ReconcileAdminPaymentsController
+
 ### Community 235 - "ActsWithOperationalSession.php"
 Cohesion: 0.70
 Nodes (4): actingAsOperatorAtStore(), actingAsOperatorWithOpenShift(), static, withOpenShift()
@@ -738,21 +716,21 @@ Nodes (4): actingAsOperatorAtStore(), actingAsOperatorWithOpenShift(), static, w
 ## Knowledge Gaps
 - **79 isolated node(s):** `$schema`, `name`, `type`, `description`, `laravel` (+74 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **45 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **48 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `User` connect `StoreInventoryFactory` to `PromotionErrorCodeTest`, `AuthenticationDomainException`, `UserFactory`, `HasFactory`, `post-create-project-cmd`, `AppServiceProvider.php`, `DatabaseSeeder.php`, `HoldSaleAction`, `AssertManagerStoreAccess`, `CatalogRepository.php`, `FormRequest`, `AuthenticationDomainException`, `SaleCompletedNotification`, `artisan`, `SaleCompletedNotificationTest`, `UsersRepository`, `CatalogRepositoryInterface.php`, `InventoryRepositoryInterface.php`, `PaymentsRepositoryInterface.php`, `RefundsReturnsRepositoryInterface.php`, `AppServiceProvider.php`, `DispatchSaleSideEffectsTest`, `ShowCurrentUserController.php`, `AdminStoreAccessIdorTest`, `CustomersRepositoryInterface.php`, `Sale`, `StoreRepository`, `CreateProductAction`, `Category`, `SelectStoreContextTest`, `AuthSecurityBaselineTest`, `CreatePromotionAction`, `OperationalStoreContextTest`, `UpdateProductAction`, `RemoveSaleLineAction`, `HoldSaleAction`, `ShowProductAction`, `ApplyPromotionToSaleAction`, `StoreRepository`, `EnsureUserHasRole.php`, `LoginTest`, `OperationalRouteAccessTest`, `HasFactory`, `SaleStatus.php`, `SelectStoreContextTest`, `ListAdminSalesAction`, `OperationalRouteAccessTest`, `CatalogResource`, `actingAsManagerForStore`, `CreateCustomerAction`, `ActsWithOperationalSession.php`, `ListStoresTest`, `PaymentMethod`, `Promotion.php`, `ListStoresTest`, `Sale.php`?**
-  _High betweenness centrality (0.212) - this node is a cross-community bridge._
-- **Why does `Controller` connect `SalesRepositoryInterface.php` to `User`, `DomainScaffolder`, `AttachCustomerToSaleAction`, `HoldSaleAction`, `CatalogRepository.php`, `RemoveSaleLineAction`, `AuthenticationDomainException`, `SaleCompletedNotification`, `SaleCompletedNotificationTest`, `CatalogRepositoryInterface.php`, `CustomersRepositoryInterface.php`, `InventoryRepositoryInterface.php`, `PaymentsRepositoryInterface.php`, `PromotionsRepositoryInterface.php`, `AppServiceProvider.php`, `AdminStoreAccessIdorTest`, `ShowCurrentUserController.php`, `StoreDomainException`, `CustomersRepositoryInterface.php`, `CreateSaleAction`, `SelectStoreContextTest`, `SaleErrorCodeTest`, `MoneyTest`, `CreatePromotionAction`, `UpdateProductAction`, `CatalogRepositoryInterface.php`, `SaleResource`, `Model`, `ShowCategoryAction`, `ResumeSaleController.php`, `ShowProductAction`, `AdminRouteAccessTest`, `CardInstrumentFormatGuardTest`, `post-autoload-dump`, `UpdateCustomerAction`, `SaleStatus.php`, `OperationalRouteAccessTest`, `AdminDashboardController.php`, `ListCategoriesAction`, `RemovePromotionFromSaleAction`, `RemoveSaleLineController.php`, `DeleteProductAction`, `ShowCategoryAction`, `CurrentCashShiftController.php`, `ShowProductAction`, `CatalogResource`, `ActsWithOperationalSession.php`, `DeleteCategoryAction`, `ListCustomersAction`, `CustomerResource`, `AdminAnalyticsTest`, `AdminInventoryTest`, `FindCustomerByCpfAction`, `ShowCustomerAction`, `CustomerErrorCodeTest`, `ListPromotionsAction`, `PaymentMethod`, `ApplyPromotionToSaleAction`, `Sale.php`?**
-  _High betweenness centrality (0.164) - this node is a cross-community bridge._
-- **Why does `TestCase` connect `OperationalRouteAccessTest` to `PromotionDiscountCalculator`, `PromotionErrorCodeTest`, `StoreContext`, `autoload-dev`, `HasFactory`, `AuthErrorCodeTest`, `StoreErrorCodeTest`, `RefundErrorCodeTest`, `FormRequest`, `artisan`, `BusOrchestratorTest`, `CashShiftRepositoryInterface.php`, `InventoryErrorCodeTest`, `PromotionErrorCodeTest`, `CompleteSaleTest`, `AdminStoreAccessIdorTest`, `RefundsReturnsRepositoryInterface.php`, `StoreInventoryFactory`, `Category`, `AuthSecurityBaselineTest`, `CatalogErrorCodeTest`, `InventoryErrorCodeTest`, `StoreErrorCodeTest`, `OperationalStoreContextTest`, `HoldSaleAction`, `ApplyPromotionToSaleAction`, `CatalogResource`, `StoreRepository`, `EnsureUserHasRole.php`, `HasFactory`, `2026_07_15_300001_create_sales_table.php`, `SelectStoreContextTest`, `ListAdminSalesAction`, `actingAsManagerForStore`, `ShowSaleAction`, `SalePaymentValidator`?**
-  _High betweenness centrality (0.130) - this node is a cross-community bridge._
-- **Are the 212 inferred relationships involving `User` (e.g. with `.execute()` and `.handle()`) actually correct?**
-  _`User` has 212 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 137 inferred relationships involving `Store` (e.g. with `.topCustomersBySpend()` and `.definition()`) actually correct?**
-  _`Store` has 137 INFERRED edges - model-reasoned connections that need verification._
+- **Why does `User` connect `StoreInventoryFactory` to `PromotionErrorCodeTest`, `autoload-dev`, `AuthenticationDomainException`, `UserFactory`, `HasFactory`, `post-create-project-cmd`, `AppServiceProvider.php`, `DatabaseSeeder.php`, `CashShiftRepository.php`, `AssertManagerStoreAccess`, `CatalogRepository.php`, `HoldSaleAction`, `FormRequest`, `AuthenticationDomainException`, `SalesRepository.php`, `SaleCompletedNotification`, `artisan`, `SaleCompletedNotificationTest`, `UsersRepository`, `CatalogRepositoryInterface.php`, `InventoryRepositoryInterface.php`, `PaymentsRepositoryInterface.php`, `PromotionsRepositoryInterface.php`, `RefundsReturnsRepositoryInterface.php`, `AppServiceProvider.php`, `DispatchSaleSideEffectsTest`, `CustomersRepositoryInterface.php`, `Sale`, `StoreRepository`, `AdminAuditLogTest`, `CreateProductAction`, `SelectStoreContextTest`, `AuthSecurityBaselineTest`, `Category`, `ListAdminShiftsAction`, `CreatePromotionAction`, `OperationalStoreContextTest`, `UpdateProductAction`, `HoldSaleAction`, `ListAdminNotificationsController.php`, `ShowProductAction`, `ApplyPromotionToSaleAction`, `CatalogResource`, `StoreRepository`, `LoginTest`, `OperationalRouteAccessTest`, `HasFactory`, `SaleStatus.php`, `SelectStoreContextTest`, `AdminDashboardController.php`, `ListAdminSalesAction`, `OperationalRouteAccessTest`, `CatalogResource`, `WebhookRetryQueueInterface.php`, `actingAsManagerForStore`, `CreateCustomerAction`, `ActsWithOperationalSession.php`, `OperationalRouteAccessTest`, `ListStoresTest`, `Promotion.php`, `ListStoresTest`, `Sale.php`?**
+  _High betweenness centrality (0.220) - this node is a cross-community bridge._
+- **Why does `Controller` connect `CreateSaleAction` to `User`, `DatabaseSeeder.php`, `AttachCustomerToSaleAction`, `CashShiftRepository.php`, `CatalogRepository.php`, `AssertManagerStoreAccess`, `HoldSaleAction`, `RemoveSaleLineAction`, `AuthenticationDomainException`, `SaleCompletedNotification`, `SaleCompletedNotificationTest`, `CatalogRepositoryInterface.php`, `CustomersRepositoryInterface.php`, `InventoryRepositoryInterface.php`, `PaymentsRepositoryInterface.php`, `PromotionsRepositoryInterface.php`, `SalesRepositoryInterface.php`, `AppServiceProvider.php`, `AdminStoreAccessIdorTest`, `EnsureStoreContext.php`, `StoreDomainException`, `AdminStoreAccessIdorTest`, `CustomersRepositoryInterface.php`, `CreateSaleAction`, `Sale`, `SelectStoreContextTest`, `SaleErrorCodeTest`, `MoneyTest`, `CreatePromotionAction`, `UpdateProductAction`, `CatalogRepositoryInterface.php`, `SaleResource`, `Model`, `RemoveSaleLineController.php`, `ShowCategoryAction`, `ShowProductAction`, `AdminRouteAccessTest`, `CardInstrumentFormatGuardTest`, `post-autoload-dump`, `UpdateCustomerAction`, `SaleStatus.php`, `OperationalRouteAccessTest`, `AdminDashboardController.php`, `ListCategoriesAction`, `RemovePromotionFromSaleAction`, `RemoveSaleLineController.php`, `DeleteProductAction`, `ShowCategoryAction`, `CurrentCashShiftController.php`, `ShowProductAction`, `ActsWithOperationalSession.php`, `DeleteCategoryAction`, `ListCustomersAction`, `CustomerResource`, `AdminAnalyticsTest`, `FindCustomerByCpfAction`, `ShowCustomerAction`, `CustomerErrorCodeTest`, `ListPromotionsAction`, `ApplyPromotionToSaleAction`, `Sale.php`?**
+  _High betweenness centrality (0.167) - this node is a cross-community bridge._
+- **Why does `TestCase` connect `OperationalRouteAccessTest` to `PromotionDiscountCalculator`, `PromotionErrorCodeTest`, `StoreContext`, `autoload-dev`, `HasFactory`, `AuthErrorCodeTest`, `StoreErrorCodeTest`, `RefundErrorCodeTest`, `FormRequest`, `SalesRepository.php`, `artisan`, `BusOrchestratorTest`, `CashShiftRepositoryInterface.php`, `InventoryErrorCodeTest`, `PromotionErrorCodeTest`, `CompleteSaleTest`, `AdjustStoreInventoryAction`, `StoreInventoryFactory`, `Sale`, `Category`, `AuthSecurityBaselineTest`, `CatalogErrorCodeTest`, `InventoryErrorCodeTest`, `StoreErrorCodeTest`, `OperationalStoreContextTest`, `UpdateProductAction`, `HoldSaleAction`, `ApplyPromotionToSaleAction`, `CatalogResource`, `StoreRepository`, `EnsureUserHasRole.php`, `HasFactory`, `SelectStoreContextTest`, `ListAdminSalesAction`, `OperationalRouteAccessTest`, `WebhookRetryQueueInterface.php`, `actingAsManagerForStore`, `AdminInventoryTest`, `ShowSaleAction`, `Promotion.php`, `SalePaymentValidator`?**
+  _High betweenness centrality (0.119) - this node is a cross-community bridge._
+- **Are the 217 inferred relationships involving `User` (e.g. with `.execute()` and `.handle()`) actually correct?**
+  _`User` has 217 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 142 inferred relationships involving `Store` (e.g. with `.topCustomersBySpend()` and `.definition()`) actually correct?**
+  _`Store` has 142 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 76 inferred relationships involving `Product` (e.g. with `.definition()` and `.run()`) actually correct?**
   _`Product` has 76 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `$schema`, `name`, `type` to the rest of the system?**

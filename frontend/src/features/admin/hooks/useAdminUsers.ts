@@ -3,6 +3,7 @@ import {
   createAdminUser,
   listAdminUsers,
   listStores,
+  resetAdminUserMfa,
   updateAdminUser,
 } from '../../../shared/api/client'
 import type {
@@ -210,6 +211,38 @@ export function useAdminUsers() {
     }
   }, [editingUserId, form, loadUsers, search, startCreate])
 
+  const resetMfa = useCallback(
+    async (user: AdminUser) => {
+      if (user.role !== 'manager') {
+        setError('MFA reset applies only to managers.')
+        return
+      }
+      const reason = window.prompt(
+        `Reason for resetting MFA for ${user.email} (min 3 chars):`,
+        '',
+      )
+      if (reason === null) return
+      if (reason.trim().length < 3) {
+        setError('Reason must be at least 3 characters.')
+        return
+      }
+
+      setSaving(true)
+      setError(null)
+      setSuccess(null)
+      try {
+        const response = await resetAdminUserMfa(user.id, reason.trim())
+        setSuccess(response.data.message)
+        await loadUsers(search)
+      } catch (err) {
+        setError(formatApiError(err))
+      } finally {
+        setSaving(false)
+      }
+    },
+    [loadUsers, search],
+  )
+
   return {
     users,
     stores,
@@ -230,5 +263,6 @@ export function useAdminUsers() {
     updateForm,
     toggleStore,
     save,
+    resetMfa,
   }
 }

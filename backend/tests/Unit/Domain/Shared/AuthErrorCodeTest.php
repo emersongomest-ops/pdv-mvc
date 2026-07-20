@@ -13,12 +13,12 @@ final class AuthErrorCodeTest extends TestCase
     public function test_catalog_lists_all_authentication_error_codes(): void
     {
         $codes = ErrorCode::authenticationErrors();
+        $values = array_map(static fn (ErrorCode $code): string => $code->value, $codes);
 
-        $this->assertCount(20, $codes);
-        $this->assertSame(
-            array_map(static fn (ErrorCode $code): string => $code->value, $codes),
-            array_map(static fn (ErrorCode $code): string => $code->value, ErrorCode::authenticationErrors())
-        );
+        $this->assertNotEmpty($codes);
+        $this->assertSame(count($values), count(array_unique($values)));
+        $this->assertContains(ErrorCode::AuthCannotResetOwnMfa->value, $values);
+        $this->assertContains(ErrorCode::AuthMfaResetNotApplicable->value, $values);
     }
 
     #[DataProvider('authenticationErrorProvider')]

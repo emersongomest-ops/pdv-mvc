@@ -14,5 +14,5 @@
 
 - **Consequences:**
   - Demo manager seeds with fixed secret `JBSWY3DPEHPK3PXP` (local/demo only).
-  - On MFA confirm, eight one-time recovery codes are shown once (bcrypt hashes in `mfa_recovery_codes`, encrypted at rest). Admin MFA reset still deferred.
+  - On MFA confirm, eight one-time recovery codes are shown once (bcrypt hashes in `mfa_recovery_codes`, encrypted at rest). Admin MFA reset: `POST /api/admin/users/{id}/mfa/reset` (RN-074).
   - Existing manager login feature tests must complete MFA challenge.

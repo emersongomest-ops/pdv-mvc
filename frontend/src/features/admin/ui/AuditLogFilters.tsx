@@ -17,6 +17,7 @@ const actions: Array<{ value: AuditAction; label: string }> = [
   { value: 'promotion.created', label: 'Promotion create' },
   { value: 'promotion.updated', label: 'Promotion update' },
   { value: 'cash_shift.reopened', label: 'Shift reopen' },
+  { value: 'identity.mfa_reset', label: 'MFA reset' },
 ]
 
 /** Presentational audit log filters (dumb). */

@@ -34,6 +34,7 @@ use App\Http\IdentityAccess\Controllers\ListUsersController;
 use App\Http\IdentityAccess\Controllers\LoginController;
 use App\Http\IdentityAccess\Controllers\LogoutController;
 use App\Http\IdentityAccess\Controllers\OperationalPosController;
+use App\Http\IdentityAccess\Controllers\ResetManagerMfaController;
 use App\Http\IdentityAccess\Controllers\ShowCurrentUserController;
 use App\Http\IdentityAccess\Controllers\ShowUserController;
 use App\Http\IdentityAccess\Controllers\UpdateUserController;
@@ -146,6 +147,7 @@ Route::middleware('auth')->group(function (): void {
                 Route::post('/', CreateUserController::class);
                 Route::get('{userId}', ShowUserController::class);
                 Route::patch('{userId}', UpdateUserController::class);
+                Route::post('{userId}/mfa/reset', ResetManagerMfaController::class);
             });
         });
 

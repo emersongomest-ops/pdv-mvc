@@ -24,6 +24,7 @@ export type AdminUser = {
   email: string
   role: UserRole
   is_active: boolean
+  mfa_enabled: boolean
   stores: AdminUserStore[]
   created_at: string | null
   updated_at: string | null
@@ -307,6 +308,7 @@ export type AuditAction =
   | 'promotion.created'
   | 'promotion.updated'
   | 'cash_shift.reopened'
+  | 'identity.mfa_reset'
 
 export type AuditLogEntry = {
   id: number

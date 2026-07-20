@@ -13,12 +13,13 @@ enum AuditAction: string
     case PromotionCreated = 'promotion.created';
     case PromotionUpdated = 'promotion.updated';
     case CashShiftReopened = 'cash_shift.reopened';
+    case ManagerMfaReset = 'identity.mfa_reset';
 
     /**
      * @return list<string>
      */
     public static function values(): array
     {
-        return array_column(self::cases(), 'value');
+        return array_values(array_column(self::cases(), 'value'));
     }
 }

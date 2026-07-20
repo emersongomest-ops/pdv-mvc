@@ -19,8 +19,9 @@ Central, immutable audit trail for sensitive administrative mutations. Writes ar
 
 | RN | Summary |
 |----|---------|
-| RN-070 | Who/when/what for price, stock, refund/return, promotion create/update, shift reopen (RN-004) |
+| RN-070 | Who/when/what for price, stock, refund/return, promotion create/update, shift reopen (RN-004), MFA reset (RN-074) |
 | RN-004 | Manager reopen closed shift — audited |
+| RN-074 | Manager MFA reset — audited |
 | RN-019a | Refund/return audit (implemented via RN-070 entries) |
 | RN-023 | Stock adjust reason mandatory + audited |
 | RN-064 | Managers only see assigned stores (+ global) |
@@ -34,6 +35,7 @@ Central, immutable audit trail for sensitive administrative mutations. Writes ar
 | `refund.created` / `return.created` | Refund/return create | Store (sale) |
 | `promotion.created` / `promotion.updated` | Admin promotion create/update (incl. `is_active`, customer IDs) | Global |
 | `cash_shift.reopened` | Manager reopens a closed shift (RN-004) | Store |
+| `identity.mfa_reset` | Manager resets another manager's MFA (RN-074) | Global |
 
 **Not audited:** product create price, apply/remove promotion on an in-progress sale.
 

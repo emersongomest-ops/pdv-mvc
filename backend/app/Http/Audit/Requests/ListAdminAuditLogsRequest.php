@@ -26,7 +26,7 @@ final class ListAdminAuditLogsRequest extends FormRequest
             'action' => ['sometimes', 'nullable', 'string', Rule::in(AuditAction::values())],
             'actor_id' => ['sometimes', 'nullable', 'integer', Rule::exists('users', 'id')],
             'store_id' => ['sometimes', 'nullable', 'integer', Rule::exists('stores', 'id')],
-            'subject_type' => ['sometimes', 'nullable', 'string', Rule::in(['product', 'refund', 'promotion', 'cash_shift'])],
+            'subject_type' => ['sometimes', 'nullable', 'string', Rule::in(['product', 'refund', 'promotion', 'cash_shift', 'user'])],
             'subject_id' => ['sometimes', 'nullable', 'integer', 'min:1'],
             'cursor' => ['sometimes', 'nullable', 'string', 'max:512'],
             'per_page' => ['sometimes', 'nullable', 'integer', 'min:1', 'max:100'],

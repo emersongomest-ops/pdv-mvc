@@ -10,8 +10,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_application_admin_actions_getadmindashboardmetricsaction",
-      "community": 23,
-      "community_name": "RefundsReturnsRepository.php",
+      "community": 145,
+      "community_name": "AssertManagerStoreAccess",
       "norm_label": "getadmindashboardmetricsaction.php"
     },
     {
@@ -21,8 +21,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_application_admin_actions_getadmindashboardmetricsaction_getadmindashboardmetricsaction",
-      "community": 23,
-      "community_name": "RefundsReturnsRepository.php",
+      "community": 145,
+      "community_name": "AssertManagerStoreAccess",
       "norm_label": "getadmindashboardmetricsaction"
     },
     {
@@ -32,8 +32,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "app_application_admin_actions_getadmindashboardmetricsaction_getadmindashboardmetricsaction_construct",
-      "community": 23,
-      "community_name": "RefundsReturnsRepository.php",
+      "community": 145,
+      "community_name": "AssertManagerStoreAccess",
       "norm_label": ".__construct()"
     },
     {
@@ -43,8 +43,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_application_admin_actions_getadmindashboardmetricsaction_getadmindashboardmetricsaction_execute",
-      "community": 23,
-      "community_name": "RefundsReturnsRepository.php",
+      "community": 145,
+      "community_name": "AssertManagerStoreAccess",
       "norm_label": ".execute()"
     },
     {
@@ -54,8 +54,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_application_admin_dtos_admindashboardmetrics",
-      "community": 23,
-      "community_name": "RefundsReturnsRepository.php",
+      "community": 145,
+      "community_name": "AssertManagerStoreAccess",
       "norm_label": "admindashboardmetrics.php"
     },
     {
@@ -65,8 +65,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_application_admin_dtos_admindashboardmetrics_admindashboardmetrics",
-      "community": 23,
-      "community_name": "RefundsReturnsRepository.php",
+      "community": 145,
+      "community_name": "AssertManagerStoreAccess",
       "norm_label": "admindashboardmetrics"
     },
     {
@@ -76,8 +76,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_application_admin_dtos_admindashboardmetrics_admindashboardmetrics_construct",
-      "community": 23,
-      "community_name": "RefundsReturnsRepository.php",
+      "community": 145,
+      "community_name": "AssertManagerStoreAccess",
       "norm_label": ".__construct()"
     },
     {
@@ -87,8 +87,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_application_admin_dtos_admindashboardmetrics_admindashboardmetrics_toarray",
-      "community": 23,
-      "community_name": "RefundsReturnsRepository.php",
+      "community": 145,
+      "community_name": "AssertManagerStoreAccess",
       "norm_label": ".toarray()"
     },
     {
@@ -373,8 +373,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_application_cashshift_actions_getadminshiftreportaction_getadminshiftreportaction_execute",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 202,
+      "community_name": "RemoveSaleLineAction",
       "norm_label": ".execute()"
     },
     {
@@ -384,8 +384,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_application_cashshift_actions_listadminshiftsaction",
-      "community": 208,
-      "community_name": "ApplyPromotionToSaleAction",
+      "community": 17,
+      "community_name": "CatalogRepository.php",
       "norm_label": "listadminshiftsaction.php"
     },
     {
@@ -395,8 +395,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_application_cashshift_actions_listadminshiftsaction_listadminshiftsaction",
-      "community": 208,
-      "community_name": "ApplyPromotionToSaleAction",
+      "community": 17,
+      "community_name": "CatalogRepository.php",
       "norm_label": "listadminshiftsaction"
     },
     {
@@ -406,8 +406,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_application_cashshift_actions_listadminshiftsaction_listadminshiftsaction_construct",
-      "community": 208,
-      "community_name": "ApplyPromotionToSaleAction",
+      "community": 17,
+      "community_name": "CatalogRepository.php",
       "norm_label": ".__construct()"
     },
     {
@@ -417,8 +417,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_cashshift_actions_listadminshiftsaction_php_cashshiftrepositoryinterface",
-      "community": 208,
-      "community_name": "ApplyPromotionToSaleAction",
+      "community": 17,
+      "community_name": "CatalogRepository.php",
       "norm_label": "cashshiftrepositoryinterface"
     },
     {
@@ -428,8 +428,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_application_cashshift_actions_listadminshiftsaction_listadminshiftsaction_execute",
-      "community": 208,
-      "community_name": "ApplyPromotionToSaleAction",
+      "community": 17,
+      "community_name": "CatalogRepository.php",
       "norm_label": ".execute()"
     },
     {
@@ -439,8 +439,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_cashshift_actions_listadminshiftsaction_php_collection",
-      "community": 208,
-      "community_name": "ApplyPromotionToSaleAction",
+      "community": 17,
+      "community_name": "CatalogRepository.php",
       "norm_label": "collection"
     },
     {
@@ -450,8 +450,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_application_cashshift_actions_opencashshiftaction",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 118,
+      "community_name": "PaymentMethod",
       "norm_label": "opencashshiftaction.php"
     },
     {
@@ -461,8 +461,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_application_cashshift_actions_opencashshiftaction_opencashshiftaction",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 118,
+      "community_name": "PaymentMethod",
       "norm_label": "opencashshiftaction"
     },
     {
@@ -472,8 +472,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_application_cashshift_actions_opencashshiftaction_opencashshiftaction_construct",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 118,
+      "community_name": "PaymentMethod",
       "norm_label": ".__construct()"
     },
     {
@@ -483,8 +483,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_cashshift_actions_opencashshiftaction_php_cashshiftrepositoryinterface",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 118,
+      "community_name": "PaymentMethod",
       "norm_label": "cashshiftrepositoryinterface"
     },
     {
@@ -494,8 +494,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_application_cashshift_actions_opencashshiftaction_opencashshiftaction_execute",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 118,
+      "community_name": "PaymentMethod",
       "norm_label": ".execute()"
     },
     {
@@ -1495,8 +1495,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_application_customers_actions_updatecustomeraction_updatecustomeraction_execute",
-      "community": 86,
-      "community_name": "UpdateCustomerAction",
+      "community": 108,
+      "community_name": "FindCustomerByCpfAction",
       "norm_label": ".execute()"
     },
     {
@@ -1506,8 +1506,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_application_customers_support_customerpayloadnormalizer",
-      "community": 86,
-      "community_name": "UpdateCustomerAction",
+      "community": 108,
+      "community_name": "FindCustomerByCpfAction",
       "norm_label": "customerpayloadnormalizer.php"
     },
     {
@@ -1517,8 +1517,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_application_customers_support_customerpayloadnormalizer_customerpayloadnormalizer",
-      "community": 86,
-      "community_name": "UpdateCustomerAction",
+      "community": 108,
+      "community_name": "FindCustomerByCpfAction",
       "norm_label": "customerpayloadnormalizer"
     },
     {
@@ -1528,8 +1528,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_application_customers_support_customerpayloadnormalizer_customerpayloadnormalizer_normalizecreate",
-      "community": 86,
-      "community_name": "UpdateCustomerAction",
+      "community": 108,
+      "community_name": "FindCustomerByCpfAction",
       "norm_label": ".normalizecreate()"
     },
     {
@@ -1539,8 +1539,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "app_application_customers_support_customerpayloadnormalizer_customerpayloadnormalizer_digitsonly",
-      "community": 86,
-      "community_name": "UpdateCustomerAction",
+      "community": 108,
+      "community_name": "FindCustomerByCpfAction",
       "norm_label": ".digitsonly()"
     },
     {
@@ -1550,8 +1550,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "app_application_customers_support_customerpayloadnormalizer_customerpayloadnormalizer_assertrequiredfieldspresent",
-      "community": 86,
-      "community_name": "UpdateCustomerAction",
+      "community": 108,
+      "community_name": "FindCustomerByCpfAction",
       "norm_label": ".assertrequiredfieldspresent()"
     },
     {
@@ -1715,8 +1715,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_createuseraction",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 127,
+      "community_name": "Sale.php",
       "norm_label": "createuseraction.php"
     },
     {
@@ -1726,8 +1726,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_createuseraction_createuseraction",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 127,
+      "community_name": "Sale.php",
       "norm_label": "createuseraction"
     },
     {
@@ -1737,8 +1737,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_createuseraction_createuseraction_construct",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 127,
+      "community_name": "Sale.php",
       "norm_label": ".__construct()"
     },
     {
@@ -1748,8 +1748,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_createuseraction_php_usersrepositoryinterface",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 127,
+      "community_name": "Sale.php",
       "norm_label": "usersrepositoryinterface"
     },
     {
@@ -1759,8 +1759,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_createuseraction_createuseraction_execute",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 127,
+      "community_name": "Sale.php",
       "norm_label": ".execute()"
     },
     {
@@ -1957,8 +1957,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_showuseraction",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 184,
+      "community_name": "CustomersRepositoryInterface.php",
       "norm_label": "showuseraction.php"
     },
     {
@@ -1968,8 +1968,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_showuseraction_showuseraction",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 184,
+      "community_name": "CustomersRepositoryInterface.php",
       "norm_label": "showuseraction"
     },
     {
@@ -1979,8 +1979,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_showuseraction_showuseraction_construct",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 184,
+      "community_name": "CustomersRepositoryInterface.php",
       "norm_label": ".__construct()"
     },
     {
@@ -1990,8 +1990,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_showuseraction_php_usersrepositoryinterface",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 184,
+      "community_name": "CustomersRepositoryInterface.php",
       "norm_label": "usersrepositoryinterface"
     },
     {
@@ -2001,8 +2001,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_showuseraction_showuseraction_execute",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 184,
+      "community_name": "CustomersRepositoryInterface.php",
       "norm_label": ".execute()"
     },
     {
@@ -2012,8 +2012,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_updateuseraction",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 144,
+      "community_name": "HoldSaleAction",
       "norm_label": "updateuseraction.php"
     },
     {
@@ -2023,8 +2023,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_updateuseraction_updateuseraction",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 144,
+      "community_name": "HoldSaleAction",
       "norm_label": "updateuseraction"
     },
     {
@@ -2034,8 +2034,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_updateuseraction_updateuseraction_construct",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 144,
+      "community_name": "HoldSaleAction",
       "norm_label": ".__construct()"
     },
     {
@@ -2045,8 +2045,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_updateuseraction_php_usersrepositoryinterface",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 144,
+      "community_name": "HoldSaleAction",
       "norm_label": "usersrepositoryinterface"
     },
     {
@@ -2056,8 +2056,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_application_identityaccess_actions_updateuseraction_updateuseraction_execute",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 144,
+      "community_name": "HoldSaleAction",
       "norm_label": ".execute()"
     },
     {
@@ -3134,8 +3134,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_application_sales_actions_addsalelineaction_addsalelineaction_execute",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 39,
+      "community_name": "PromotionsRepositoryInterface.php",
       "norm_label": ".execute()"
     },
     {
@@ -3398,8 +3398,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "app_application_sales_actions_completesaleaction_completesaleaction_execute",
-      "community": 132,
-      "community_name": "RemovePromotionFromSaleController.php",
+      "community": 88,
+      "community_name": "CloseCashShiftTest",
       "norm_label": ".execute()"
     },
     {
@@ -3409,8 +3409,8 @@
       "source_location": "L151",
       "_origin": "ast",
       "id": "app_application_sales_actions_completesaleaction_completesaleaction_enqueuependingoutbox",
-      "community": 132,
-      "community_name": "RemovePromotionFromSaleController.php",
+      "community": 88,
+      "community_name": "CloseCashShiftTest",
       "norm_label": ".enqueuependingoutbox()"
     },
     {
@@ -3420,8 +3420,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_application_sales_actions_createsaleaction",
-      "community": 39,
-      "community_name": "PromotionsRepositoryInterface.php",
+      "community": 176,
+      "community_name": "ShowCurrentUserController.php",
       "norm_label": "createsaleaction.php"
     },
     {
@@ -3431,8 +3431,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_application_sales_actions_createsaleaction_createsaleaction",
-      "community": 39,
-      "community_name": "PromotionsRepositoryInterface.php",
+      "community": 176,
+      "community_name": "ShowCurrentUserController.php",
       "norm_label": "createsaleaction"
     },
     {
@@ -3442,8 +3442,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_application_sales_actions_createsaleaction_createsaleaction_construct",
-      "community": 39,
-      "community_name": "PromotionsRepositoryInterface.php",
+      "community": 176,
+      "community_name": "ShowCurrentUserController.php",
       "norm_label": ".__construct()"
     },
     {
@@ -3453,8 +3453,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_sales_actions_createsaleaction_php_salesrepositoryinterface",
-      "community": 39,
-      "community_name": "PromotionsRepositoryInterface.php",
+      "community": 176,
+      "community_name": "ShowCurrentUserController.php",
       "norm_label": "salesrepositoryinterface"
     },
     {
@@ -3464,8 +3464,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "app_application_sales_actions_createsaleaction_createsaleaction_execute",
-      "community": 39,
-      "community_name": "PromotionsRepositoryInterface.php",
+      "community": 176,
+      "community_name": "ShowCurrentUserController.php",
       "norm_label": ".execute()"
     },
     {
@@ -3475,8 +3475,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_application_sales_actions_holdsaleaction",
-      "community": 127,
-      "community_name": "Sale.php",
+      "community": 197,
+      "community_name": "MoneyTest",
       "norm_label": "holdsaleaction.php"
     },
     {
@@ -3486,8 +3486,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_application_sales_actions_holdsaleaction_holdsaleaction",
-      "community": 127,
-      "community_name": "Sale.php",
+      "community": 197,
+      "community_name": "MoneyTest",
       "norm_label": "holdsaleaction"
     },
     {
@@ -3497,8 +3497,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_application_sales_actions_holdsaleaction_holdsaleaction_construct",
-      "community": 127,
-      "community_name": "Sale.php",
+      "community": 197,
+      "community_name": "MoneyTest",
       "norm_label": ".__construct()"
     },
     {
@@ -3508,8 +3508,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_sales_actions_holdsaleaction_php_salesrepositoryinterface",
-      "community": 127,
-      "community_name": "Sale.php",
+      "community": 197,
+      "community_name": "MoneyTest",
       "norm_label": "salesrepositoryinterface"
     },
     {
@@ -3519,8 +3519,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_application_sales_actions_holdsaleaction_holdsaleaction_execute",
-      "community": 127,
-      "community_name": "Sale.php",
+      "community": 197,
+      "community_name": "MoneyTest",
       "norm_label": ".execute()"
     },
     {
@@ -3530,8 +3530,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_application_sales_actions_listadminsalesaction",
-      "community": 210,
-      "community_name": "HasFactory",
+      "community": 37,
+      "community_name": "InventoryRepositoryInterface.php",
       "norm_label": "listadminsalesaction.php"
     },
     {
@@ -3541,8 +3541,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_application_sales_actions_listadminsalesaction_listadminsalesaction",
-      "community": 210,
-      "community_name": "HasFactory",
+      "community": 37,
+      "community_name": "InventoryRepositoryInterface.php",
       "norm_label": "listadminsalesaction"
     },
     {
@@ -3552,8 +3552,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_application_sales_actions_listadminsalesaction_listadminsalesaction_construct",
-      "community": 210,
-      "community_name": "HasFactory",
+      "community": 37,
+      "community_name": "InventoryRepositoryInterface.php",
       "norm_label": ".__construct()"
     },
     {
@@ -3563,8 +3563,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_sales_actions_listadminsalesaction_php_salesrepositoryinterface",
-      "community": 210,
-      "community_name": "HasFactory",
+      "community": 37,
+      "community_name": "InventoryRepositoryInterface.php",
       "norm_label": "salesrepositoryinterface"
     },
     {
@@ -3574,8 +3574,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "app_application_sales_actions_listadminsalesaction_listadminsalesaction_execute",
-      "community": 210,
-      "community_name": "HasFactory",
+      "community": 37,
+      "community_name": "InventoryRepositoryInterface.php",
       "norm_label": ".execute()"
     },
     {
@@ -3585,8 +3585,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_sales_actions_listadminsalesaction_php_collection",
-      "community": 210,
-      "community_name": "HasFactory",
+      "community": 37,
+      "community_name": "InventoryRepositoryInterface.php",
       "norm_label": "collection"
     },
     {
@@ -3717,8 +3717,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_application_sales_actions_removepromotionfromsaleaction_removepromotionfromsaleaction_execute",
-      "community": 221,
-      "community_name": "RemovePromotionFromSaleAction",
+      "community": 88,
+      "community_name": "CloseCashShiftTest",
       "norm_label": ".execute()"
     },
     {
@@ -3728,8 +3728,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_application_sales_actions_removesalelineaction",
-      "community": 202,
-      "community_name": "RemoveSaleLineAction",
+      "community": 88,
+      "community_name": "CloseCashShiftTest",
       "norm_label": "removesalelineaction.php"
     },
     {
@@ -3739,8 +3739,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_application_sales_actions_removesalelineaction_removesalelineaction",
-      "community": 202,
-      "community_name": "RemoveSaleLineAction",
+      "community": 88,
+      "community_name": "CloseCashShiftTest",
       "norm_label": "removesalelineaction"
     },
     {
@@ -3750,8 +3750,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_application_sales_actions_removesalelineaction_removesalelineaction_construct",
-      "community": 202,
-      "community_name": "RemoveSaleLineAction",
+      "community": 88,
+      "community_name": "CloseCashShiftTest",
       "norm_label": ".__construct()"
     },
     {
@@ -3761,8 +3761,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_sales_actions_removesalelineaction_php_salesrepositoryinterface",
-      "community": 202,
-      "community_name": "RemoveSaleLineAction",
+      "community": 88,
+      "community_name": "CloseCashShiftTest",
       "norm_label": "salesrepositoryinterface"
     },
     {
@@ -3772,8 +3772,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_application_sales_actions_removesalelineaction_removesalelineaction_execute",
-      "community": 202,
-      "community_name": "RemoveSaleLineAction",
+      "community": 88,
+      "community_name": "CloseCashShiftTest",
       "norm_label": ".execute()"
     },
     {
@@ -3893,8 +3893,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_application_sales_actions_showsaleaction",
-      "community": 39,
-      "community_name": "PromotionsRepositoryInterface.php",
+      "community": 94,
+      "community_name": "DeleteCategoryAction",
       "norm_label": "showsaleaction.php"
     },
     {
@@ -3904,8 +3904,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_application_sales_actions_showsaleaction_showsaleaction",
-      "community": 39,
-      "community_name": "PromotionsRepositoryInterface.php",
+      "community": 94,
+      "community_name": "DeleteCategoryAction",
       "norm_label": "showsaleaction"
     },
     {
@@ -3915,8 +3915,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_application_sales_actions_showsaleaction_showsaleaction_construct",
-      "community": 39,
-      "community_name": "PromotionsRepositoryInterface.php",
+      "community": 94,
+      "community_name": "DeleteCategoryAction",
       "norm_label": ".__construct()"
     },
     {
@@ -3926,8 +3926,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_sales_actions_showsaleaction_php_salesrepositoryinterface",
-      "community": 39,
-      "community_name": "PromotionsRepositoryInterface.php",
+      "community": 94,
+      "community_name": "DeleteCategoryAction",
       "norm_label": "salesrepositoryinterface"
     },
     {
@@ -3937,8 +3937,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_application_sales_actions_showsaleaction_showsaleaction_execute",
-      "community": 39,
-      "community_name": "PromotionsRepositoryInterface.php",
+      "community": 94,
+      "community_name": "DeleteCategoryAction",
       "norm_label": ".execute()"
     },
     {
@@ -4223,8 +4223,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_application_shared_idempotency_idempotencyguard",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": "idempotencyguard.php"
     },
     {
@@ -4234,8 +4234,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "app_application_shared_idempotency_idempotencyguard_idempotencyguard",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": "idempotencyguard"
     },
     {
@@ -4245,8 +4245,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_application_shared_idempotency_idempotencyguard_idempotencyguard_construct",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": ".__construct()"
     },
     {
@@ -4256,8 +4256,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_shared_idempotency_idempotencyguard_php_idempotencyrecordrepositoryinterface",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": "idempotencyrecordrepositoryinterface"
     },
     {
@@ -4267,8 +4267,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "app_application_shared_idempotency_idempotencyguard_idempotencyguard_requirekey",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": ".requirekey()"
     },
     {
@@ -4278,8 +4278,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_shared_idempotency_idempotencyguard_php_request",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": "request"
     },
     {
@@ -4289,8 +4289,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "app_application_shared_idempotency_idempotencyguard_idempotencyguard_hashpayload",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": ".hashpayload()"
     },
     {
@@ -4300,8 +4300,8 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "app_application_shared_idempotency_idempotencyguard_idempotencyguard_begin",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": ".begin()"
     },
     {
@@ -4311,8 +4311,8 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "app_application_shared_idempotency_idempotencyguard_idempotencyguard_complete",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": ".complete()"
     },
     {
@@ -4322,8 +4322,8 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "app_application_shared_idempotency_idempotencyguard_idempotencyguard_abort",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": ".abort()"
     },
     {
@@ -4333,8 +4333,8 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "app_application_shared_idempotency_idempotencyguard_idempotencyguard_replayresponse",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": ".replayresponse()"
     },
     {
@@ -4344,8 +4344,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_application_shared_idempotency_idempotencyguard_php_jsonresponse",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": "jsonresponse"
     },
     {
@@ -4355,8 +4355,8 @@
       "source_location": "L127",
       "_origin": "ast",
       "id": "app_application_shared_idempotency_idempotencyguard_idempotencyguard_run",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": ".run()"
     },
     {
@@ -4366,8 +4366,8 @@
       "source_location": "L161",
       "_origin": "ast",
       "id": "app_application_shared_idempotency_idempotencyguard_idempotencyguard_isuniqueviolation",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": ".isuniqueviolation()"
     },
     {
@@ -4377,8 +4377,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "queryexception",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 102,
+      "community_name": "UpdateSaleLineAction",
       "norm_label": "queryexception"
     },
     {
@@ -5246,8 +5246,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_domain_cashshift_dtos_shiftclosingreport",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 202,
+      "community_name": "RemoveSaleLineAction",
       "norm_label": "shiftclosingreport.php"
     },
     {
@@ -5257,8 +5257,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_domain_cashshift_dtos_shiftclosingreport_shiftclosingreport",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 202,
+      "community_name": "RemoveSaleLineAction",
       "norm_label": "shiftclosingreport"
     },
     {
@@ -5268,8 +5268,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_domain_cashshift_dtos_shiftclosingreport_shiftclosingreport_construct",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 202,
+      "community_name": "RemoveSaleLineAction",
       "norm_label": ".__construct()"
     },
     {
@@ -5741,8 +5741,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_domain_customers_repositories_customersrepositoryinterface",
-      "community": 102,
-      "community_name": "UpdateSaleLineAction",
+      "community": 136,
+      "community_name": "HasFactory",
       "norm_label": "customersrepositoryinterface.php"
     },
     {
@@ -5752,8 +5752,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_domain_customers_repositories_customersrepositoryinterface_list",
-      "community": 102,
-      "community_name": "UpdateSaleLineAction",
+      "community": 136,
+      "community_name": "HasFactory",
       "norm_label": "list()"
     },
     {
@@ -5763,8 +5763,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_domain_customers_repositories_customersrepositoryinterface_php_collection",
-      "community": 102,
-      "community_name": "UpdateSaleLineAction",
+      "community": 136,
+      "community_name": "HasFactory",
       "norm_label": "collection"
     },
     {
@@ -5774,8 +5774,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_domain_customers_repositories_customersrepositoryinterface_listpage",
-      "community": 102,
-      "community_name": "UpdateSaleLineAction",
+      "community": 136,
+      "community_name": "HasFactory",
       "norm_label": "listpage()"
     },
     {
@@ -5785,8 +5785,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "app_domain_customers_repositories_customersrepositoryinterface_findbyid",
-      "community": 102,
-      "community_name": "UpdateSaleLineAction",
+      "community": 136,
+      "community_name": "HasFactory",
       "norm_label": "findbyid()"
     },
     {
@@ -5796,8 +5796,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_domain_customers_repositories_customersrepositoryinterface_findbycpf",
-      "community": 102,
-      "community_name": "UpdateSaleLineAction",
+      "community": 136,
+      "community_name": "HasFactory",
       "norm_label": "findbycpf()"
     },
     {
@@ -5807,8 +5807,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_domain_customers_repositories_customersrepositoryinterface_cpfexists",
-      "community": 102,
-      "community_name": "UpdateSaleLineAction",
+      "community": 136,
+      "community_name": "HasFactory",
       "norm_label": "cpfexists()"
     },
     {
@@ -5818,8 +5818,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "app_domain_customers_repositories_customersrepositoryinterface_create",
-      "community": 102,
-      "community_name": "UpdateSaleLineAction",
+      "community": 136,
+      "community_name": "HasFactory",
       "norm_label": "create()"
     },
     {
@@ -5829,8 +5829,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "app_domain_customers_repositories_customersrepositoryinterface_update",
-      "community": 102,
-      "community_name": "UpdateSaleLineAction",
+      "community": 136,
+      "community_name": "HasFactory",
       "norm_label": "update()"
     },
     {
@@ -5840,8 +5840,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "app_domain_customers_repositories_customersrepositoryinterface_recordcompletedpurchase",
-      "community": 102,
-      "community_name": "UpdateSaleLineAction",
+      "community": 136,
+      "community_name": "HasFactory",
       "norm_label": "recordcompletedpurchase()"
     },
     {
@@ -6819,8 +6819,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_domain_payments_outbox_pendingpaymentoutboxinterface",
-      "community": 20,
-      "community_name": "InventoryRepository.php",
+      "community": 227,
+      "community_name": "WebhookRetryQueueInterface.php",
       "norm_label": "pendingpaymentoutboxinterface.php"
     },
     {
@@ -6830,8 +6830,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_domain_payments_outbox_pendingpaymentoutboxinterface_push",
-      "community": 20,
-      "community_name": "InventoryRepository.php",
+      "community": 227,
+      "community_name": "WebhookRetryQueueInterface.php",
       "norm_label": "push()"
     },
     {
@@ -6841,8 +6841,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_domain_payments_outbox_pendingpaymentoutboxinterface_forget",
-      "community": 20,
-      "community_name": "InventoryRepository.php",
+      "community": 227,
+      "community_name": "WebhookRetryQueueInterface.php",
       "norm_label": "forget()"
     },
     {
@@ -6852,8 +6852,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_domain_payments_outbox_pendingpaymentoutboxinterface_all",
-      "community": 20,
-      "community_name": "InventoryRepository.php",
+      "community": 227,
+      "community_name": "WebhookRetryQueueInterface.php",
       "norm_label": "all()"
     },
     {
@@ -6863,8 +6863,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "app_domain_payments_outbox_pendingpaymentoutboxinterface_incrementattempts",
-      "community": 20,
-      "community_name": "InventoryRepository.php",
+      "community": 227,
+      "community_name": "WebhookRetryQueueInterface.php",
       "norm_label": "incrementattempts()"
     },
     {
@@ -6874,8 +6874,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_domain_payments_repositories_paymentsrepositoryinterface",
-      "community": 144,
-      "community_name": "HoldSaleAction",
+      "community": 120,
+      "community_name": "Promotion.php",
       "norm_label": "paymentsrepositoryinterface.php"
     },
     {
@@ -6885,8 +6885,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "app_domain_payments_repositories_paymentsrepositoryinterface_recordforsale",
-      "community": 144,
-      "community_name": "HoldSaleAction",
+      "community": 120,
+      "community_name": "Promotion.php",
       "norm_label": "recordforsale()"
     },
     {
@@ -6896,8 +6896,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_domain_payments_repositories_paymentsrepositoryinterface_findlinebytransactionreference",
-      "community": 144,
-      "community_name": "HoldSaleAction",
+      "community": 120,
+      "community_name": "Promotion.php",
       "norm_label": "findlinebytransactionreference()"
     },
     {
@@ -6907,8 +6907,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_domain_payments_repositories_paymentsrepositoryinterface_marklinestatus",
-      "community": 144,
-      "community_name": "HoldSaleAction",
+      "community": 120,
+      "community_name": "Promotion.php",
       "norm_label": "marklinestatus()"
     },
     {
@@ -6918,8 +6918,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_domain_payments_repositories_paymentsrepositoryinterface_php_paymentlinestatus",
-      "community": 144,
-      "community_name": "HoldSaleAction",
+      "community": 120,
+      "community_name": "Promotion.php",
       "norm_label": "paymentlinestatus"
     },
     {
@@ -6929,8 +6929,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_domain_payments_repositories_paymentsrepositoryinterface_php_datetimeinterface",
-      "community": 144,
-      "community_name": "HoldSaleAction",
+      "community": 120,
+      "community_name": "Promotion.php",
       "norm_label": "datetimeinterface"
     },
     {
@@ -6940,8 +6940,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "app_domain_payments_repositories_paymentsrepositoryinterface_recordwebhookevent",
-      "community": 144,
-      "community_name": "HoldSaleAction",
+      "community": 120,
+      "community_name": "Promotion.php",
       "norm_label": "recordwebhookevent()"
     },
     {
@@ -6951,8 +6951,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "app_domain_payments_repositories_paymentsrepositoryinterface_markwebhookprocessed",
-      "community": 144,
-      "community_name": "HoldSaleAction",
+      "community": 120,
+      "community_name": "Promotion.php",
       "norm_label": "markwebhookprocessed()"
     },
     {
@@ -6962,8 +6962,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "app_domain_payments_repositories_paymentsrepositoryinterface_listpendinglines",
-      "community": 144,
-      "community_name": "HoldSaleAction",
+      "community": 120,
+      "community_name": "Promotion.php",
       "norm_label": "listpendinglines()"
     },
     {
@@ -6973,8 +6973,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "app_domain_payments_repositories_paymentsrepositoryinterface_countpendinglines",
-      "community": 144,
-      "community_name": "HoldSaleAction",
+      "community": 120,
+      "community_name": "Promotion.php",
       "norm_label": "countpendinglines()"
     },
     {
@@ -7083,8 +7083,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_domain_payments_webhooks_webhookretryqueueinterface",
-      "community": 227,
-      "community_name": "WebhookRetryQueueInterface.php",
+      "community": 32,
+      "community_name": "AnalyticsRepositoryInterface.php",
       "norm_label": "webhookretryqueueinterface.php"
     },
     {
@@ -7094,8 +7094,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_domain_payments_webhooks_webhookretryqueueinterface_push",
-      "community": 227,
-      "community_name": "WebhookRetryQueueInterface.php",
+      "community": 32,
+      "community_name": "AnalyticsRepositoryInterface.php",
       "norm_label": "push()"
     },
     {
@@ -7105,8 +7105,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_domain_payments_webhooks_webhookretryqueueinterface_popmany",
-      "community": 227,
-      "community_name": "WebhookRetryQueueInterface.php",
+      "community": 32,
+      "community_name": "AnalyticsRepositoryInterface.php",
       "norm_label": "popmany()"
     },
     {
@@ -7116,8 +7116,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "app_domain_payments_webhooks_webhookretryqueueinterface_size",
-      "community": 227,
-      "community_name": "WebhookRetryQueueInterface.php",
+      "community": 32,
+      "community_name": "AnalyticsRepositoryInterface.php",
       "norm_label": "size()"
     },
     {
@@ -8403,8 +8403,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_analytics_controllers_getadminanalyticscontroller",
-      "community": 118,
-      "community_name": "PaymentMethod",
+      "community": 38,
+      "community_name": "PaymentsRepositoryInterface.php",
       "norm_label": "getadminanalyticscontroller.php"
     },
     {
@@ -8414,8 +8414,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_analytics_controllers_getadminanalyticscontroller_getadminanalyticscontroller",
-      "community": 118,
-      "community_name": "PaymentMethod",
+      "community": 38,
+      "community_name": "PaymentsRepositoryInterface.php",
       "norm_label": "getadminanalyticscontroller"
     },
     {
@@ -8425,8 +8425,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_analytics_controllers_getadminanalyticscontroller_getadminanalyticscontroller_invoke",
-      "community": 118,
-      "community_name": "PaymentMethod",
+      "community": 38,
+      "community_name": "PaymentsRepositoryInterface.php",
       "norm_label": ".__invoke()"
     },
     {
@@ -8436,8 +8436,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_analytics_controllers_getadminanalyticscontroller_php_jsonresponse",
-      "community": 118,
-      "community_name": "PaymentMethod",
+      "community": 38,
+      "community_name": "PaymentsRepositoryInterface.php",
       "norm_label": "jsonresponse"
     },
     {
@@ -8491,8 +8491,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_analytics_requests_getadminanalyticsrequest",
-      "community": 118,
-      "community_name": "PaymentMethod",
+      "community": 38,
+      "community_name": "PaymentsRepositoryInterface.php",
       "norm_label": "getadminanalyticsrequest.php"
     },
     {
@@ -8502,8 +8502,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_analytics_requests_getadminanalyticsrequest_getadminanalyticsrequest",
-      "community": 118,
-      "community_name": "PaymentMethod",
+      "community": 38,
+      "community_name": "PaymentsRepositoryInterface.php",
       "norm_label": "getadminanalyticsrequest"
     },
     {
@@ -8524,8 +8524,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_analytics_requests_getadminanalyticsrequest_getadminanalyticsrequest_authorize",
-      "community": 118,
-      "community_name": "PaymentMethod",
+      "community": 38,
+      "community_name": "PaymentsRepositoryInterface.php",
       "norm_label": ".authorize()"
     },
     {
@@ -8535,8 +8535,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_http_analytics_requests_getadminanalyticsrequest_getadminanalyticsrequest_rules",
-      "community": 118,
-      "community_name": "PaymentMethod",
+      "community": 38,
+      "community_name": "PaymentsRepositoryInterface.php",
       "norm_label": ".rules()"
     },
     {
@@ -8546,8 +8546,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "app_http_analytics_requests_getadminanalyticsrequest_getadminanalyticsrequest_prepareforvalidation",
-      "community": 118,
-      "community_name": "PaymentMethod",
+      "community": 38,
+      "community_name": "PaymentsRepositoryInterface.php",
       "norm_label": ".prepareforvalidation()"
     },
     {
@@ -8865,8 +8865,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_cashshift_controllers_opencashshiftcontroller",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 118,
+      "community_name": "PaymentMethod",
       "norm_label": "opencashshiftcontroller.php"
     },
     {
@@ -8876,8 +8876,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_cashshift_controllers_opencashshiftcontroller_opencashshiftcontroller",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 118,
+      "community_name": "PaymentMethod",
       "norm_label": "opencashshiftcontroller"
     },
     {
@@ -8887,8 +8887,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_cashshift_controllers_opencashshiftcontroller_opencashshiftcontroller_invoke",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 118,
+      "community_name": "PaymentMethod",
       "norm_label": ".__invoke()"
     },
     {
@@ -8898,8 +8898,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_cashshift_controllers_opencashshiftcontroller_php_jsonresponse",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 118,
+      "community_name": "PaymentMethod",
       "norm_label": "jsonresponse"
     },
     {
@@ -9118,8 +9118,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_cashshift_requests_opencashshiftrequest",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 118,
+      "community_name": "PaymentMethod",
       "norm_label": "opencashshiftrequest.php"
     },
     {
@@ -9129,8 +9129,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_cashshift_requests_opencashshiftrequest_opencashshiftrequest",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 118,
+      "community_name": "PaymentMethod",
       "norm_label": "opencashshiftrequest"
     },
     {
@@ -9140,8 +9140,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_cashshift_requests_opencashshiftrequest_opencashshiftrequest_authorize",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 118,
+      "community_name": "PaymentMethod",
       "norm_label": ".authorize()"
     },
     {
@@ -9151,8 +9151,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_http_cashshift_requests_opencashshiftrequest_opencashshiftrequest_rules",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 118,
+      "community_name": "PaymentMethod",
       "norm_label": ".rules()"
     },
     {
@@ -9294,8 +9294,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_catalog_controllers_deleteproductcontroller",
-      "community": 176,
-      "community_name": "ShowCurrentUserController.php",
+      "community": 178,
+      "community_name": "StoreDomainException",
       "norm_label": "deleteproductcontroller.php"
     },
     {
@@ -9305,8 +9305,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_catalog_controllers_deleteproductcontroller_deleteproductcontroller",
-      "community": 176,
-      "community_name": "ShowCurrentUserController.php",
+      "community": 178,
+      "community_name": "StoreDomainException",
       "norm_label": "deleteproductcontroller"
     },
     {
@@ -9316,8 +9316,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_catalog_controllers_deleteproductcontroller_deleteproductcontroller_invoke",
-      "community": 176,
-      "community_name": "ShowCurrentUserController.php",
+      "community": 178,
+      "community_name": "StoreDomainException",
       "norm_label": ".__invoke()"
     },
     {
@@ -9327,8 +9327,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_catalog_controllers_deleteproductcontroller_php_jsonresponse",
-      "community": 176,
-      "community_name": "ShowCurrentUserController.php",
+      "community": 178,
+      "community_name": "StoreDomainException",
       "norm_label": "jsonresponse"
     },
     {
@@ -9756,8 +9756,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_catalog_requests_storecategoryrequest",
-      "community": 77,
-      "community_name": "Model",
+      "community": 112,
+      "community_name": "ResumeSaleController.php",
       "norm_label": "storecategoryrequest.php"
     },
     {
@@ -9767,8 +9767,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_catalog_requests_storecategoryrequest_storecategoryrequest",
-      "community": 77,
-      "community_name": "Model",
+      "community": 112,
+      "community_name": "ResumeSaleController.php",
       "norm_label": "storecategoryrequest"
     },
     {
@@ -9778,8 +9778,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_catalog_requests_storecategoryrequest_storecategoryrequest_authorize",
-      "community": 77,
-      "community_name": "Model",
+      "community": 112,
+      "community_name": "ResumeSaleController.php",
       "norm_label": ".authorize()"
     },
     {
@@ -9789,8 +9789,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_http_catalog_requests_storecategoryrequest_storecategoryrequest_rules",
-      "community": 77,
-      "community_name": "Model",
+      "community": 112,
+      "community_name": "ResumeSaleController.php",
       "norm_label": ".rules()"
     },
     {
@@ -9932,8 +9932,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_controller",
-      "community": 176,
-      "community_name": "ShowCurrentUserController.php",
+      "community": 41,
+      "community_name": "SalesRepositoryInterface.php",
       "norm_label": "controller.php"
     },
     {
@@ -9943,8 +9943,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_http_controllers_controller_controller",
-      "community": 176,
-      "community_name": "ShowCurrentUserController.php",
+      "community": 41,
+      "community_name": "SalesRepositoryInterface.php",
       "norm_label": "controller"
     },
     {
@@ -10284,8 +10284,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_customers_requests_updatecustomerrequest",
-      "community": 112,
-      "community_name": "ResumeSaleController.php",
+      "community": 86,
+      "community_name": "UpdateCustomerAction",
       "norm_label": "updatecustomerrequest.php"
     },
     {
@@ -10295,8 +10295,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_customers_requests_updatecustomerrequest_updatecustomerrequest",
-      "community": 112,
-      "community_name": "ResumeSaleController.php",
+      "community": 86,
+      "community_name": "UpdateCustomerAction",
       "norm_label": "updatecustomerrequest"
     },
     {
@@ -10306,8 +10306,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_customers_requests_updatecustomerrequest_updatecustomerrequest_authorize",
-      "community": 112,
-      "community_name": "ResumeSaleController.php",
+      "community": 86,
+      "community_name": "UpdateCustomerAction",
       "norm_label": ".authorize()"
     },
     {
@@ -10317,8 +10317,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_http_customers_requests_updatecustomerrequest_updatecustomerrequest_rules",
-      "community": 112,
-      "community_name": "ResumeSaleController.php",
+      "community": 86,
+      "community_name": "UpdateCustomerAction",
       "norm_label": ".rules()"
     },
     {
@@ -10482,8 +10482,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_createusercontroller",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 127,
+      "community_name": "Sale.php",
       "norm_label": "createusercontroller.php"
     },
     {
@@ -10493,8 +10493,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_createusercontroller_createusercontroller",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 127,
+      "community_name": "Sale.php",
       "norm_label": "createusercontroller"
     },
     {
@@ -10504,8 +10504,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_createusercontroller_createusercontroller_invoke",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 127,
+      "community_name": "Sale.php",
       "norm_label": ".__invoke()"
     },
     {
@@ -10515,8 +10515,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_createusercontroller_php_jsonresponse",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 127,
+      "community_name": "Sale.php",
       "norm_label": "jsonresponse"
     },
     {
@@ -10526,8 +10526,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_listadminnotificationscontroller",
-      "community": 220,
-      "community_name": "ListAdminSalesAction",
+      "community": 41,
+      "community_name": "SalesRepositoryInterface.php",
       "norm_label": "listadminnotificationscontroller.php"
     },
     {
@@ -10537,8 +10537,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_listadminnotificationscontroller_listadminnotificationscontroller",
-      "community": 220,
-      "community_name": "ListAdminSalesAction",
+      "community": 41,
+      "community_name": "SalesRepositoryInterface.php",
       "norm_label": "listadminnotificationscontroller"
     },
     {
@@ -10548,8 +10548,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_listadminnotificationscontroller_listadminnotificationscontroller_invoke",
-      "community": 220,
-      "community_name": "ListAdminSalesAction",
+      "community": 41,
+      "community_name": "SalesRepositoryInterface.php",
       "norm_label": ".__invoke()"
     },
     {
@@ -10559,8 +10559,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_listadminnotificationscontroller_php_request",
-      "community": 220,
-      "community_name": "ListAdminSalesAction",
+      "community": 41,
+      "community_name": "SalesRepositoryInterface.php",
       "norm_label": "request"
     },
     {
@@ -10570,8 +10570,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_listadminnotificationscontroller_php_jsonresponse",
-      "community": 220,
-      "community_name": "ListAdminSalesAction",
+      "community": 41,
+      "community_name": "SalesRepositoryInterface.php",
       "norm_label": "jsonresponse"
     },
     {
@@ -10834,8 +10834,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_showusercontroller",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 184,
+      "community_name": "CustomersRepositoryInterface.php",
       "norm_label": "showusercontroller.php"
     },
     {
@@ -10845,8 +10845,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_showusercontroller_showusercontroller",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 184,
+      "community_name": "CustomersRepositoryInterface.php",
       "norm_label": "showusercontroller"
     },
     {
@@ -10856,8 +10856,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_showusercontroller_showusercontroller_invoke",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 184,
+      "community_name": "CustomersRepositoryInterface.php",
       "norm_label": ".__invoke()"
     },
     {
@@ -10867,8 +10867,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_showusercontroller_php_jsonresponse",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 184,
+      "community_name": "CustomersRepositoryInterface.php",
       "norm_label": "jsonresponse"
     },
     {
@@ -10878,8 +10878,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_updateusercontroller",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 144,
+      "community_name": "HoldSaleAction",
       "norm_label": "updateusercontroller.php"
     },
     {
@@ -10889,8 +10889,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_updateusercontroller_updateusercontroller",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 144,
+      "community_name": "HoldSaleAction",
       "norm_label": "updateusercontroller"
     },
     {
@@ -10900,8 +10900,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_updateusercontroller_updateusercontroller_invoke",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 144,
+      "community_name": "HoldSaleAction",
       "norm_label": ".__invoke()"
     },
     {
@@ -10911,8 +10911,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_identityaccess_controllers_updateusercontroller_php_jsonresponse",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 144,
+      "community_name": "HoldSaleAction",
       "norm_label": "jsonresponse"
     },
     {
@@ -11109,8 +11109,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_identityaccess_requests_storeuserrequest",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 127,
+      "community_name": "Sale.php",
       "norm_label": "storeuserrequest.php"
     },
     {
@@ -11120,8 +11120,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_identityaccess_requests_storeuserrequest_storeuserrequest",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 127,
+      "community_name": "Sale.php",
       "norm_label": "storeuserrequest"
     },
     {
@@ -11131,8 +11131,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_identityaccess_requests_storeuserrequest_storeuserrequest_authorize",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 127,
+      "community_name": "Sale.php",
       "norm_label": ".authorize()"
     },
     {
@@ -11142,8 +11142,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_http_identityaccess_requests_storeuserrequest_storeuserrequest_rules",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 127,
+      "community_name": "Sale.php",
       "norm_label": ".rules()"
     },
     {
@@ -11153,8 +11153,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_identityaccess_requests_updateuserrequest",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 144,
+      "community_name": "HoldSaleAction",
       "norm_label": "updateuserrequest.php"
     },
     {
@@ -11164,8 +11164,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_identityaccess_requests_updateuserrequest_updateuserrequest",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 144,
+      "community_name": "HoldSaleAction",
       "norm_label": "updateuserrequest"
     },
     {
@@ -11175,8 +11175,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_identityaccess_requests_updateuserrequest_updateuserrequest_authorize",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 144,
+      "community_name": "HoldSaleAction",
       "norm_label": ".authorize()"
     },
     {
@@ -11186,8 +11186,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_http_identityaccess_requests_updateuserrequest_updateuserrequest_rules",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 144,
+      "community_name": "HoldSaleAction",
       "norm_label": ".rules()"
     },
     {
@@ -11780,8 +11780,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_payments_controllers_reconcileadminpaymentscontroller",
-      "community": 9,
-      "community_name": "DomainScaffolder",
+      "community": 232,
+      "community_name": "AdminAnalyticsTest",
       "norm_label": "reconcileadminpaymentscontroller.php"
     },
     {
@@ -11791,8 +11791,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_payments_controllers_reconcileadminpaymentscontroller_reconcileadminpaymentscontroller",
-      "community": 9,
-      "community_name": "DomainScaffolder",
+      "community": 232,
+      "community_name": "AdminAnalyticsTest",
       "norm_label": "reconcileadminpaymentscontroller"
     },
     {
@@ -11802,8 +11802,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_payments_controllers_reconcileadminpaymentscontroller_reconcileadminpaymentscontroller_invoke",
-      "community": 9,
-      "community_name": "DomainScaffolder",
+      "community": 232,
+      "community_name": "AdminAnalyticsTest",
       "norm_label": ".__invoke()"
     },
     {
@@ -11813,8 +11813,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_payments_controllers_reconcileadminpaymentscontroller_php_jsonresponse",
-      "community": 9,
-      "community_name": "DomainScaffolder",
+      "community": 232,
+      "community_name": "AdminAnalyticsTest",
       "norm_label": "jsonresponse"
     },
     {
@@ -12242,8 +12242,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_refundsreturns_controllers_listrefundsforsalecontroller",
-      "community": 176,
-      "community_name": "ShowCurrentUserController.php",
+      "community": 99,
+      "community_name": "CatalogResource",
       "norm_label": "listrefundsforsalecontroller.php"
     },
     {
@@ -12253,8 +12253,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_refundsreturns_controllers_listrefundsforsalecontroller_listrefundsforsalecontroller",
-      "community": 176,
-      "community_name": "ShowCurrentUserController.php",
+      "community": 99,
+      "community_name": "CatalogResource",
       "norm_label": "listrefundsforsalecontroller"
     },
     {
@@ -12264,8 +12264,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_refundsreturns_controllers_listrefundsforsalecontroller_listrefundsforsalecontroller_invoke",
-      "community": 176,
-      "community_name": "ShowCurrentUserController.php",
+      "community": 99,
+      "community_name": "CatalogResource",
       "norm_label": ".__invoke()"
     },
     {
@@ -12275,8 +12275,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_refundsreturns_controllers_listrefundsforsalecontroller_php_request",
-      "community": 176,
-      "community_name": "ShowCurrentUserController.php",
+      "community": 99,
+      "community_name": "CatalogResource",
       "norm_label": "request"
     },
     {
@@ -12286,8 +12286,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_refundsreturns_controllers_listrefundsforsalecontroller_php_jsonresponse",
-      "community": 176,
-      "community_name": "ShowCurrentUserController.php",
+      "community": 99,
+      "community_name": "CatalogResource",
       "norm_label": "jsonresponse"
     },
     {
@@ -12473,8 +12473,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_sales_controllers_completesalecontroller",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 233,
+      "community_name": "AdminInventoryTest",
       "norm_label": "completesalecontroller.php"
     },
     {
@@ -12484,8 +12484,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_sales_controllers_completesalecontroller_completesalecontroller",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 233,
+      "community_name": "AdminInventoryTest",
       "norm_label": "completesalecontroller"
     },
     {
@@ -12495,8 +12495,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_sales_controllers_completesalecontroller_completesalecontroller_invoke",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 233,
+      "community_name": "AdminInventoryTest",
       "norm_label": ".__invoke()"
     },
     {
@@ -12506,8 +12506,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_sales_controllers_completesalecontroller_php_jsonresponse",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 233,
+      "community_name": "AdminInventoryTest",
       "norm_label": "jsonresponse"
     },
     {
@@ -12517,8 +12517,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_sales_controllers_createsalecontroller",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 176,
+      "community_name": "ShowCurrentUserController.php",
       "norm_label": "createsalecontroller.php"
     },
     {
@@ -12528,8 +12528,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_sales_controllers_createsalecontroller_createsalecontroller",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 176,
+      "community_name": "ShowCurrentUserController.php",
       "norm_label": "createsalecontroller"
     },
     {
@@ -12539,8 +12539,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_sales_controllers_createsalecontroller_createsalecontroller_invoke",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 176,
+      "community_name": "ShowCurrentUserController.php",
       "norm_label": ".__invoke()"
     },
     {
@@ -12550,8 +12550,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_sales_controllers_createsalecontroller_php_jsonresponse",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 176,
+      "community_name": "ShowCurrentUserController.php",
       "norm_label": "jsonresponse"
     },
     {
@@ -13111,8 +13111,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_sales_requests_attachcustomertosalerequest",
-      "community": 142,
-      "community_name": "AttachCustomerToSaleAction",
+      "community": 112,
+      "community_name": "ResumeSaleController.php",
       "norm_label": "attachcustomertosalerequest.php"
     },
     {
@@ -13122,8 +13122,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_sales_requests_attachcustomertosalerequest_attachcustomertosalerequest",
-      "community": 142,
-      "community_name": "AttachCustomerToSaleAction",
+      "community": 112,
+      "community_name": "ResumeSaleController.php",
       "norm_label": "attachcustomertosalerequest"
     },
     {
@@ -13133,8 +13133,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_sales_requests_attachcustomertosalerequest_attachcustomertosalerequest_authorize",
-      "community": 142,
-      "community_name": "AttachCustomerToSaleAction",
+      "community": 112,
+      "community_name": "ResumeSaleController.php",
       "norm_label": ".authorize()"
     },
     {
@@ -13144,8 +13144,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_http_sales_requests_attachcustomertosalerequest_attachcustomertosalerequest_rules",
-      "community": 142,
-      "community_name": "AttachCustomerToSaleAction",
+      "community": 112,
+      "community_name": "ResumeSaleController.php",
       "norm_label": ".rules()"
     },
     {
@@ -13221,8 +13221,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_sales_requests_createsalerequest",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 176,
+      "community_name": "ShowCurrentUserController.php",
       "norm_label": "createsalerequest.php"
     },
     {
@@ -13232,8 +13232,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_sales_requests_createsalerequest_createsalerequest",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 176,
+      "community_name": "ShowCurrentUserController.php",
       "norm_label": "createsalerequest"
     },
     {
@@ -13243,8 +13243,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_sales_requests_createsalerequest_createsalerequest_authorize",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 176,
+      "community_name": "ShowCurrentUserController.php",
       "norm_label": ".authorize()"
     },
     {
@@ -13254,8 +13254,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_http_sales_requests_createsalerequest_createsalerequest_rules",
-      "community": 61,
-      "community_name": "Sale",
+      "community": 176,
+      "community_name": "ShowCurrentUserController.php",
       "norm_label": ".rules()"
     },
     {
@@ -13727,8 +13727,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_infrastructure_cashshift_persistence_repositories_cashshiftrepository",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 185,
+      "community_name": "AdjustStoreInventoryAction",
       "norm_label": "cashshiftrepository.php"
     },
     {
@@ -13738,8 +13738,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_infrastructure_cashshift_persistence_repositories_cashshiftrepository_cashshiftrepository",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 185,
+      "community_name": "AdjustStoreInventoryAction",
       "norm_label": "cashshiftrepository"
     },
     {
@@ -13749,8 +13749,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "cashshiftrepositoryinterface",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 185,
+      "community_name": "AdjustStoreInventoryAction",
       "norm_label": "cashshiftrepositoryinterface"
     },
     {
@@ -13760,8 +13760,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_infrastructure_cashshift_persistence_repositories_cashshiftrepository_cashshiftrepository_findopenforuser",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 185,
+      "community_name": "AdjustStoreInventoryAction",
       "norm_label": ".findopenforuser()"
     },
     {
@@ -13771,8 +13771,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "app_infrastructure_cashshift_persistence_repositories_cashshiftrepository_cashshiftrepository_findopenforuseratstore",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 185,
+      "community_name": "AdjustStoreInventoryAction",
       "norm_label": ".findopenforuseratstore()"
     },
     {
@@ -13782,8 +13782,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "app_infrastructure_cashshift_persistence_repositories_cashshiftrepository_cashshiftrepository_findbyid",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 185,
+      "community_name": "AdjustStoreInventoryAction",
       "norm_label": ".findbyid()"
     },
     {
@@ -13793,8 +13793,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "app_infrastructure_cashshift_persistence_repositories_cashshiftrepository_cashshiftrepository_createopen",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 185,
+      "community_name": "AdjustStoreInventoryAction",
       "norm_label": ".createopen()"
     },
     {
@@ -13804,8 +13804,8 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "app_infrastructure_cashshift_persistence_repositories_cashshiftrepository_cashshiftrepository_close",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 185,
+      "community_name": "AdjustStoreInventoryAction",
       "norm_label": ".close()"
     },
     {
@@ -13815,8 +13815,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "app_infrastructure_cashshift_persistence_repositories_cashshiftrepository_cashshiftrepository_reopen",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 185,
+      "community_name": "AdjustStoreInventoryAction",
       "norm_label": ".reopen()"
     },
     {
@@ -13826,8 +13826,8 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "app_infrastructure_cashshift_persistence_repositories_cashshiftrepository_cashshiftrepository_buildclosingreport",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 202,
+      "community_name": "RemoveSaleLineAction",
       "norm_label": ".buildclosingreport()"
     },
     {
@@ -13837,8 +13837,8 @@
       "source_location": "L141",
       "_origin": "ast",
       "id": "app_infrastructure_cashshift_persistence_repositories_cashshiftrepository_cashshiftrepository_listforstore",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 185,
+      "community_name": "AdjustStoreInventoryAction",
       "norm_label": ".listforstore()"
     },
     {
@@ -13848,8 +13848,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_infrastructure_cashshift_persistence_repositories_cashshiftrepository_php_collection",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 185,
+      "community_name": "AdjustStoreInventoryAction",
       "norm_label": "collection"
     },
     {
@@ -13859,8 +13859,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": "catalogrepository.php"
     },
     {
@@ -13870,8 +13870,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": "catalogrepository"
     },
     {
@@ -13881,8 +13881,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "catalogrepositoryinterface",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": "catalogrepositoryinterface"
     },
     {
@@ -13892,8 +13892,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository_listcategories",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": ".listcategories()"
     },
     {
@@ -13903,8 +13903,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_php_collection",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": "collection"
     },
     {
@@ -13936,8 +13936,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository_createcategory",
-      "community": 119,
-      "community_name": "SaleResource",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": ".createcategory()"
     },
     {
@@ -13969,8 +13969,8 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository_categoryhasproducts",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": ".categoryhasproducts()"
     },
     {
@@ -13980,8 +13980,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository_listproducts",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": ".listproducts()"
     },
     {
@@ -13991,8 +13991,8 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository_listproductspage",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": ".listproductspage()"
     },
     {
@@ -14002,8 +14002,8 @@
       "source_location": "L143",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository_listactiveproductspage",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": ".listactiveproductspage()"
     },
     {
@@ -14013,8 +14013,8 @@
       "source_location": "L152",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository_encodeproductcursor",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": ".encodeproductcursor()"
     },
     {
@@ -14024,8 +14024,8 @@
       "source_location": "L165",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository_decodeproductcursor",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": ".decodeproductcursor()"
     },
     {
@@ -14035,8 +14035,8 @@
       "source_location": "L188",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository_findproductbyid",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": ".findproductbyid()"
     },
     {
@@ -14046,8 +14046,8 @@
       "source_location": "L193",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository_skuexists",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": ".skuexists()"
     },
     {
@@ -14057,8 +14057,8 @@
       "source_location": "L204",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository_createproduct",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": ".createproduct()"
     },
     {
@@ -14068,8 +14068,8 @@
       "source_location": "L215",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository_updateproduct",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": ".updateproduct()"
     },
     {
@@ -14079,8 +14079,8 @@
       "source_location": "L222",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository_deleteproduct",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": ".deleteproduct()"
     },
     {
@@ -14090,8 +14090,8 @@
       "source_location": "L227",
       "_origin": "ast",
       "id": "app_infrastructure_catalog_persistence_repositories_catalogrepository_catalogrepository_producthassalelines",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 23,
+      "community_name": "RefundsReturnsRepository.php",
       "norm_label": ".producthassalelines()"
     },
     {
@@ -14211,8 +14211,8 @@
       "source_location": "L125",
       "_origin": "ast",
       "id": "app_infrastructure_customers_persistence_repositories_customersrepository_customersrepository_findbycpf",
-      "community": 129,
-      "community_name": "ApiErrorResponse.php",
+      "community": 18,
+      "community_name": "CustomersRepository.php",
       "norm_label": ".findbycpf()"
     },
     {
@@ -14222,8 +14222,8 @@
       "source_location": "L137",
       "_origin": "ast",
       "id": "app_infrastructure_customers_persistence_repositories_customersrepository_customersrepository_cpfexists",
-      "community": 18,
-      "community_name": "CustomersRepository.php",
+      "community": 129,
+      "community_name": "ApiErrorResponse.php",
       "norm_label": ".cpfexists()"
     },
     {
@@ -14541,8 +14541,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_infrastructure_inventory_persistence_repositories_inventoryrepository",
-      "community": 30,
-      "community_name": "artisan",
+      "community": 191,
+      "community_name": "AdminAuditLogTest",
       "norm_label": "inventoryrepository.php"
     },
     {
@@ -14552,8 +14552,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_infrastructure_inventory_persistence_repositories_inventoryrepository_inventoryrepository",
-      "community": 30,
-      "community_name": "artisan",
+      "community": 191,
+      "community_name": "AdminAuditLogTest",
       "norm_label": "inventoryrepository"
     },
     {
@@ -14563,8 +14563,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "inventoryrepositoryinterface",
-      "community": 30,
-      "community_name": "artisan",
+      "community": 191,
+      "community_name": "AdminAuditLogTest",
       "norm_label": "inventoryrepositoryinterface"
     },
     {
@@ -14574,8 +14574,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_infrastructure_inventory_persistence_repositories_inventoryrepository_inventoryrepository_findforstoreproduct",
-      "community": 30,
-      "community_name": "artisan",
+      "community": 191,
+      "community_name": "AdminAuditLogTest",
       "norm_label": ".findforstoreproduct()"
     },
     {
@@ -14585,8 +14585,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "app_infrastructure_inventory_persistence_repositories_inventoryrepository_inventoryrepository_mapforstoreproducts",
-      "community": 30,
-      "community_name": "artisan",
+      "community": 191,
+      "community_name": "AdminAuditLogTest",
       "norm_label": ".mapforstoreproducts()"
     },
     {
@@ -14596,8 +14596,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_infrastructure_inventory_persistence_repositories_inventoryrepository_php_collection",
-      "community": 30,
-      "community_name": "artisan",
+      "community": 191,
+      "community_name": "AdminAuditLogTest",
       "norm_label": "collection"
     },
     {
@@ -14607,8 +14607,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "app_infrastructure_inventory_persistence_repositories_inventoryrepository_inventoryrepository_listforstore",
-      "community": 30,
-      "community_name": "artisan",
+      "community": 191,
+      "community_name": "AdminAuditLogTest",
       "norm_label": ".listforstore()"
     },
     {
@@ -14618,8 +14618,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "app_infrastructure_inventory_persistence_repositories_inventoryrepository_inventoryrepository_decrementforcompletedsale",
-      "community": 30,
-      "community_name": "artisan",
+      "community": 191,
+      "community_name": "AdminAuditLogTest",
       "norm_label": ".decrementforcompletedsale()"
     },
     {
@@ -14629,8 +14629,8 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "app_infrastructure_inventory_persistence_repositories_inventoryrepository_inventoryrepository_incrementforreturn",
-      "community": 30,
-      "community_name": "artisan",
+      "community": 191,
+      "community_name": "AdminAuditLogTest",
       "norm_label": ".incrementforreturn()"
     },
     {
@@ -14640,8 +14640,8 @@
       "source_location": "L121",
       "_origin": "ast",
       "id": "app_infrastructure_inventory_persistence_repositories_inventoryrepository_inventoryrepository_adjustquantity",
-      "community": 30,
-      "community_name": "artisan",
+      "community": 204,
+      "community_name": "ListAdminNotificationsController.php",
       "norm_label": ".adjustquantity()"
     },
     {
@@ -14915,8 +14915,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_infrastructure_payments_outbox_inmemorypendingpaymentoutbox",
-      "community": 20,
-      "community_name": "InventoryRepository.php",
+      "community": 205,
+      "community_name": "RemoveSaleLineController.php",
       "norm_label": "inmemorypendingpaymentoutbox.php"
     },
     {
@@ -14926,8 +14926,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_infrastructure_payments_outbox_inmemorypendingpaymentoutbox_inmemorypendingpaymentoutbox",
-      "community": 20,
-      "community_name": "InventoryRepository.php",
+      "community": 205,
+      "community_name": "RemoveSaleLineController.php",
       "norm_label": "inmemorypendingpaymentoutbox"
     },
     {
@@ -14937,8 +14937,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "pendingpaymentoutboxinterface",
-      "community": 20,
-      "community_name": "InventoryRepository.php",
+      "community": 205,
+      "community_name": "RemoveSaleLineController.php",
       "norm_label": "pendingpaymentoutboxinterface"
     },
     {
@@ -14959,8 +14959,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_infrastructure_payments_outbox_inmemorypendingpaymentoutbox_inmemorypendingpaymentoutbox_forget",
-      "community": 20,
-      "community_name": "InventoryRepository.php",
+      "community": 205,
+      "community_name": "RemoveSaleLineController.php",
       "norm_label": ".forget()"
     },
     {
@@ -14970,8 +14970,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_infrastructure_payments_outbox_inmemorypendingpaymentoutbox_inmemorypendingpaymentoutbox_all",
-      "community": 20,
-      "community_name": "InventoryRepository.php",
+      "community": 205,
+      "community_name": "RemoveSaleLineController.php",
       "norm_label": ".all()"
     },
     {
@@ -14981,8 +14981,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_infrastructure_payments_outbox_inmemorypendingpaymentoutbox_inmemorypendingpaymentoutbox_incrementattempts",
-      "community": 20,
-      "community_name": "InventoryRepository.php",
+      "community": 205,
+      "community_name": "RemoveSaleLineController.php",
       "norm_label": ".incrementattempts()"
     },
     {
@@ -14992,8 +14992,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "app_infrastructure_payments_outbox_inmemorypendingpaymentoutbox_inmemorypendingpaymentoutbox_clear",
-      "community": 20,
-      "community_name": "InventoryRepository.php",
+      "community": 205,
+      "community_name": "RemoveSaleLineController.php",
       "norm_label": ".clear()"
     },
     {
@@ -15927,8 +15927,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "salesrepositoryinterface",
-      "community": 76,
-      "community_name": "SalesRepository",
+      "community": 177,
+      "community_name": "EnsureStoreContext.php",
       "norm_label": "salesrepositoryinterface"
     },
     {
@@ -16015,8 +16015,8 @@
       "source_location": "L118",
       "_origin": "ast",
       "id": "app_infrastructure_sales_persistence_repositories_salesrepository_salesrepository_findlinebyid",
-      "community": 6,
-      "community_name": "AuthenticationDomainException",
+      "community": 76,
+      "community_name": "SalesRepository",
       "norm_label": ".findlinebyid()"
     },
     {
@@ -16488,8 +16488,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "model",
-      "community": 14,
-      "community_name": "DatabaseSeeder.php",
+      "community": 81,
+      "community_name": "AppServiceProvider.php",
       "norm_label": "model"
     },
     {
@@ -17049,8 +17049,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_paymentwebhookevent",
-      "community": 14,
-      "community_name": "DatabaseSeeder.php",
+      "community": 81,
+      "community_name": "AppServiceProvider.php",
       "norm_label": "paymentwebhookevent.php"
     },
     {
@@ -17060,8 +17060,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_models_paymentwebhookevent_paymentwebhookevent",
-      "community": 14,
-      "community_name": "DatabaseSeeder.php",
+      "community": 120,
+      "community_name": "Promotion.php",
       "norm_label": "paymentwebhookevent"
     },
     {
@@ -17071,8 +17071,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "app_models_paymentwebhookevent_paymentwebhookevent_casts",
-      "community": 14,
-      "community_name": "DatabaseSeeder.php",
+      "community": 120,
+      "community_name": "Promotion.php",
       "norm_label": ".casts()"
     },
     {
@@ -17412,8 +17412,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_sale",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": "sale.php"
     },
     {
@@ -17423,8 +17423,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_models_sale_sale",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": "sale"
     },
     {
@@ -17434,8 +17434,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "app_models_sale_sale_casts",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": ".casts()"
     },
     {
@@ -17445,8 +17445,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "app_models_sale_sale_store",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": ".store()"
     },
     {
@@ -17456,8 +17456,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_sale_php_belongsto",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": "belongsto"
     },
     {
@@ -17467,8 +17467,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "app_models_sale_sale_operator",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": ".operator()"
     },
     {
@@ -17478,8 +17478,8 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "app_models_sale_sale_cashshift",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": ".cashshift()"
     },
     {
@@ -17489,8 +17489,8 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "app_models_sale_sale_customer",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": ".customer()"
     },
     {
@@ -17500,8 +17500,8 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "app_models_sale_sale_lines",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": ".lines()"
     },
     {
@@ -17511,8 +17511,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_sale_php_hasmany",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": "hasmany"
     },
     {
@@ -17522,8 +17522,8 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "app_models_sale_sale_payments",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": ".payments()"
     },
     {
@@ -17533,8 +17533,8 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "app_models_sale_sale_fiscalreceipt",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": ".fiscalreceipt()"
     },
     {
@@ -17544,8 +17544,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "hasone",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": "hasone"
     },
     {
@@ -17555,8 +17555,8 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "app_models_sale_sale_salepromotions",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": ".salepromotions()"
     },
     {
@@ -17566,8 +17566,8 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "app_models_sale_sale_isinprogress",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": ".isinprogress()"
     },
     {
@@ -17577,8 +17577,8 @@
       "source_location": "L121",
       "_origin": "ast",
       "id": "app_models_sale_sale_isheld",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": ".isheld()"
     },
     {
@@ -17918,8 +17918,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_user",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 14,
+      "community_name": "DatabaseSeeder.php",
       "norm_label": "user.php"
     },
     {
@@ -17951,8 +17951,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "notifiable",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 14,
+      "community_name": "DatabaseSeeder.php",
       "norm_label": "notifiable"
     },
     {
@@ -18006,8 +18006,8 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "app_models_user_user_stores",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 14,
+      "community_name": "DatabaseSeeder.php",
       "norm_label": ".stores()"
     },
     {
@@ -18017,8 +18017,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_user_php_belongstomany",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 14,
+      "community_name": "DatabaseSeeder.php",
       "norm_label": "belongstomany"
     },
     {
@@ -18135,7 +18135,7 @@
       "label": "AppServiceProvider",
       "file_type": "code",
       "source_file": "projects/pdv/backend/app/Providers/AppServiceProvider.php",
-      "source_location": "L64",
+      "source_location": "L65",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider",
       "community": 177,
@@ -18157,7 +18157,7 @@
       "label": ".register()",
       "file_type": "code",
       "source_file": "projects/pdv/backend/app/Providers/AppServiceProvider.php",
-      "source_location": "L69",
+      "source_location": "L70",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider_register",
       "community": 177,
@@ -18168,7 +18168,7 @@
       "label": ".boot()",
       "file_type": "code",
       "source_file": "projects/pdv/backend/app/Providers/AppServiceProvider.php",
-      "source_location": "L116",
+      "source_location": "L117",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider_boot",
       "community": 177,
@@ -18633,8 +18633,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_support_http_cashshiftreportresource",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 202,
+      "community_name": "RemoveSaleLineAction",
       "norm_label": "cashshiftreportresource.php"
     },
     {
@@ -18644,8 +18644,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_support_http_cashshiftreportresource_cashshiftreportresource",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 202,
+      "community_name": "RemoveSaleLineAction",
       "norm_label": "cashshiftreportresource"
     },
     {
@@ -18655,8 +18655,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_support_http_cashshiftreportresource_cashshiftreportresource_toarray",
-      "community": 16,
-      "community_name": "CashShiftRepository.php",
+      "community": 202,
+      "community_name": "RemoveSaleLineAction",
       "norm_label": ".toarray()"
     },
     {
@@ -18666,8 +18666,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_support_http_catalogresource",
-      "community": 236,
-      "community_name": "CatalogResource",
+      "community": 119,
+      "community_name": "SaleResource",
       "norm_label": "catalogresource.php"
     },
     {
@@ -18677,8 +18677,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_support_http_catalogresource_catalogresource",
-      "community": 236,
-      "community_name": "CatalogResource",
+      "community": 119,
+      "community_name": "SaleResource",
       "norm_label": "catalogresource"
     },
     {
@@ -18688,8 +18688,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_support_http_catalogresource_catalogresource_categorytoarray",
-      "community": 236,
-      "community_name": "CatalogResource",
+      "community": 119,
+      "community_name": "SaleResource",
       "norm_label": ".categorytoarray()"
     },
     {
@@ -18699,8 +18699,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_support_http_catalogresource_catalogresource_producttoarray",
-      "community": 236,
-      "community_name": "CatalogResource",
+      "community": 119,
+      "community_name": "SaleResource",
       "norm_label": ".producttoarray()"
     },
     {
@@ -18765,8 +18765,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_support_http_inventoryresource",
-      "community": 30,
-      "community_name": "artisan",
+      "community": 158,
+      "community_name": "SaleCompletedNotification",
       "norm_label": "inventoryresource.php"
     },
     {
@@ -18776,8 +18776,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_support_http_inventoryresource_inventoryresource",
-      "community": 30,
-      "community_name": "artisan",
+      "community": 158,
+      "community_name": "SaleCompletedNotification",
       "norm_label": "inventoryresource"
     },
     {
@@ -18787,8 +18787,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_support_http_inventoryresource_inventoryresource_toarray",
-      "community": 30,
-      "community_name": "artisan",
+      "community": 158,
+      "community_name": "SaleCompletedNotification",
       "norm_label": ".toarray()"
     },
     {
@@ -18952,8 +18952,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_support_http_userresource",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 184,
+      "community_name": "CustomersRepositoryInterface.php",
       "norm_label": "userresource.php"
     },
     {
@@ -18963,8 +18963,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_support_http_userresource_userresource",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 184,
+      "community_name": "CustomersRepositoryInterface.php",
       "norm_label": "userresource"
     },
     {
@@ -18974,8 +18974,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_support_http_userresource_userresource_toarray",
-      "community": 95,
-      "community_name": "DeleteProductAction",
+      "community": 184,
+      "community_name": "CustomersRepositoryInterface.php",
       "norm_label": ".toarray()"
     },
     {
@@ -19098,6 +19098,39 @@
       "community": 129,
       "community_name": "ApiErrorResponse.php",
       "norm_label": ".parsekey()"
+    },
+    {
+      "label": "ProductionSecurityConfigAssertor.php",
+      "file_type": "code",
+      "source_file": "projects/pdv/backend/app/Support/Security/ProductionSecurityConfigAssertor.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_support_security_productionsecurityconfigassertor",
+      "community": 236,
+      "community_name": "CatalogResource",
+      "norm_label": "productionsecurityconfigassertor.php"
+    },
+    {
+      "label": "ProductionSecurityConfigAssertor",
+      "file_type": "code",
+      "source_file": "projects/pdv/backend/app/Support/Security/ProductionSecurityConfigAssertor.php",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "app_support_security_productionsecurityconfigassertor_productionsecurityconfigassertor",
+      "community": 236,
+      "community_name": "CatalogResource",
+      "norm_label": "productionsecurityconfigassertor"
+    },
+    {
+      "label": ".assertForEnvironment()",
+      "file_type": "code",
+      "source_file": "projects/pdv/backend/app/Support/Security/ProductionSecurityConfigAssertor.php",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "app_support_security_productionsecurityconfigassertor_productionsecurityconfigassertor_assertforenvironment",
+      "community": 236,
+      "community_name": "CatalogResource",
+      "norm_label": ".assertforenvironment()"
     },
     {
       "label": "StoreContext.php",
@@ -20063,8 +20096,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "config_auth",
-      "community": 40,
-      "community_name": "RefundsReturnsRepositoryInterface.php",
+      "community": 172,
+      "community_name": "AdminStoreAccessIdorTest",
       "norm_label": "auth.php"
     },
     {
@@ -20096,8 +20129,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "config_concurrency",
-      "community": 23,
-      "community_name": "RefundsReturnsRepository.php",
+      "community": 145,
+      "community_name": "AssertManagerStoreAccess",
       "norm_label": "concurrency.php"
     },
     {
@@ -20481,8 +20514,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "database_factories_promotionfactory_promotionfactory",
-      "community": 15,
-      "community_name": "AnalyticsRepositoryInterface",
+      "community": 203,
+      "community_name": "ShowAdminShiftReportController.php",
       "norm_label": "promotionfactory"
     },
     {
@@ -20492,8 +20525,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "database_factories_promotionfactory_promotionfactory_definition",
-      "community": 15,
-      "community_name": "AnalyticsRepositoryInterface",
+      "community": 203,
+      "community_name": "ShowAdminShiftReportController.php",
       "norm_label": ".definition()"
     },
     {
@@ -20503,8 +20536,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "database_factories_promotionfactory_promotionfactory_uniquestacking",
-      "community": 15,
-      "community_name": "AnalyticsRepositoryInterface",
+      "community": 203,
+      "community_name": "ShowAdminShiftReportController.php",
       "norm_label": ".uniquestacking()"
     },
     {
@@ -20514,8 +20547,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "database_factories_promotionfactory_php_static",
-      "community": 15,
-      "community_name": "AnalyticsRepositoryInterface",
+      "community": 203,
+      "community_name": "ShowAdminShiftReportController.php",
       "norm_label": "static"
     },
     {
@@ -20525,8 +20558,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "database_factories_promotionfactory_promotionfactory_forassignedcustomers",
-      "community": 15,
-      "community_name": "AnalyticsRepositoryInterface",
+      "community": 203,
+      "community_name": "ShowAdminShiftReportController.php",
       "norm_label": ".forassignedcustomers()"
     },
     {
@@ -20536,8 +20569,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "database_factories_promotionfactory_promotionfactory_inactive",
-      "community": 15,
-      "community_name": "AnalyticsRepositoryInterface",
+      "community": 203,
+      "community_name": "ShowAdminShiftReportController.php",
       "norm_label": ".inactive()"
     },
     {
@@ -20547,8 +20580,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "database_factories_promotionfactory_promotionfactory_expired",
-      "community": 15,
-      "community_name": "AnalyticsRepositoryInterface",
+      "community": 203,
+      "community_name": "ShowAdminShiftReportController.php",
       "norm_label": ".expired()"
     },
     {
@@ -20558,8 +20591,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "database_factories_promotionfactory_promotionfactory_fixed",
-      "community": 15,
-      "community_name": "AnalyticsRepositoryInterface",
+      "community": 203,
+      "community_name": "ShowAdminShiftReportController.php",
       "norm_label": ".fixed()"
     },
     {
@@ -21999,8 +22032,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_democustomerseeder",
-      "community": 211,
-      "community_name": "EnsureUserHasRole.php",
+      "community": 234,
+      "community_name": ".completedSaleFixture",
       "norm_label": "democustomerseeder.php"
     },
     {
@@ -22010,8 +22043,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "database_seeders_democustomerseeder_democustomerseeder",
-      "community": 211,
-      "community_name": "EnsureUserHasRole.php",
+      "community": 234,
+      "community_name": ".completedSaleFixture",
       "norm_label": "democustomerseeder"
     },
     {
@@ -22021,8 +22054,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "database_seeders_democustomerseeder_democustomerseeder_run",
-      "community": 211,
-      "community_name": "EnsureUserHasRole.php",
+      "community": 234,
+      "community_name": ".completedSaleFixture",
       "norm_label": ".run()"
     },
     {
@@ -22032,8 +22065,8 @@
       "source_location": "L86",
       "_origin": "ast",
       "id": "database_seeders_democustomerseeder_democustomerseeder_findorcreatecustomer",
-      "community": 211,
-      "community_name": "EnsureUserHasRole.php",
+      "community": 234,
+      "community_name": ".completedSaleFixture",
       "norm_label": ".findorcreatecustomer()"
     },
     {
@@ -22604,8 +22637,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_admin_adminanalyticstest_adminanalyticstest",
-      "community": 232,
-      "community_name": "AdminAnalyticsTest",
+      "community": 211,
+      "community_name": "EnsureUserHasRole.php",
       "norm_label": "adminanalyticstest"
     },
     {
@@ -22637,8 +22670,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "tests_feature_admin_adminanalyticstest_adminanalyticstest_manager_gets_registrations_recurrence_and_spend_breakdown",
-      "community": 232,
-      "community_name": "AdminAnalyticsTest",
+      "community": 211,
+      "community_name": "EnsureUserHasRole.php",
       "norm_label": ".manager_gets_registrations_recurrence_and_spend_breakdown()"
     },
     {
@@ -22648,8 +22681,8 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "tests_feature_admin_adminanalyticstest_adminanalyticstest_manager_can_filter_campaign_customers_by_birthday_and_region",
-      "community": 232,
-      "community_name": "AdminAnalyticsTest",
+      "community": 211,
+      "community_name": "EnsureUserHasRole.php",
       "norm_label": ".manager_can_filter_campaign_customers_by_birthday_and_region()"
     },
     {
@@ -22659,8 +22692,8 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "tests_feature_admin_adminanalyticstest_adminanalyticstest_operator_cannot_access_analytics",
-      "community": 232,
-      "community_name": "AdminAnalyticsTest",
+      "community": 211,
+      "community_name": "EnsureUserHasRole.php",
       "norm_label": ".operator_cannot_access_analytics()"
     },
     {
@@ -22670,8 +22703,8 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "tests_feature_admin_adminanalyticstest_adminanalyticstest_invalid_campaign_filters_return_validation_errors",
-      "community": 232,
-      "community_name": "AdminAnalyticsTest",
+      "community": 211,
+      "community_name": "EnsureUserHasRole.php",
       "norm_label": ".invalid_campaign_filters_return_validation_errors()"
     },
     {
@@ -22802,8 +22835,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "tests_feature_admin_adminstoreaccessidortest_adminstoreaccessidortest",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 208,
+      "community_name": "ApplyPromotionToSaleAction",
       "norm_label": "adminstoreaccessidortest"
     },
     {
@@ -22824,8 +22857,8 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "tests_feature_admin_adminstoreaccessidortest_adminstoreaccessidortest_manager_without_stores_sees_empty_store_scoped_kpis",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 208,
+      "community_name": "ApplyPromotionToSaleAction",
       "norm_label": ".manager_without_stores_sees_empty_store_scoped_kpis()"
     },
     {
@@ -22835,8 +22868,8 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "tests_feature_admin_adminstoreaccessidortest_adminstoreaccessidortest_sales_list_defaults_to_assigned_stores_only",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 208,
+      "community_name": "ApplyPromotionToSaleAction",
       "norm_label": ".sales_list_defaults_to_assigned_stores_only()"
     },
     {
@@ -22846,8 +22879,8 @@
       "source_location": "L121",
       "_origin": "ast",
       "id": "tests_feature_admin_adminstoreaccessidortest_adminstoreaccessidortest_sales_filter_and_show_deny_unassigned_store",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 208,
+      "community_name": "ApplyPromotionToSaleAction",
       "norm_label": ".sales_filter_and_show_deny_unassigned_store()"
     },
     {
@@ -22857,8 +22890,8 @@
       "source_location": "L146",
       "_origin": "ast",
       "id": "tests_feature_admin_adminstoreaccessidortest_adminstoreaccessidortest_shifts_and_inventory_deny_unassigned_store",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 208,
+      "community_name": "ApplyPromotionToSaleAction",
       "norm_label": ".shifts_and_inventory_deny_unassigned_store()"
     },
     {
@@ -22879,8 +22912,8 @@
       "source_location": "L241",
       "_origin": "ast",
       "id": "tests_feature_admin_adminstoreaccessidortest_adminstoreaccessidortest_notifications_hide_entries_for_revoked_store_assignment",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 208,
+      "community_name": "ApplyPromotionToSaleAction",
       "norm_label": ".notifications_hide_entries_for_revoked_store_assignment()"
     },
     {
@@ -22890,8 +22923,8 @@
       "source_location": "L272",
       "_origin": "ast",
       "id": "tests_feature_admin_adminstoreaccessidortest_adminstoreaccessidortest_catalog_remains_global_without_store_assignment",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 208,
+      "community_name": "ApplyPromotionToSaleAction",
       "norm_label": ".catalog_remains_global_without_store_assignment()"
     },
     {
@@ -23220,8 +23253,8 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "tests_feature_admin_showadminsaletest_showadminsaletest_operator_cannot_show_admin_sale",
-      "community": 88,
-      "community_name": "CloseCashShiftTest",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": ".operator_cannot_show_admin_sale()"
     },
     {
@@ -23253,8 +23286,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "tests_feature_audit_adminauditlogtest_adminauditlogtest_price_change_creates_audit_log_and_same_price_does_not",
-      "community": 73,
-      "community_name": "UpdateProductAction",
+      "community": 82,
+      "community_name": "StoreRepository",
       "norm_label": ".price_change_creates_audit_log_and_same_price_does_not()"
     },
     {
@@ -23286,8 +23319,8 @@
       "source_location": "L208",
       "_origin": "ast",
       "id": "tests_feature_audit_adminauditlogtest_adminauditlogtest_audit_append_failure_rolls_back_price_change",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 73,
+      "community_name": "UpdateProductAction",
       "norm_label": ".audit_append_failure_rolls_back_price_change()"
     },
     {
@@ -23297,8 +23330,8 @@
       "source_location": "L242",
       "_origin": "ast",
       "id": "tests_feature_audit_adminauditlogtest_adminauditlogtest_audit_logs_are_immutable",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 73,
+      "community_name": "UpdateProductAction",
       "norm_label": ".audit_logs_are_immutable()"
     },
     {
@@ -23308,8 +23341,8 @@
       "source_location": "L258",
       "_origin": "ast",
       "id": "tests_feature_audit_adminauditlogtest_adminauditlogtest_query_builder_update_is_blocked_by_trigger",
-      "community": 73,
-      "community_name": "UpdateProductAction",
+      "community": 82,
+      "community_name": "StoreRepository",
       "norm_label": ".query_builder_update_is_blocked_by_trigger()"
     },
     {
@@ -23352,8 +23385,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_adminrouteaccesstest",
-      "community": 110,
-      "community_name": "OperationalRouteAccessTest",
+      "community": 220,
+      "community_name": "ListAdminSalesAction",
       "norm_label": "adminrouteaccesstest.php"
     },
     {
@@ -23363,8 +23396,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_auth_adminrouteaccesstest_adminrouteaccesstest",
-      "community": 110,
-      "community_name": "OperationalRouteAccessTest",
+      "community": 220,
+      "community_name": "ListAdminSalesAction",
       "norm_label": "adminrouteaccesstest"
     },
     {
@@ -23374,8 +23407,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_auth_adminrouteaccesstest_adminrouteaccesstest_test_guest_cannot_access_admin_dashboard",
-      "community": 110,
-      "community_name": "OperationalRouteAccessTest",
+      "community": 220,
+      "community_name": "ListAdminSalesAction",
       "norm_label": ".test_guest_cannot_access_admin_dashboard()"
     },
     {
@@ -23385,8 +23418,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "tests_feature_auth_adminrouteaccesstest_adminrouteaccesstest_test_operator_cannot_access_admin_dashboard",
-      "community": 110,
-      "community_name": "OperationalRouteAccessTest",
+      "community": 220,
+      "community_name": "ListAdminSalesAction",
       "norm_label": ".test_operator_cannot_access_admin_dashboard()"
     },
     {
@@ -23396,8 +23429,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "tests_feature_auth_adminrouteaccesstest_adminrouteaccesstest_test_inactive_manager_cannot_access_admin_dashboard",
-      "community": 110,
-      "community_name": "OperationalRouteAccessTest",
+      "community": 220,
+      "community_name": "ListAdminSalesAction",
       "norm_label": ".test_inactive_manager_cannot_access_admin_dashboard()"
     },
     {
@@ -23407,8 +23440,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "tests_feature_auth_adminrouteaccesstest_adminrouteaccesstest_test_manager_can_access_admin_dashboard",
-      "community": 110,
-      "community_name": "OperationalRouteAccessTest",
+      "community": 220,
+      "community_name": "ListAdminSalesAction",
       "norm_label": ".test_manager_can_access_admin_dashboard()"
     },
     {
@@ -23506,8 +23539,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "tests_feature_auth_managermfatest_managermfatest",
-      "community": 184,
-      "community_name": "CustomersRepositoryInterface.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": "managermfatest"
     },
     {
@@ -23517,8 +23550,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "tests_feature_auth_managermfatest_managermfatest_setup",
-      "community": 184,
-      "community_name": "CustomersRepositoryInterface.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".setup()"
     },
     {
@@ -23528,8 +23561,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "tests_feature_auth_managermfatest_managermfatest_manager_login_requires_mfa_and_blocks_admin_until_verified",
-      "community": 184,
-      "community_name": "CustomersRepositoryInterface.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".manager_login_requires_mfa_and_blocks_admin_until_verified()"
     },
     {
@@ -23539,8 +23572,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "tests_feature_auth_managermfatest_managermfatest_manager_without_mfa_must_enroll_before_session",
-      "community": 184,
-      "community_name": "CustomersRepositoryInterface.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".manager_without_mfa_must_enroll_before_session()"
     },
     {
@@ -23550,8 +23583,8 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "tests_feature_auth_managermfatest_managermfatest_manager_can_verify_with_one_time_recovery_code",
-      "community": 184,
-      "community_name": "CustomersRepositoryInterface.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".manager_can_verify_with_one_time_recovery_code()"
     },
     {
@@ -23561,8 +23594,8 @@
       "source_location": "L129",
       "_origin": "ast",
       "id": "tests_feature_auth_managermfatest_managermfatest_invalid_mfa_code_returns_auth_mfa_invalid_code",
-      "community": 184,
-      "community_name": "CustomersRepositoryInterface.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".invalid_mfa_code_returns_auth_mfa_invalid_code()"
     },
     {
@@ -23572,8 +23605,8 @@
       "source_location": "L147",
       "_origin": "ast",
       "id": "tests_feature_auth_managermfatest_managermfatest_mfa_endpoints_require_pending_challenge",
-      "community": 184,
-      "community_name": "CustomersRepositoryInterface.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".mfa_endpoints_require_pending_challenge()"
     },
     {
@@ -23583,8 +23616,8 @@
       "source_location": "L159",
       "_origin": "ast",
       "id": "tests_feature_auth_managermfatest_managermfatest_operator_login_skips_mfa",
-      "community": 184,
-      "community_name": "CustomersRepositoryInterface.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".operator_login_skips_mfa()"
     },
     {
@@ -23594,8 +23627,8 @@
       "source_location": "L178",
       "_origin": "ast",
       "id": "tests_feature_auth_managermfatest_managermfatest_demo_manager_seeder_enables_known_mfa_secret",
-      "community": 184,
-      "community_name": "CustomersRepositoryInterface.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".demo_manager_seeder_enables_known_mfa_secret()"
     },
     {
@@ -23990,8 +24023,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_feature_cashshift_reopencashshifttest_reopencashshifttest",
-      "community": 205,
-      "community_name": "RemoveSaleLineController.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": "reopencashshifttest"
     },
     {
@@ -24001,8 +24034,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "tests_feature_cashshift_reopencashshifttest_reopencashshifttest_manager_can_reopen_closed_shift_and_audit_is_written",
-      "community": 205,
-      "community_name": "RemoveSaleLineController.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".manager_can_reopen_closed_shift_and_audit_is_written()"
     },
     {
@@ -24012,8 +24045,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "tests_feature_cashshift_reopencashshifttest_reopencashshifttest_reopen_denied_when_operator_already_has_open_shift",
-      "community": 205,
-      "community_name": "RemoveSaleLineController.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".reopen_denied_when_operator_already_has_open_shift()"
     },
     {
@@ -24023,8 +24056,8 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "tests_feature_cashshift_reopencashshifttest_reopencashshifttest_reopen_open_shift_returns_already_open",
-      "community": 205,
-      "community_name": "RemoveSaleLineController.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".reopen_open_shift_returns_already_open()"
     },
     {
@@ -24034,8 +24067,8 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "tests_feature_cashshift_reopencashshifttest_reopencashshifttest_operator_cannot_reopen_shift",
-      "community": 205,
-      "community_name": "RemoveSaleLineController.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".operator_cannot_reopen_shift()"
     },
     {
@@ -24045,8 +24078,8 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "tests_feature_cashshift_reopencashshifttest_reopencashshifttest_manager_without_store_assignment_cannot_reopen",
-      "community": 205,
-      "community_name": "RemoveSaleLineController.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".manager_without_store_assignment_cannot_reopen()"
     },
     {
@@ -24056,8 +24089,8 @@
       "source_location": "L143",
       "_origin": "ast",
       "id": "tests_feature_cashshift_reopencashshifttest_reopencashshifttest_unknown_shift_returns_not_found",
-      "community": 205,
-      "community_name": "RemoveSaleLineController.php",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".unknown_shift_returns_not_found()"
     },
     {
@@ -24122,8 +24155,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_catalog_categorycrudtest_categorycrudtest",
-      "community": 119,
-      "community_name": "SaleResource",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": "categorycrudtest"
     },
     {
@@ -24133,8 +24166,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "tests_feature_catalog_categorycrudtest_categorycrudtest_test_manager_can_create_list_update_and_delete_category",
-      "community": 119,
-      "community_name": "SaleResource",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".test_manager_can_create_list_update_and_delete_category()"
     },
     {
@@ -24144,8 +24177,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "tests_feature_catalog_categorycrudtest_categorycrudtest_test_duplicate_category_name_returns_cat_category_name_duplicate",
-      "community": 119,
-      "community_name": "SaleResource",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".test_duplicate_category_name_returns_cat_category_name_duplicate()"
     },
     {
@@ -24155,8 +24188,8 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "tests_feature_catalog_categorycrudtest_categorycrudtest_test_delete_category_with_products_returns_cat_category_in_use",
-      "community": 119,
-      "community_name": "SaleResource",
+      "community": 187,
+      "community_name": "StoreInventoryFactory",
       "norm_label": ".test_delete_category_with_products_returns_cat_category_in_use()"
     },
     {
@@ -24177,8 +24210,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "tests_feature_catalog_operationalcatalogtest_operationalcatalogtest",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": "operationalcatalogtest"
     },
     {
@@ -24188,8 +24221,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_feature_catalog_operationalcatalogtest_operationalcatalogtest_test_operator_lists_active_products_with_stock_for_current_store",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".test_operator_lists_active_products_with_stock_for_current_store()"
     },
     {
@@ -24199,8 +24232,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "tests_feature_catalog_operationalcatalogtest_operationalcatalogtest_test_operator_can_search_products_by_name_or_sku",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".test_operator_can_search_products_by_name_or_sku()"
     },
     {
@@ -24210,8 +24243,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "tests_feature_catalog_operationalcatalogtest_operationalcatalogtest_test_listing_products_requires_store_context",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".test_listing_products_requires_store_context()"
     },
     {
@@ -24221,8 +24254,8 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "tests_feature_catalog_operationalcatalogtest_operationalcatalogtest_test_listing_products_batches_inventory_lookups",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".test_listing_products_batches_inventory_lookups()"
     },
     {
@@ -24232,8 +24265,8 @@
       "source_location": "L106",
       "_origin": "ast",
       "id": "tests_feature_catalog_operationalcatalogtest_operationalcatalogtest_test_operator_can_paginate_products_with_cursor",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".test_operator_can_paginate_products_with_cursor()"
     },
     {
@@ -24243,8 +24276,8 @@
       "source_location": "L134",
       "_origin": "ast",
       "id": "tests_feature_catalog_operationalcatalogtest_operationalcatalogtest_test_invalid_catalog_cursor_returns_validation_error",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".test_invalid_catalog_cursor_returns_validation_error()"
     },
     {
@@ -24276,8 +24309,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "tests_feature_catalog_productcrudtest_productcrudtest_test_manager_can_create_product_with_base_price_and_category",
-      "community": 119,
-      "community_name": "SaleResource",
+      "community": 82,
+      "community_name": "StoreRepository",
       "norm_label": ".test_manager_can_create_product_with_base_price_and_category()"
     },
     {
@@ -24364,8 +24397,8 @@
       "source_location": "L151",
       "_origin": "ast",
       "id": "tests_feature_catalog_productcrudtest_productcrudtest_test_delete_product_with_sale_lines_returns_cat_product_in_use",
-      "community": 82,
-      "community_name": "StoreRepository",
+      "community": 6,
+      "community_name": "AuthenticationDomainException",
       "norm_label": ".test_delete_product_with_sale_lines_returns_cat_product_in_use()"
     },
     {
@@ -24782,8 +24815,8 @@
       "source_location": "L145",
       "_origin": "ast",
       "id": "tests_feature_inventory_inventorytest_admininventorytest",
-      "community": 233,
-      "community_name": "AdminInventoryTest",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": "admininventorytest"
     },
     {
@@ -24793,8 +24826,8 @@
       "source_location": "L149",
       "_origin": "ast",
       "id": "tests_feature_inventory_inventorytest_admininventorytest_test_manager_can_adjust_stock_with_reason",
-      "community": 233,
-      "community_name": "AdminInventoryTest",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".test_manager_can_adjust_stock_with_reason()"
     },
     {
@@ -24804,8 +24837,8 @@
       "source_location": "L181",
       "_origin": "ast",
       "id": "tests_feature_inventory_inventorytest_admininventorytest_test_adjustment_without_reason_returns_validation_error",
-      "community": 233,
-      "community_name": "AdminInventoryTest",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".test_adjustment_without_reason_returns_validation_error()"
     },
     {
@@ -24815,8 +24848,8 @@
       "source_location": "L196",
       "_origin": "ast",
       "id": "tests_feature_inventory_inventorytest_admininventorytest_test_manager_can_list_store_inventory",
-      "community": 233,
-      "community_name": "AdminInventoryTest",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".test_manager_can_list_store_inventory()"
     },
     {
@@ -24826,8 +24859,8 @@
       "source_location": "L209",
       "_origin": "ast",
       "id": "tests_feature_inventory_inventorytest_admininventorytest_test_operator_cannot_adjust_stock",
-      "community": 233,
-      "community_name": "AdminInventoryTest",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".test_operator_cannot_adjust_stock()"
     },
     {
@@ -25442,8 +25475,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "tests_feature_sales_completesaletest_completesaletest",
-      "community": 185,
-      "community_name": "AdjustStoreInventoryAction",
+      "community": 82,
+      "community_name": "StoreRepository",
       "norm_label": "completesaletest"
     },
     {
@@ -25453,8 +25486,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "tests_feature_sales_completesaletest_completesaletest_test_operator_can_complete_sale_with_cash_payment_and_fiscal_receipt",
-      "community": 185,
-      "community_name": "AdjustStoreInventoryAction",
+      "community": 82,
+      "community_name": "StoreRepository",
       "norm_label": ".test_operator_can_complete_sale_with_cash_payment_and_fiscal_receipt()"
     },
     {
@@ -25464,8 +25497,8 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "tests_feature_sales_completesaletest_completesaletest_test_operator_can_complete_sale_with_split_payments",
-      "community": 185,
-      "community_name": "AdjustStoreInventoryAction",
+      "community": 82,
+      "community_name": "StoreRepository",
       "norm_label": ".test_operator_can_complete_sale_with_split_payments()"
     },
     {
@@ -25475,8 +25508,8 @@
       "source_location": "L106",
       "_origin": "ast",
       "id": "tests_feature_sales_completesaletest_completesaletest_test_completing_sale_uses_constant_inventory_queries_for_multiple_lines",
-      "community": 185,
-      "community_name": "AdjustStoreInventoryAction",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".test_completing_sale_uses_constant_inventory_queries_for_multiple_lines()"
     },
     {
@@ -25486,8 +25519,8 @@
       "source_location": "L158",
       "_origin": "ast",
       "id": "tests_feature_sales_completesaletest_completesaletest_test_completing_empty_cart_returns_sale_empty_cart",
-      "community": 185,
-      "community_name": "AdjustStoreInventoryAction",
+      "community": 82,
+      "community_name": "StoreRepository",
       "norm_label": ".test_completing_empty_cart_returns_sale_empty_cart()"
     },
     {
@@ -25497,8 +25530,8 @@
       "source_location": "L175",
       "_origin": "ast",
       "id": "tests_feature_sales_completesaletest_completesaletest_test_completing_without_payments_returns_validation_error",
-      "community": 185,
-      "community_name": "AdjustStoreInventoryAction",
+      "community": 82,
+      "community_name": "StoreRepository",
       "norm_label": ".test_completing_without_payments_returns_validation_error()"
     },
     {
@@ -25508,8 +25541,8 @@
       "source_location": "L194",
       "_origin": "ast",
       "id": "tests_feature_sales_completesaletest_completesaletest_test_payment_mismatch_returns_sale_payment_mismatch",
-      "community": 185,
-      "community_name": "AdjustStoreInventoryAction",
+      "community": 82,
+      "community_name": "StoreRepository",
       "norm_label": ".test_payment_mismatch_returns_sale_payment_mismatch()"
     },
     {
@@ -25519,8 +25552,8 @@
       "source_location": "L217",
       "_origin": "ast",
       "id": "tests_feature_sales_completesaletest_completesaletest_test_insufficient_cash_returns_pay_cash_insufficient",
-      "community": 185,
-      "community_name": "AdjustStoreInventoryAction",
+      "community": 82,
+      "community_name": "StoreRepository",
       "norm_label": ".test_insufficient_cash_returns_pay_cash_insufficient()"
     },
     {
@@ -25530,8 +25563,8 @@
       "source_location": "L240",
       "_origin": "ast",
       "id": "tests_feature_sales_completesaletest_completesaletest_test_completing_already_completed_sale_returns_sale_already_completed",
-      "community": 185,
-      "community_name": "AdjustStoreInventoryAction",
+      "community": 82,
+      "community_name": "StoreRepository",
       "norm_label": ".test_completing_already_completed_sale_returns_sale_already_completed()"
     },
     {
@@ -25541,8 +25574,8 @@
       "source_location": "L263",
       "_origin": "ast",
       "id": "tests_feature_sales_completesaletest_completesaletest_test_unsupported_payment_method_returns_validation_error",
-      "community": 185,
-      "community_name": "AdjustStoreInventoryAction",
+      "community": 82,
+      "community_name": "StoreRepository",
       "norm_label": ".test_unsupported_payment_method_returns_validation_error()"
     },
     {
@@ -25904,8 +25937,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_feature_security_refundthrottleandsalesidortest_refundthrottleandsalesidortest",
-      "community": 234,
-      "community_name": ".completedSaleFixture",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": "refundthrottleandsalesidortest"
     },
     {
@@ -25915,8 +25948,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "tests_feature_security_refundthrottleandsalesidortest_refundthrottleandsalesidortest_operator_cannot_list_or_show_admin_sales",
-      "community": 234,
-      "community_name": ".completedSaleFixture",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".operator_cannot_list_or_show_admin_sales()"
     },
     {
@@ -25926,8 +25959,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "tests_feature_security_refundthrottleandsalesidortest_refundthrottleandsalesidortest_manager_cannot_show_sale_from_unassigned_store",
-      "community": 234,
-      "community_name": ".completedSaleFixture",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".manager_cannot_show_sale_from_unassigned_store()"
     },
     {
@@ -25937,8 +25970,8 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "tests_feature_security_refundthrottleandsalesidortest_refundthrottleandsalesidortest_refund_endpoint_is_rate_limited",
-      "community": 234,
-      "community_name": ".completedSaleFixture",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".refund_endpoint_is_rate_limited()"
     },
     {
@@ -25948,8 +25981,8 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "tests_feature_security_refundthrottleandsalesidortest_refundthrottleandsalesidortest_completedsalefixture",
-      "community": 234,
-      "community_name": ".completedSaleFixture",
+      "community": 30,
+      "community_name": "artisan",
       "norm_label": ".completedsalefixture()"
     },
     {
@@ -26036,8 +26069,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_feature_seeders_demouserseederstest_demouserseederstest",
-      "community": 131,
-      "community_name": "PromotionErrorCodeTest",
+      "community": 230,
+      "community_name": "actingAsManagerForStore",
       "norm_label": "demouserseederstest"
     },
     {
@@ -26047,8 +26080,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_seeders_demouserseederstest_demouserseederstest_database_seeder_creates_one_user_per_role_on_main_store",
-      "community": 131,
-      "community_name": "PromotionErrorCodeTest",
+      "community": 230,
+      "community_name": "actingAsManagerForStore",
       "norm_label": ".database_seeder_creates_one_user_per_role_on_main_store()"
     },
     {
@@ -26058,8 +26091,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "tests_feature_seeders_demouserseederstest_demouserseederstest_database_seeder_is_idempotent",
-      "community": 131,
-      "community_name": "PromotionErrorCodeTest",
+      "community": 230,
+      "community_name": "actingAsManagerForStore",
       "norm_label": ".database_seeder_is_idempotent()"
     },
     {
@@ -26069,8 +26102,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "tests_feature_seeders_demouserseederstest_demouserseederstest_operator_seeder_fails_without_demo_store",
-      "community": 131,
-      "community_name": "PromotionErrorCodeTest",
+      "community": 230,
+      "community_name": "actingAsManagerForStore",
       "norm_label": ".operator_seeder_fails_without_demo_store()"
     },
     {
@@ -26080,8 +26113,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "tests_feature_seeders_demouserseederstest_demouserseederstest_manager_seeder_fails_without_demo_store",
-      "community": 131,
-      "community_name": "PromotionErrorCodeTest",
+      "community": 230,
+      "community_name": "actingAsManagerForStore",
       "norm_label": ".manager_seeder_fails_without_demo_store()"
     },
     {
@@ -26454,8 +26487,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_store_selectstorecontexttest_selectstorecontexttest",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 210,
+      "community_name": "HasFactory",
       "norm_label": "selectstorecontexttest"
     },
     {
@@ -26465,8 +26498,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_feature_store_selectstorecontexttest_selectstorecontexttest_setup",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 210,
+      "community_name": "HasFactory",
       "norm_label": ".setup()"
     },
     {
@@ -26476,8 +26509,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "tests_feature_store_selectstorecontexttest_selectstorecontexttest_test_operator_can_select_assigned_store_context",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 210,
+      "community_name": "HasFactory",
       "norm_label": ".test_operator_can_select_assigned_store_context()"
     },
     {
@@ -26487,8 +26520,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "tests_feature_store_selectstorecontexttest_selectstorecontexttest_test_operator_cannot_select_unassigned_store",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 210,
+      "community_name": "HasFactory",
       "norm_label": ".test_operator_cannot_select_unassigned_store()"
     },
     {
@@ -26498,8 +26531,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "tests_feature_store_selectstorecontexttest_selectstorecontexttest_test_selecting_nonexistent_store_returns_store_not_found",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 210,
+      "community_name": "HasFactory",
       "norm_label": ".test_selecting_nonexistent_store_returns_store_not_found()"
     },
     {
@@ -26509,8 +26542,8 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "tests_feature_store_selectstorecontexttest_selectstorecontexttest_test_selecting_inactive_store_returns_store_inactive",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 210,
+      "community_name": "HasFactory",
       "norm_label": ".test_selecting_inactive_store_returns_store_inactive()"
     },
     {
@@ -26520,8 +26553,8 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "tests_feature_store_selectstorecontexttest_selectstorecontexttest_test_manager_can_select_any_assigned_store",
-      "community": 187,
-      "community_name": "StoreInventoryFactory",
+      "community": 210,
+      "community_name": "HasFactory",
       "norm_label": ".test_manager_can_select_any_assigned_store()"
     },
     {
@@ -26586,8 +26619,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_support_actswithadminstoreaccess",
-      "community": 230,
-      "community_name": "actingAsManagerForStore",
+      "community": 131,
+      "community_name": "PromotionErrorCodeTest",
       "norm_label": "actswithadminstoreaccess.php"
     },
     {
@@ -26597,8 +26630,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_support_actswithadminstoreaccess_attachmanagertostore",
-      "community": 230,
-      "community_name": "actingAsManagerForStore",
+      "community": 131,
+      "community_name": "PromotionErrorCodeTest",
       "norm_label": "attachmanagertostore()"
     },
     {
@@ -26608,8 +26641,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "tests_support_actswithadminstoreaccess_actingasmanagerforstore",
-      "community": 230,
-      "community_name": "actingAsManagerForStore",
+      "community": 131,
+      "community_name": "PromotionErrorCodeTest",
       "norm_label": "actingasmanagerforstore()"
     },
     {
@@ -26619,8 +26652,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tests_support_actswithadminstoreaccess_php_static",
-      "community": 230,
-      "community_name": "actingAsManagerForStore",
+      "community": 131,
+      "community_name": "PromotionErrorCodeTest",
       "norm_label": "static"
     },
     {
@@ -26850,8 +26883,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "tests_unit_application_sales_orchestration_dispatchsalesideeffectstest_dispatchsalesideeffectstest",
-      "community": 191,
-      "community_name": "AdminAuditLogTest",
+      "community": 107,
+      "community_name": "ShowSaleAction",
       "norm_label": "dispatchsalesideeffectstest"
     },
     {
@@ -26861,8 +26894,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "tests_unit_application_sales_orchestration_dispatchsalesideeffectstest_dispatchsalesideeffectstest_dispatches_analytics_and_customer_jobs_in_named_batch",
-      "community": 191,
-      "community_name": "AdminAuditLogTest",
+      "community": 107,
+      "community_name": "ShowSaleAction",
       "norm_label": ".dispatches_analytics_and_customer_jobs_in_named_batch()"
     },
     {
@@ -26872,8 +26905,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "tests_unit_application_sales_orchestration_dispatchsalesideeffectstest_dispatchsalesideeffectstest_omits_customer_job_when_sale_has_no_customer",
-      "community": 191,
-      "community_name": "AdminAuditLogTest",
+      "community": 107,
+      "community_name": "ShowSaleAction",
       "norm_label": ".omits_customer_job_when_sale_has_no_customer()"
     },
     {
@@ -27070,8 +27103,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_unit_domain_payments_cardinstrumentformatguardtest_cardinstrumentformatguardtest",
-      "community": 203,
-      "community_name": "ShowAdminShiftReportController.php",
+      "community": 4,
+      "community_name": "StoreContext",
       "norm_label": "cardinstrumentformatguardtest"
     },
     {
@@ -27081,8 +27114,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_unit_domain_payments_cardinstrumentformatguardtest_cardinstrumentformatguardtest_setup",
-      "community": 203,
-      "community_name": "ShowAdminShiftReportController.php",
+      "community": 4,
+      "community_name": "StoreContext",
       "norm_label": ".setup()"
     },
     {
@@ -27092,8 +27125,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "tests_unit_domain_payments_cardinstrumentformatguardtest_cardinstrumentformatguardtest_accepts_well_formed_card_matching_indicated_person",
-      "community": 203,
-      "community_name": "ShowAdminShiftReportController.php",
+      "community": 4,
+      "community_name": "StoreContext",
       "norm_label": ".accepts_well_formed_card_matching_indicated_person()"
     },
     {
@@ -27103,8 +27136,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "tests_unit_domain_payments_cardinstrumentformatguardtest_cardinstrumentformatguardtest_rejects_invalid_luhn_number",
-      "community": 203,
-      "community_name": "ShowAdminShiftReportController.php",
+      "community": 4,
+      "community_name": "StoreContext",
       "norm_label": ".rejects_invalid_luhn_number()"
     },
     {
@@ -27114,8 +27147,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "tests_unit_domain_payments_cardinstrumentformatguardtest_cardinstrumentformatguardtest_rejects_holder_mismatch",
-      "community": 203,
-      "community_name": "ShowAdminShiftReportController.php",
+      "community": 4,
+      "community_name": "StoreContext",
       "norm_label": ".rejects_holder_mismatch()"
     },
     {
@@ -27125,8 +27158,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "tests_unit_domain_payments_cardinstrumentformatguardtest_cardinstrumentformatguardtest_rejects_unconfirmed_ownership",
-      "community": 203,
-      "community_name": "ShowAdminShiftReportController.php",
+      "community": 4,
+      "community_name": "StoreContext",
       "norm_label": ".rejects_unconfirmed_ownership()"
     },
     {
@@ -27136,8 +27169,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "tests_unit_domain_payments_cardinstrumentformatguardtest_cardinstrumentformatguardtest_rejects_expired_card",
-      "community": 203,
-      "community_name": "ShowAdminShiftReportController.php",
+      "community": 4,
+      "community_name": "StoreContext",
       "norm_label": ".rejects_expired_card()"
     },
     {
@@ -27147,8 +27180,8 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "tests_unit_domain_payments_cardinstrumentformatguardtest_cardinstrumentformatguardtest_validcard",
-      "community": 203,
-      "community_name": "ShowAdminShiftReportController.php",
+      "community": 4,
+      "community_name": "StoreContext",
       "norm_label": ".validcard()"
     },
     {
@@ -27942,6 +27975,72 @@
       "community": 110,
       "community_name": "OperationalRouteAccessTest",
       "norm_label": ".builds_well_formed_charge_and_refund_envelopes()"
+    },
+    {
+      "label": "ProductionSecurityConfigAssertorTest.php",
+      "file_type": "code",
+      "source_file": "projects/pdv/backend/tests/Unit/Support/Security/ProductionSecurityConfigAssertorTest.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_unit_support_security_productionsecurityconfigassertortest",
+      "community": 110,
+      "community_name": "OperationalRouteAccessTest",
+      "norm_label": "productionsecurityconfigassertortest.php"
+    },
+    {
+      "label": "ProductionSecurityConfigAssertorTest",
+      "file_type": "code",
+      "source_file": "projects/pdv/backend/tests/Unit/Support/Security/ProductionSecurityConfigAssertorTest.php",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest",
+      "community": 110,
+      "community_name": "OperationalRouteAccessTest",
+      "norm_label": "productionsecurityconfigassertortest"
+    },
+    {
+      "label": ".non_production_environments_are_ignored()",
+      "file_type": "code",
+      "source_file": "projects/pdv/backend/tests/Unit/Support/Security/ProductionSecurityConfigAssertorTest.php",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest_non_production_environments_are_ignored",
+      "community": 110,
+      "community_name": "OperationalRouteAccessTest",
+      "norm_label": ".non_production_environments_are_ignored()"
+    },
+    {
+      "label": ".production_rejects_debug_enabled()",
+      "file_type": "code",
+      "source_file": "projects/pdv/backend/tests/Unit/Support/Security/ProductionSecurityConfigAssertorTest.php",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest_production_rejects_debug_enabled",
+      "community": 110,
+      "community_name": "OperationalRouteAccessTest",
+      "norm_label": ".production_rejects_debug_enabled()"
+    },
+    {
+      "label": ".production_rejects_insecure_session_cookie()",
+      "file_type": "code",
+      "source_file": "projects/pdv/backend/tests/Unit/Support/Security/ProductionSecurityConfigAssertorTest.php",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest_production_rejects_insecure_session_cookie",
+      "community": 110,
+      "community_name": "OperationalRouteAccessTest",
+      "norm_label": ".production_rejects_insecure_session_cookie()"
+    },
+    {
+      "label": ".production_accepts_hardened_config()",
+      "file_type": "code",
+      "source_file": "projects/pdv/backend/tests/Unit/Support/Security/ProductionSecurityConfigAssertorTest.php",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest_production_accepts_hardened_config",
+      "community": 110,
+      "community_name": "OperationalRouteAccessTest",
+      "norm_label": ".production_accepts_hardened_config()"
     },
     {
       "label": "vite.config.js",
@@ -72103,7 +72202,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "projects/pdv/backend/app/Providers/AppServiceProvider.php",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_providers_appserviceprovider",
@@ -72115,7 +72214,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "projects/pdv/backend/app/Providers/AppServiceProvider.php",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_providers_appserviceprovider",
@@ -72126,7 +72225,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "projects/pdv/backend/app/Providers/AppServiceProvider.php",
-      "source_location": "L116",
+      "source_location": "L117",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_providers_appserviceprovider_appserviceprovider",
@@ -72137,7 +72236,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "projects/pdv/backend/app/Providers/AppServiceProvider.php",
-      "source_location": "L69",
+      "source_location": "L70",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_providers_appserviceprovider_appserviceprovider",
@@ -72148,7 +72247,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "projects/pdv/backend/app/Providers/AppServiceProvider.php",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_providers_appserviceprovider_appserviceprovider",
@@ -73288,6 +73387,28 @@
       "_origin": "ast",
       "source": "app_support_pii_piicrypto_piicrypto_encrypter",
       "target": "encrypter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "projects/pdv/backend/app/Support/Security/ProductionSecurityConfigAssertor.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_support_security_productionsecurityconfigassertor",
+      "target": "app_support_security_productionsecurityconfigassertor_productionsecurityconfigassertor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "projects/pdv/backend/app/Support/Security/ProductionSecurityConfigAssertor.php",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_support_security_productionsecurityconfigassertor_productionsecurityconfigassertor",
+      "target": "app_support_security_productionsecurityconfigassertor_productionsecurityconfigassertor_assertforenvironment",
       "confidence_score": 1.0
     },
     {
@@ -84670,6 +84791,29 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "projects/pdv/backend/tests/Unit/Support/Security/ProductionSecurityConfigAssertorTest.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_support_security_productionsecurityconfigassertortest",
+      "target": "tests_testcase_testcase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "projects/pdv/backend/tests/Unit/Support/Security/ProductionSecurityConfigAssertorTest.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest",
+      "target": "tests_testcase_testcase",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "projects/pdv/backend/tests/TestCase.php",
@@ -86076,6 +86220,61 @@
       "_origin": "ast",
       "source": "tests_unit_infrastructure_payments_paymentsoapenvelopebuildertest_paymentsoapenvelopebuildertest",
       "target": "tests_unit_infrastructure_payments_paymentsoapenvelopebuildertest_paymentsoapenvelopebuildertest_builds_well_formed_charge_and_refund_envelopes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "projects/pdv/backend/tests/Unit/Support/Security/ProductionSecurityConfigAssertorTest.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_support_security_productionsecurityconfigassertortest",
+      "target": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "projects/pdv/backend/tests/Unit/Support/Security/ProductionSecurityConfigAssertorTest.php",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest",
+      "target": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest_non_production_environments_are_ignored",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "projects/pdv/backend/tests/Unit/Support/Security/ProductionSecurityConfigAssertorTest.php",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest",
+      "target": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest_production_accepts_hardened_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "projects/pdv/backend/tests/Unit/Support/Security/ProductionSecurityConfigAssertorTest.php",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest",
+      "target": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest_production_rejects_debug_enabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "projects/pdv/backend/tests/Unit/Support/Security/ProductionSecurityConfigAssertorTest.php",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest",
+      "target": "tests_unit_support_security_productionsecurityconfigassertortest_productionsecurityconfigassertortest_production_rejects_insecure_session_cookie",
       "confidence_score": 1.0
     },
     {

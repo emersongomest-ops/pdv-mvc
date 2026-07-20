@@ -233,7 +233,6 @@
   "231": "idempotency.php",
   "232": "AdminAnalyticsTest",
   "233": "AdminInventoryTest",
-  "234": ".completedSaleFixture",
   "235": "ActsWithOperationalSession.php",
   "236": "CatalogResource"
 }

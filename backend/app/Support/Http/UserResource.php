@@ -22,6 +22,7 @@ final class UserResource
             'email' => $user->email,
             'role' => $user->role->value,
             'is_active' => $user->is_active,
+            'mfa_enabled' => $user->hasMfaEnabled(),
             'stores' => $user->stores
                 ->map(static fn (Store $store): array => [
                     'id' => $store->id,

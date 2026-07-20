@@ -31,6 +31,8 @@ enum ErrorCode: string
     case AuthMfaInvalidCode = 'AUTH_MFA_INVALID_CODE';
     case AuthMfaNotPending = 'AUTH_MFA_NOT_PENDING';
     case AuthMfaAlreadyEnabled = 'AUTH_MFA_ALREADY_ENABLED';
+    case AuthCannotResetOwnMfa = 'AUTH_CANNOT_RESET_OWN_MFA';
+    case AuthMfaResetNotApplicable = 'AUTH_MFA_RESET_NOT_APPLICABLE';
 
     case StoreNotFound = 'STORE_NOT_FOUND';
     case StoreContextRequired = 'STORE_CONTEXT_REQUIRED';
@@ -170,6 +172,8 @@ enum ErrorCode: string
             self::AuthMfaRequired,
             self::AuthMfaSetupRequired,
             self::AuthMfaAlreadyEnabled,
+            self::AuthCannotResetOwnMfa,
+            self::AuthMfaResetNotApplicable,
             self::RefReturnQtyInvalid,
             self::IdempotencyKeyRequired => 422,
             self::SaleFiscalReceiptFailed => 500,
@@ -207,6 +211,8 @@ enum ErrorCode: string
             self::AuthMfaInvalidCode => 'Invalid or expired authentication code.',
             self::AuthMfaNotPending => 'No multi-factor authentication challenge is pending.',
             self::AuthMfaAlreadyEnabled => 'Multi-factor authentication is already enabled.',
+            self::AuthCannotResetOwnMfa => 'You cannot reset your own MFA; another manager must perform the reset.',
+            self::AuthMfaResetNotApplicable => 'MFA reset applies only to manager accounts.',
             self::StoreNotFound => 'Store not found.',
             self::StoreContextRequired => 'Store context must be selected.',
             self::StoreInactive => 'Store is inactive and cannot be selected.',
@@ -299,6 +305,8 @@ enum ErrorCode: string
             self::AuthMfaInvalidCode,
             self::AuthMfaNotPending,
             self::AuthMfaAlreadyEnabled,
+            self::AuthCannotResetOwnMfa,
+            self::AuthMfaResetNotApplicable,
         ];
     }
 

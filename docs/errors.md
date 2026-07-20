@@ -148,6 +148,14 @@ Implemented in `backend/app/Domain/Shared/ErrorCode.php`. Tests: `tests/Unit/Dom
 | `AUTH_STORE_CONTEXT_REQUIRED` | 422 | Store context must be selected. | RN-065 |
 | `AUTH_SESSION_EXPIRED` | 401 | Session has expired. | — |
 | `AUTH_TOO_MANY_ATTEMPTS` | 429 | Too many login attempts. Try again later. | — |
+| `AUTH_CANNOT_MODIFY_SELF` | 422 | You cannot deactivate or demote your own account. | RN-062 |
+| `AUTH_CANNOT_RESET_OWN_MFA` | 422 | You cannot reset your own MFA; another manager must perform the reset. | RN-074 |
+| `AUTH_MFA_RESET_NOT_APPLICABLE` | 422 | MFA reset applies only to manager accounts. | RN-074 |
+| `AUTH_MFA_REQUIRED` | 422 | Multi-factor authentication is required. | RN-066 |
+| `AUTH_MFA_SETUP_REQUIRED` | 422 | Multi-factor authentication setup is required before continuing. | RN-066 |
+| `AUTH_MFA_INVALID_CODE` | 422 | Invalid or expired authentication code. | RN-066 |
+| `AUTH_MFA_NOT_PENDING` | 422 | No multi-factor authentication challenge is pending. | RN-066 |
+| `AUTH_MFA_ALREADY_ENABLED` | 422 | Multi-factor authentication is already enabled. | RN-066 |
 
 Implemented in `backend/app/Domain/Shared/ErrorCode.php`. Tests: `tests/Unit/Domain/Shared/AuthErrorCodeTest.php`, `tests/Feature/Auth/*`.
 

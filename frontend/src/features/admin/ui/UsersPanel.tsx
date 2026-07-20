@@ -15,6 +15,8 @@ type UsersPanelProps = {
   onStartCreate: () => void
   onStartEdit: (user: AdminUser) => void
   onSave: () => void
+  onResetMfa: (user: AdminUser) => void
+  currentUserId: number | null
   loading: boolean
   loadingMore?: boolean
   nextCursor?: string | null
@@ -37,6 +39,8 @@ export function UsersPanel({
   onStartCreate,
   onStartEdit,
   onSave,
+  onResetMfa,
+  currentUserId,
   loading,
   loadingMore = false,
   nextCursor = null,
@@ -85,6 +89,7 @@ export function UsersPanel({
                 <th>Email</th>
                 <th>Role</th>
                 <th>Status</th>
+                <th>MFA</th>
                 <th>Stores</th>
                 <th />
               </tr>
@@ -100,6 +105,9 @@ export function UsersPanel({
                     <span className={`${styles.badge} ${user.is_active ? styles.active : styles.inactive}`}>
                       {user.is_active ? 'Active' : 'Inactive'}
                     </span>
+                  </td>
+                  <td>
+                    {user.role === 'manager' ? (user.mfa_enabled ? 'On' : 'Off') : '—'}
                   </td>
                   <td>
                     <div className={styles.stores}>
@@ -122,6 +130,16 @@ export function UsersPanel({
                     >
                       Edit
                     </button>
+                    {user.role === 'manager' && user.id !== currentUserId ? (
+                      <button
+                        type="button"
+                        className="btn btn-ghost"
+                        disabled={saving}
+                        onClick={() => onResetMfa(user)}
+                      >
+                        Reset MFA
+                      </button>
+                    ) : null}
                   </td>
                 </tr>
               ))}
