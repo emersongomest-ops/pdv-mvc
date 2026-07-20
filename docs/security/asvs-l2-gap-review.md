@@ -29,7 +29,7 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 
 1. ~~Prod env hardening checklist (`APP_DEBUG=false`, `SESSION_SECURE_COOKIE=true`, TLS/HSTS)~~ → **done** (`docs/ops/production-hardening.md`, boot guard, `nginx.tls.conf.example`)
 2. ~~Admin MFA reset / break-glass (beyond recovery codes)~~ → **done** (RN-074)
-3. External pen-test before multi-store production go-live
+3. External pen-test **execution** before multi-store production go-live (scope pack: [`external-pen-test.md`](./external-pen-test.md))
 4. ~~Optional: HIBP~~ → **done** (`Password::uncompromised`); ~~CAPTCHA after repeated failures~~ → **done** (Cloudflare Turnstile)
 5. ~~API `/api/v1`~~ → **done** (ADR-0011: `/api/v1` alias + policy; SPA cutover optional)
 
@@ -208,6 +208,6 @@ This review **closes** the checklist item “OWASP ASVS L2 review” in [`docs/s
 | Role | Outcome |
 |------|---------|
 | Engineering (this review) | ASVS L2 **desk review complete**; residual gaps tracked above |
-| External pen-test | **Still recommended** before production (separate checklist line or reopen §12) |
+| External pen-test | **Scope pack ready**; execution still required before production ([`external-pen-test.md`](./external-pen-test.md)) |
 
 When gaps 1–3 (headers, password min 12, prod env) are closed, update this file’s status column and re-run targeted Feature tests.

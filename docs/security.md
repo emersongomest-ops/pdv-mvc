@@ -156,7 +156,8 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 - [x] HIBP uncompromised passwords on create/update (`Password::uncompromised()`, `PASSWORD_UNCOMPROMISED`)  
 - [x] CAPTCHA after repeated login failures (Cloudflare Turnstile; `TURNSTILE_*`)  
 - [x] API versioning `/api/v1` (ADR-0011: live alias + policy; SPA may keep `/api` until cutover)  
-- [ ] External penetration test (post remaining ASVS residuals or in parallel)  
+- [x] External pen-test **scope pack** ([`docs/security/external-pen-test.md`](./security/external-pen-test.md)) — engagement brief, RoE, themes  
+- [ ] External penetration test **executed** + Critical/High closed (see scope pack §9)  
 - [ ] Legal sign-off on privacy/retention + fill controller/DPO placeholders  
 - [ ] Card issuer SOAP verify (leave 501 until WSDL) — ADR-0009
 ---
@@ -168,6 +169,7 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 - Laravel security docs  
 - RN-070, RN-071 (`business-rules.md`)
 - ASVS L2 gap review: `docs/security/asvs-l2-gap-review.md`
+- External pen-test brief: `docs/security/external-pen-test.md`
 - Project baseline: `.cursor/rules/06-seguranca-baseline.mdc` (always apply; violation = -3 scoring)
 
 ---
@@ -218,4 +220,4 @@ Automated coverage added under `tests/Feature/Security/`:
 
 Full matrix: [`docs/security/asvs-l2-gap-review.md`](./security/asvs-l2-gap-review.md).
 
-**Top residual gaps:** external pen-test; formal threat model; live TLS termination (runbook ready); legal counsel sign-off.
+**Top residual gaps:** external pen-test **execution** (scope pack ready); formal threat model; live TLS termination (runbook ready); legal counsel sign-off.
