@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Sales\Controllers;
 
 use App\Application\Sales\Actions\CompleteSaleAction;
+use App\Application\Shared\Idempotency\IdempotencyGuard;
 use App\Domain\Shared\Money;
 use App\Http\Controllers\Controller;
 use App\Http\Sales\Requests\CompleteSaleRequest;
@@ -17,6 +18,7 @@ final class CompleteSaleController extends Controller
         CompleteSaleRequest $request,
         int $saleId,
         CompleteSaleAction $action,
+        IdempotencyGuard $idempotency,
     ): JsonResponse {
         $validated = $request->validated();
 
@@ -48,19 +50,26 @@ final class CompleteSaleController extends Controller
             $validated['payments'],
         );
 
-        $sale = $action->execute(
-            $saleId,
-            $payments,
-            (int) $request->attributes->get('store_id'),
-            $request->user()->id,
-            (int) $request->attributes->get('cash_shift_id'),
-        );
+        return $idempotency->run(
+            $request,
+            'sales.complete:'.$saleId,
+            ['payments' => $validated['payments']],
+            function () use ($action, $request, $saleId, $payments): JsonResponse {
+                $sale = $action->execute(
+                    $saleId,
+                    $payments,
+                    (int) $request->attributes->get('store_id'),
+                    $request->user()->id,
+                    (int) $request->attributes->get('cash_shift_id'),
+                );
 
-        return response()->json([
-            'data' => [
-                'message' => 'Sale completed.',
-                'sale' => SaleResource::toArray($sale),
-            ],
-        ]);
+                return response()->json([
+                    'data' => [
+                        'message' => 'Sale completed.',
+                        'sale' => SaleResource::toArray($sale),
+                    ],
+                ]);
+            },
+        );
     }
 }

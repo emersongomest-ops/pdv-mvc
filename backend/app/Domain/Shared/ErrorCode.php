@@ -96,6 +96,10 @@ enum ErrorCode: string
     case PayWebhookAmountMismatch = 'PAY_WEBHOOK_AMOUNT_MISMATCH';
     case PayWebhookInvalidTransition = 'PAY_WEBHOOK_INVALID_TRANSITION';
 
+    case IdempotencyKeyRequired = 'IDEMPOTENCY_KEY_REQUIRED';
+    case IdempotencyKeyReuse = 'IDEMPOTENCY_KEY_REUSE';
+    case IdempotencyRequestInFlight = 'IDEMPOTENCY_REQUEST_IN_FLIGHT';
+
     public function httpStatus(): int
     {
         return match ($this) {
@@ -122,7 +126,9 @@ enum ErrorCode: string
             self::CatProductInUse,
             self::CustCpfDuplicate,
             self::AuthEmailDuplicate,
-            self::RefAlreadyFullyRefunded => 409,
+            self::RefAlreadyFullyRefunded,
+            self::IdempotencyKeyReuse,
+            self::IdempotencyRequestInFlight => 409,
             self::StoreNotFound,
             self::ShiftNotFound,
             self::SaleNotFound,
@@ -164,7 +170,8 @@ enum ErrorCode: string
             self::AuthMfaRequired,
             self::AuthMfaSetupRequired,
             self::AuthMfaAlreadyEnabled,
-            self::RefReturnQtyInvalid => 422,
+            self::RefReturnQtyInvalid,
+            self::IdempotencyKeyRequired => 422,
             self::SaleFiscalReceiptFailed => 500,
             self::PayGatewayUnavailable => 503,
             self::PayMethodNotImplemented => 501,
@@ -255,6 +262,9 @@ enum ErrorCode: string
             self::PayWebhookUnknownReference => 'No payment line matches the webhook transaction reference.',
             self::PayWebhookAmountMismatch => 'Webhook amount does not match the payment line.',
             self::PayWebhookInvalidTransition => 'Payment line cannot transition to the webhook status.',
+            self::IdempotencyKeyRequired => 'Idempotency-Key header is required.',
+            self::IdempotencyKeyReuse => 'Idempotency-Key was already used with a different request payload.',
+            self::IdempotencyRequestInFlight => 'A request with this Idempotency-Key is already in progress.',
         };
     }
 
@@ -425,6 +435,18 @@ enum ErrorCode: string
             self::PayWebhookUnknownReference,
             self::PayWebhookAmountMismatch,
             self::PayWebhookInvalidTransition,
+        ];
+    }
+
+    /**
+     * @return list<self>
+     */
+    public static function idempotencyErrors(): array
+    {
+        return [
+            self::IdempotencyKeyRequired,
+            self::IdempotencyKeyReuse,
+            self::IdempotencyRequestInFlight,
         ];
     }
 

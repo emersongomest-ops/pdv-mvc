@@ -9,6 +9,7 @@ use App\Domain\Payments\Exceptions\PaymentDomainException;
 use App\Domain\Promotions\Exceptions\PromotionDomainException;
 use App\Domain\RefundsReturns\Exceptions\RefundDomainException;
 use App\Domain\Sales\Exceptions\SaleDomainException;
+use App\Domain\Shared\Exceptions\IdempotencyDomainException;
 use App\Domain\Store\Exceptions\StoreDomainException;
 use App\Http\Middleware\AssignCorrelationId;
 use App\Http\Middleware\EnsureOpenCashShift;
@@ -121,6 +122,14 @@ return Application::configure(basePath: dirname(__DIR__))
         });
 
         $exceptions->render(function (RefundDomainException $exception, Request $request) {
+            if (! ApiErrorResponse::shouldRenderJson($request)) {
+                return null;
+            }
+
+            return ApiErrorResponse::fromErrorCode($exception->errorCode);
+        });
+
+        $exceptions->render(function (IdempotencyDomainException $exception, Request $request) {
             if (! ApiErrorResponse::shouldRenderJson($request)) {
                 return null;
             }

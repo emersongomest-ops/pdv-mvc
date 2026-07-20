@@ -116,8 +116,9 @@ export function useAdminRefunds() {
     setSubmitting(true)
     setError(null)
     setSuccess(null)
+    const idempotencyKey = crypto.randomUUID()
     try {
-      const response = await createRefund(sale.id, payload)
+      const response = await createRefund(sale.id, payload, idempotencyKey)
       setSuccess(response.data.message)
       setReason('')
       await loadSale(sale.id)

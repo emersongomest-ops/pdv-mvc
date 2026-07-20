@@ -25,6 +25,7 @@ Full/partial refunds and returns against completed sales, with payment stub reve
 | RN-018 | Full return |
 | RN-019 | Partial return |
 | RN-019a / RN-070 | Audit trail |
+| RN-073 | Idempotency-Key required on create refund |
 
 ## HTTP surface
 
@@ -33,10 +34,12 @@ Full/partial refunds and returns against completed sales, with payment stub reve
 | `POST` | `/api/admin/sales/{saleId}/refunds` | Manager |
 | `GET` | `/api/admin/sales/{saleId}/refunds` | Manager |
 
-Body: `{ type, reason, lines?: [{ sale_line_id, quantity }] }`
+Body: `{ type, reason, lines?: [{ sale_line_id, quantity }] }`  
+Header (POST): `Idempotency-Key` (RN-073)
 
 ## Notes
 
 - Snake case key: `refunds_returns`
-- Errors: `REF_*` in `docs/errors.md`
+- Errors: `REF_*` + `IDEMPOTENCY_*` in `docs/errors.md`
 - Create path appends `refund.created` or `return.created` in the same transaction (RN-070); see `docs/domains/audit.md`
+- Replay-safe create via `IdempotencyGuard` (same key + payload → stored 201)

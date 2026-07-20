@@ -406,11 +406,17 @@ export function listRefundsForSale(saleId: number) {
   )
 }
 
-export function createRefund(saleId: number, payload: import('./types').CreateRefundPayload) {
+export function createRefund(
+  saleId: number,
+  payload: import('./types').CreateRefundPayload,
+  idempotencyKey?: string,
+) {
+  const key = idempotencyKey ?? crypto.randomUUID()
   return apiRequest<{ data: { message: string; refund: import('./types').Refund } }>(
     `/api/admin/sales/${saleId}/refunds`,
     {
       method: 'POST',
+      headers: { 'Idempotency-Key': key },
       body: JSON.stringify(payload),
     },
   )
@@ -597,11 +603,14 @@ export function applyPromotionToSale(saleId: number, code: string) {
 export function completeSale(
   saleId: number,
   payments: Array<{ method: string; amount: string; cash_received?: string }>,
+  idempotencyKey?: string,
 ) {
+  const key = idempotencyKey ?? crypto.randomUUID()
   return apiRequest<{ data: { sale: import('./types').Sale } }>(
     `/api/operational/sales/${saleId}/complete`,
     {
       method: 'POST',
+      headers: { 'Idempotency-Key': key },
       body: JSON.stringify({ payments }),
     },
   )

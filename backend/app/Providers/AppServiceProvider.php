@@ -47,6 +47,8 @@ use App\Infrastructure\RefundsReturns\Persistence\Repositories\RefundsReturnsRep
 use App\Infrastructure\Sales\Analytics\LogSaleAnalyticsRecorder;
 use App\Infrastructure\Sales\Fiscal\StubFiscalReceiptGenerator;
 use App\Infrastructure\Sales\Persistence\Repositories\SalesRepository;
+use App\Domain\Shared\Idempotency\IdempotencyRecordRepositoryInterface;
+use App\Infrastructure\Shared\Idempotency\EloquentIdempotencyRecordRepository;
 use App\Infrastructure\Store\Persistence\Repositories\StoreRepository;
 use App\Models\User;
 use App\Support\Store\StoreContext;
@@ -95,6 +97,7 @@ class AppServiceProvider extends ServiceProvider
         });
         $this->app->bind(FiscalReceiptGeneratorInterface::class, StubFiscalReceiptGenerator::class);
         $this->app->bind(SaleAnalyticsRecorderInterface::class, LogSaleAnalyticsRecorder::class);
+        $this->app->bind(IdempotencyRecordRepositoryInterface::class, EloquentIdempotencyRecordRepository::class);
         $this->app->singleton(StoreContext::class);
 
         if (

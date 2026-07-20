@@ -8304,8 +8304,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_http_audit_requests_listadminauditlogsrequest_listadminauditlogsrequest_rules",
-      "community": 73,
-      "community_name": "UpdateProductAction",
+      "community": 200,
+      "community_name": "OperationalStoreContextTest",
       "norm_label": ".rules()"
     },
     {
@@ -21545,7 +21545,7 @@
       "label": "ManagerUserSeeder",
       "file_type": "code",
       "source_file": "projects/pdv/backend/database/seeders/ManagerUserSeeder.php",
-      "source_location": "L13",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "database_seeders_manageruserseeder_manageruserseeder",
       "community": 118,
@@ -21556,7 +21556,7 @@
       "label": ".run()",
       "file_type": "code",
       "source_file": "projects/pdv/backend/database/seeders/ManagerUserSeeder.php",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "database_seeders_manageruserseeder_manageruserseeder_run",
       "community": 118,
@@ -22813,8 +22813,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_logintest",
-      "community": 213,
-      "community_name": "LoginTest",
+      "community": 62,
+      "community_name": "Category",
       "norm_label": "logintest.php"
     },
     {
@@ -22824,8 +22824,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_feature_auth_logintest_logintest",
-      "community": 213,
-      "community_name": "LoginTest",
+      "community": 62,
+      "community_name": "Category",
       "norm_label": "logintest"
     },
     {
@@ -22835,8 +22835,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "tests_feature_auth_logintest_logintest_setup",
-      "community": 213,
-      "community_name": "LoginTest",
+      "community": 62,
+      "community_name": "Category",
       "norm_label": ".setup()"
     },
     {
@@ -22846,8 +22846,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "tests_feature_auth_logintest_logintest_test_manager_can_login_and_access_admin_route",
-      "community": 213,
-      "community_name": "LoginTest",
+      "community": 62,
+      "community_name": "Category",
       "norm_label": ".test_manager_can_login_and_access_admin_route()"
     },
     {
@@ -22857,8 +22857,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "tests_feature_auth_logintest_logintest_test_operator_can_login_and_access_operational_route",
-      "community": 213,
-      "community_name": "LoginTest",
+      "community": 62,
+      "community_name": "Category",
       "norm_label": ".test_operator_can_login_and_access_operational_route()"
     },
     {
@@ -22868,8 +22868,8 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "tests_feature_auth_logintest_logintest_test_login_with_invalid_credentials_returns_auth_invalid_credentials",
-      "community": 213,
-      "community_name": "LoginTest",
+      "community": 62,
+      "community_name": "Category",
       "norm_label": ".test_login_with_invalid_credentials_returns_auth_invalid_credentials()"
     },
     {
@@ -22879,8 +22879,8 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "tests_feature_auth_logintest_logintest_test_inactive_user_login_returns_auth_account_inactive",
-      "community": 213,
-      "community_name": "LoginTest",
+      "community": 62,
+      "community_name": "Category",
       "norm_label": ".test_inactive_user_login_returns_auth_account_inactive()"
     },
     {
@@ -65078,7 +65078,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "projects/pdv/backend/database/seeders/ManagerUserSeeder.php",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "database_seeders_manageruserseeder_manageruserseeder_run",
@@ -67106,7 +67106,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "projects/pdv/backend/database/seeders/ManagerUserSeeder.php",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
       "source": "database_seeders_manageruserseeder_manageruserseeder_run",
@@ -73610,7 +73610,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "projects/pdv/backend/database/seeders/ManagerUserSeeder.php",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "database_seeders_manageruserseeder_manageruserseeder",
@@ -73777,7 +73777,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "projects/pdv/backend/database/seeders/ManagerUserSeeder.php",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "database_seeders_manageruserseeder",
@@ -73788,7 +73788,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "projects/pdv/backend/database/seeders/ManagerUserSeeder.php",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "database_seeders_manageruserseeder_manageruserseeder",

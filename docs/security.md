@@ -117,9 +117,10 @@ Defense-in-depth mapped to threat categories. Not exhaustive — review per rele
 | Area | Control |
 |------|---------|
 | **Multi-store IDOR** | Operational: middleware `store.context` + `StorePolicy` (RN-065). Admin store-scoped: `AssertManagerStoreAccess` / `store_user` on sales, shifts, inventory, refunds, dashboard KPIs, audit log filters (RN-064); catalog remains global |
-| **Refunds** | Manager-only or threshold; full audit (RN-019a / RN-070) |
+| **Refunds** | Manager-only or threshold; full audit (RN-019a / RN-070); `Idempotency-Key` on create (RN-073) |
 | **PII (CPF, email, phone, address, birth_date)** | Encrypt at rest (AES-256-CBC, dedicated key); blind indexes for CPF/email equality; operational CPF masked; see ADR-0008 |
 | **Payment stub / SOAP acquirer** | No PAN stored; outbound acquirer protocol is SOAP; app API + payment webhooks remain REST |
+| **Complete sale / refund replay** | `Idempotency-Key` + payload hash (RN-073); webhooks via `payment_webhook_events` (RN-054) |
 | **Audit** | Append-only `audit_logs` (RN-070): Eloquent + DB triggers block UPDATE/DELETE; audit failure aborts mutation; managers see assigned stores + global rows; unassigned `store_id` filter → 403 `AUTH_STORE_ACCESS_DENIED` |
 | **API** | Unversioned `/api/*` today (ASVS gap: `/api/v1` when breaking); Form Requests at boundary |
 | **Headers** | Nginx SPA: CSP, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` (`docker/nginx.conf`) |

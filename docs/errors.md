@@ -164,6 +164,18 @@ Related auth codes for store access: `AUTH_STORE_ACCESS_DENIED`, `AUTH_STORE_CON
 
 Implemented in `backend/app/Domain/Shared/ErrorCode.php`. Tests: `tests/Unit/Domain/Shared/StoreErrorCodeTest.php`, `tests/Feature/Store/*`.
 
+## Idempotency (`IDEMPOTENCY_*`)
+
+| Code | HTTP | Message | RN |
+|------|------|---------|-----|
+| `IDEMPOTENCY_KEY_REQUIRED` | 422 | Idempotency-Key header is required. | RN-073 |
+| `IDEMPOTENCY_KEY_REUSE` | 409 | Idempotency-Key was already used with a different request payload. | RN-073 |
+| `IDEMPOTENCY_REQUEST_IN_FLIGHT` | 409 | A request with this Idempotency-Key is already in progress. | RN-073 |
+
+Applies to `POST .../sales/{id}/complete` and `POST /api/admin/sales/{id}/refunds`. Replay returns stored body with `Idempotent-Replayed: true`.
+
+Implemented in `IdempotencyGuard` + `ErrorCode`. Tests: `tests/Feature/Shared/IdempotencyTest.php`.
+
 ---
 
 ## Implementation notes

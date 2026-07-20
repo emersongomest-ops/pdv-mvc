@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\RefundsReturns\Controllers;
 
 use App\Application\RefundsReturns\Actions\CreateRefundAction;
+use App\Application\Shared\Idempotency\IdempotencyGuard;
 use App\Domain\RefundsReturns\ValueObjects\RefundType;
 use App\Http\Controllers\Controller;
 use App\Http\RefundsReturns\Requests\StoreRefundRequest;
@@ -17,6 +18,7 @@ final class CreateRefundController extends Controller
     public function __invoke(
         StoreRefundRequest $request,
         CreateRefundAction $action,
+        IdempotencyGuard $idempotency,
         int $saleId,
     ): JsonResponse {
         $validated = $request->validated();
@@ -34,19 +36,32 @@ final class CreateRefundController extends Controller
         /** @var User $manager */
         $manager = $request->user();
 
-        $refund = $action->execute(
-            $saleId,
-            $type,
-            (string) $validated['reason'],
-            $manager,
-            $lines,
-        );
+        $hashPayload = [
+            'type' => $validated['type'],
+            'reason' => $validated['reason'],
+            'lines' => $validated['lines'] ?? [],
+        ];
 
-        return response()->json([
-            'data' => [
-                'message' => 'Refund recorded.',
-                'refund' => RefundResource::toArray($refund),
-            ],
-        ], 201);
+        return $idempotency->run(
+            $request,
+            'sales.refund:'.$saleId,
+            $hashPayload,
+            function () use ($action, $saleId, $type, $validated, $manager, $lines): JsonResponse {
+                $refund = $action->execute(
+                    $saleId,
+                    $type,
+                    (string) $validated['reason'],
+                    $manager,
+                    $lines,
+                );
+
+                return response()->json([
+                    'data' => [
+                        'message' => 'Refund recorded.',
+                        'refund' => RefundResource::toArray($refund),
+                    ],
+                ], 201);
+            },
+        );
     }
 }

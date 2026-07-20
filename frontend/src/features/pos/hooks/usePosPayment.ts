@@ -47,8 +47,9 @@ export function usePosPayment(onPaid?: () => void) {
         : [{ method: 'pix', amount }]
 
     clearFeedback()
+    const idempotencyKey = crypto.randomUUID()
     await runBusy(async () => {
-      const completed = await completeSale(sale.id, payments)
+      const completed = await completeSale(sale.id, payments, idempotencyKey)
       const change =
         payMethod === 'cash' && cashReceived
           ? ` · troco ${formatMoney(moneyDiff(cashReceived, sale.total))}`
