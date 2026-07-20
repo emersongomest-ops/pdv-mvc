@@ -526,11 +526,16 @@ export function adjustAdminInventory(payload: import('./types').AdjustInventoryP
   )
 }
 
-export function createSale(payload?: { product_id: number; quantity?: number }) {
+export function createSale(
+  payload?: { product_id: number; quantity?: number },
+  idempotencyKey?: string,
+) {
+  const key = idempotencyKey ?? crypto.randomUUID()
   return apiRequest<{ data: { message: string; sale: import('./types').Sale } }>(
     '/api/operational/sales',
     {
       method: 'POST',
+      headers: { 'Idempotency-Key': key },
       body: payload
         ? JSON.stringify({
             product_id: payload.product_id,
@@ -541,11 +546,18 @@ export function createSale(payload?: { product_id: number; quantity?: number }) 
   )
 }
 
-export function addSaleLine(saleId: number, productId: number, quantity = 1) {
+export function addSaleLine(
+  saleId: number,
+  productId: number,
+  quantity = 1,
+  idempotencyKey?: string,
+) {
+  const key = idempotencyKey ?? crypto.randomUUID()
   return apiRequest<{ data: { sale: import('./types').Sale } }>(
     `/api/operational/sales/${saleId}/lines`,
     {
       method: 'POST',
+      headers: { 'Idempotency-Key': key },
       body: JSON.stringify({ product_id: productId, quantity }),
     },
   )

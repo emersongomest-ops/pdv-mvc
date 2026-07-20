@@ -172,9 +172,9 @@ Implemented in `backend/app/Domain/Shared/ErrorCode.php`. Tests: `tests/Unit/Dom
 | `IDEMPOTENCY_KEY_REUSE` | 409 | Idempotency-Key was already used with a different request payload. | RN-073 |
 | `IDEMPOTENCY_REQUEST_IN_FLIGHT` | 409 | A request with this Idempotency-Key is already in progress. | RN-073 |
 
-Applies to `POST .../sales/{id}/complete` and `POST /api/admin/sales/{id}/refunds`. Replay returns stored body with `Idempotent-Replayed: true`. Retention: daily `idempotency:purge` (default 7 days).
+Applies to `POST /api/operational/sales`, `POST .../sales/{id}/lines`, `POST .../sales/{id}/complete`, and `POST /api/admin/sales/{id}/refunds`. Replay returns stored body with `Idempotent-Replayed: true`. Retention: daily `idempotency:purge` (default 7 days).
 
-Implemented in `IdempotencyGuard` + `ErrorCode`. Tests: `tests/Feature/Shared/IdempotencyTest.php`, `PurgeExpiredIdempotencyRecordsTest.php`.
+Implemented in `IdempotencyGuard` + `ErrorCode`. Tests: `tests/Feature/Shared/IdempotencyTest.php`, `CartIdempotencyTest.php`, `PurgeExpiredIdempotencyRecordsTest.php`.
 
 ---
 

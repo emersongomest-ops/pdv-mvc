@@ -74,7 +74,11 @@ final class IdempotencyTest extends TestCase
         $this->assertSame($firstBody, $second->json());
         $this->assertSame(1, Sale::query()->where('id', $saleId)->where('status', SaleStatus::Completed)->count());
         $this->assertDatabaseCount('payment_lines', 1);
-        $this->assertSame(1, IdempotencyRecord::query()->count());
+        $this->assertDatabaseHas('idempotency_records', [
+            'scope' => 'sales.complete:'.$saleId,
+            'key' => $key,
+            'status' => IdempotencyRecord::STATUS_COMPLETED,
+        ]);
     }
 
     public function test_complete_sale_same_key_different_payload_conflicts(): void

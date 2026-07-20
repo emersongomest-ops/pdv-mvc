@@ -218,9 +218,17 @@
   "216": "pii.php",
   "217": "SelectStoreContextTest",
   "218": "ListCampaignCustomersAction",
+  "219": "AdminDashboardController.php",
   "220": "ListAdminSalesAction",
   "221": "RemovePromotionFromSaleAction",
+  "222": "RemoveSaleLineController.php",
   "223": "ActsWithOperationalSession.php",
   "224": "2026_07_20_120000_add_mfa_recovery_codes_to_users_table.php",
-  "225": "ProbeQueuedJob"
+  "225": "ProbeQueuedJob",
+  "226": "OperationalRouteAccessTest",
+  "227": "WebhookRetryQueueInterface.php",
+  "228": "SaleAnalyticsRecorderInterface",
+  "229": "DatabaseSeeder",
+  "230": "actingAsManagerForStore",
+  "231": "idempotency.php"
 }
